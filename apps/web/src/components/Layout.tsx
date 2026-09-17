@@ -7,6 +7,7 @@ const NAV = [
   { to: "/new", label: "New Audit" },
   { to: "/history", label: "Audit History" },
   { to: "/rules", label: "Rule Library" },
+  { to: "/references", label: "References" },
   { to: "/settings", label: "Settings" },
 ];
 

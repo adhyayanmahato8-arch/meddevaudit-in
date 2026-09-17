@@ -16,6 +16,7 @@
     "db:studio": "npm run studio -w @meddevaudit/db",
     "build": "npm run build -w @meddevaudit/web",
     "fixtures:build": "npm run build-fixtures -w @meddevaudit/eval",
+    "samples:build": "tsx packages/eval/src/build-sample-pdfs.ts",
     "eval": "npm run eval -w @meddevaudit/eval --",
     "test:llm-contract": "npm run test:llm-contract -w @meddevaudit/api",
     "start": "node scripts/setup.mjs && npm run start -w @meddevaudit/api",

@@ -1,0 +1,74 @@
+[
+  {
+    "file": "bp-monitor-distractor-heavy.pdf",
+    "title": "bp-monitor-distractor-heavy",
+    "device": "bp-monitor",
+    "expected": "REJECT",
+    "description": "Every clause answered with a hard distractor — same topic and vocabulary, requirement not met. The precision test: a matcher that trusts keywords will over-call PASS here.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "bp-monitor-sparse.pdf",
+    "title": "bp-monitor-sparse",
+    "device": "bp-monitor",
+    "expected": "REJECT",
+    "description": "Only six clauses have any passage at all; the other eleven are simply absent. Tests the plain 'missing document' case, which must be REJECT and must not be softened by topical similarity to the passages that are present.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "ecg-paraphrase-two-rejects.pdf",
+    "title": "ecg-paraphrase-two-rejects",
+    "device": "ecg-machine",
+    "expected": "REJECT",
+    "description": "Paraphrased throughout, with two REJECT-grade distractors buried in it (self-declared Free Sale Certificate; Type BF applied part on a diagnostic ECG). Tests that paraphrase recall does not come at the cost of missing real rejects.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "nebulizer-literal-one-minor.pdf",
+    "title": "nebulizer-literal-one-minor",
+    "device": "nebulizer",
+    "expected": "MINOR_IMPROVEMENT",
+    "description": "Literal throughout except a duty-cycle/IFU contradiction on the compressor clause. Expected overall MINOR_IMPROVEMENT.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "pulse-oximeter-literal-complete.pdf",
+    "title": "pulse-oximeter-literal-complete",
+    "device": "pulse-oximeter",
+    "expected": "PASS",
+    "description": "Every clause satisfied in the clause's own vocabulary. Baseline: should PASS on any matcher.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "pulse-oximeter-paraphrase-complete.pdf",
+    "title": "pulse-oximeter-paraphrase-complete",
+    "device": "pulse-oximeter",
+    "expected": "PASS",
+    "description": "Every clause genuinely satisfied, but in deliberately disjoint wording. The recall test for paraphrase: a purely lexical matcher will under-call this dossier.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "thermometer-mixed-minor.pdf",
+    "title": "thermometer-mixed-minor",
+    "device": "digital-thermometer",
+    "expected": "MINOR_IMPROVEMENT",
+    "description": "Mostly satisfied with a handful of MINOR-grade distractors (expired QMS certificate, country-only manufacturer address, missing IFU complaint route, undeclared measurement mode). Expected overall MINOR_IMPROVEMENT.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "demo-pulse-oximeter-complete.pdf",
+    "title": "demo-pulse-oximeter-complete",
+    "device": "pulse-oximeter",
+    "expected": "PASS",
+    "description": "The original demo dossier: every clause satisfied in its own vocabulary.",
+    "kind": "synthetic"
+  },
+  {
+    "file": "demo-bp-monitor-deficient.pdf",
+    "title": "demo-bp-monitor-deficient",
+    "device": "bp-monitor",
+    "expected": "REJECT",
+    "description": "The original deficient demo dossier: licensing documents missing, self-declaration in place of a Free Sale Certificate, English-only label.",
+    "kind": "synthetic"
+  }
+]
