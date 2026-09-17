@@ -83,6 +83,12 @@ On Railway: **New Project → Deploy from GitHub repo**; it detects the Dockerfi
 
 The schema is Postgres-compatible. Create a free database at https://neon.tech, then in `packages/db/prisma/schema.prisma` change `provider = "sqlite"` to `provider = "postgresql"` and `url = "file:./dev.db"` to `url = env("DATABASE_URL")`, set `DATABASE_URL` in the host's environment, and redeploy. `npm run setup` will create the tables and seed them. No model changes are needed.
 
+### How an audit runs in production
+
+`POST /api/audits` extracts the text, creates the audit as `RUNNING` and returns **202** immediately. Screening runs in a **separate worker process, one at a time** (`services/screeningQueue.ts` → `scripts/screen-audit.ts`), and the report page polls `GET /api/audits/:id` every 2 s until the status is `COMPLETED` or `FAILED`. This is what makes long documents work on a small host: the web process never blocks on embedding, a worker that runs out of memory is recorded as `FAILED` instead of restarting the instance, and interrupted audits are re-queued on start-up.
+
+Measured on the 32-page Omron NE-C801 manual (222 passages): worker peak RSS **242 MB** with fixed-shape embedding (batch 4 × 192 tokens; the ONNX Runtime memory arena grows with every new input shape, so dynamic padding had driven it to 611 MB). On Render's free instance (0.1 CPU) a document of that size takes a few minutes; short dossiers take 10–30 s. Tunables: `EMBED_BATCH`, `EMBED_MAX_TOKENS`, `EMBED_MAX_CHARS`, `MAX_WORKER_RSS_MB` (default 380 — the worker fails the job cleanly above it), `SCREENING_TIMEOUT_MS`.
+
 ### Production hardening already in place
 - Frontend served from the API process with immutable caching for fingerprinted assets and SPA fallback routing.
 - `X-Powered-By` disabled; CORS closed by default in production (open only via `CORS_ORIGIN`).
@@ -300,7 +306,11 @@ The output of this tool is a review aid. **It is not a regulatory determination*
 | `GET` | `/api/audits/summary` | Dashboard aggregates |
 | `GET` | `/api/audits/:id` | Full report with findings and clauses |
 | `PATCH` | `/api/audits/:id/findings/:findingId` | Reviewer override (`reviewerVerdict: null` clears it) |
-| `GET` | `/api/audits/:id/export` | Download the PDF audit report |
+| `GET` | `/api/audits/:id/export` | Download the PDF audit report (409 until screening completes) |
+| `GET` | `/api/evaluation` | Held-out evaluation figures from `reports/*.json` |
+| `GET` | `/samples/index.json`, `/samples/*.pdf` | Synthetic test dossiers with known expected results |
+
+**References page** (`/references`, `apps/web/src/data/references.ts`): every rule, form, guidance document and ISO/IEC standard the clause library cites, linked to its authoritative source and tagged with the clause codes that rest on it, plus 20 real public documents (FDA 510(k) summaries, manufacturer IFUs, an EU Declaration of Conformity) verified to download and to yield extractable text. All links were fetched and checked on 17 September 2026; ISO catalogue pages were confirmed via their search listings because iso.org blocks scripted requests.
 
 ---
 
