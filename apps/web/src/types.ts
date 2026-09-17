@@ -28,10 +28,14 @@ export type Clause = {
 
 export type VerdictCounts = Record<Verdict, number>;
 
+export type AuditStatus = "RUNNING" | "COMPLETED" | "FAILED";
+
 export type AuditSummaryRow = {
   id: string;
   createdAt: string;
   dossierFilename: string;
+  status: AuditStatus;
+  statusMessage: string | null;
   overallResult: Verdict;
   engine: string;
   submittedBy: string;
@@ -69,9 +73,12 @@ export type AuditDetail = {
   id: string;
   createdAt: string;
   dossierFilename: string;
-  status: string;
+  status: AuditStatus;
+  statusMessage: string | null;
+  completedAt: string | null;
   overallResult: Verdict;
   engine: string;
+  retrievalMode: string;
   submittedBy: string;
   deviceType: DeviceType;
   counts: VerdictCounts;

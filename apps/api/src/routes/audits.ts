@@ -57,6 +57,39 @@ auditsRouter.post("/audits", upload.array("files", 10), async (req, res, next) =
       });
     }
 
+    const dossierLabel =
+      documents.length === 1 ? documents[0].filename : `${documents.length} documents (${documents[0].filename}, …)`;
+
+    // The audit record is created immediately and screened in the background.
+    // Screening a long document embeds every passage, which on a small host can
+    // take minutes — longer than an HTTP proxy will hold a request open. The
+    // client polls GET /api/audits/:id until status is COMPLETED or FAILED.
+    const audit = await prisma.audit.create({
+      data: {
+        deviceTypeId,
+        dossierFilename: dossierLabel,
+        dossierText,
+        status: "RUNNING",
+        statusMessage: "Queued",
+      },
+    });
+
+    res.status(202).json({ id: audit.id, status: "RUNNING" });
+    setImmediate(() => {
+      screenAudit(audit.id, deviceTypeId, dossierText).catch((error) => console.error("[audit]", audit.id, error));
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+/**
+ * Background screening of one audit. Progress is written to statusMessage so
+ * the report page can show "n/17 clauses screened"; the final state is
+ * COMPLETED with findings, or FAILED with the error message.
+ */
+async function screenAudit(auditId: string, deviceTypeId: string, dossierText: string): Promise<void> {
+  try {
     const clauseRows = await prisma.clause.findMany({
       where: { OR: [{ deviceTypeId: null }, { deviceTypeId }] },
       orderBy: [{ deviceTypeId: "asc" }, { sortOrder: "asc" }],
@@ -76,7 +109,19 @@ auditsRouter.post("/audits", upload.array("files", 10), async (req, res, next) =
       category: clause.category,
     }));
 
-    const { results, engine, retrievalMode, notes } = await runMatching(clauses, dossierText);
+    await prisma.audit.update({ where: { id: auditId }, data: { statusMessage: "Indexing dossier passages…" } });
+
+    let lastProgressWrite = 0;
+    const { results, engine, retrievalMode, notes } = await runMatching(clauses, dossierText, (done, total) => {
+      const now = Date.now();
+      // The final update below writes the engine notes; a progress write for
+      // the last clause could land after it and overwrite them.
+      if (done >= total || now - lastProgressWrite < 750) return;
+      lastProgressWrite = now;
+      prisma.audit
+        .update({ where: { id: auditId }, data: { statusMessage: `${done}/${total} clauses screened` } })
+        .catch(() => undefined);
+    });
 
     const mandatoryById = new Map(clauseRows.map((clause) => [clause.id, clause.mandatory]));
     const overallResult = computeOverallResult(
@@ -87,15 +132,12 @@ auditsRouter.post("/audits", upload.array("files", 10), async (req, res, next) =
       })),
     );
 
-    const dossierLabel =
-      documents.length === 1 ? documents[0].filename : `${documents.length} documents (${documents[0].filename}, …)`;
-
-    const audit = await prisma.audit.create({
+    await prisma.audit.update({
+      where: { id: auditId },
       data: {
-        deviceTypeId,
-        dossierFilename: dossierLabel,
-        dossierText,
         status: "COMPLETED",
+        statusMessage: notes.join(" "),
+        completedAt: new Date(),
         overallResult,
         engine,
         retrievalMode,
@@ -112,12 +154,14 @@ auditsRouter.post("/audits", upload.array("files", 10), async (req, res, next) =
         },
       },
     });
-
-    res.status(201).json({ id: audit.id, overallResult, engine, clausesScreened: results.length, notes });
   } catch (error) {
-    next(error);
+    const message = error instanceof Error ? error.message : "Unexpected error during screening.";
+    await prisma.audit
+      .update({ where: { id: auditId }, data: { status: "FAILED", statusMessage: message, completedAt: new Date() } })
+      .catch(() => undefined);
+    throw error;
   }
-});
+}
 
 /** GET /api/audits — history, newest first. */
 auditsRouter.get("/audits", async (_req, res, next) => {
@@ -135,6 +179,8 @@ auditsRouter.get("/audits", async (_req, res, next) => {
         id: audit.id,
         createdAt: audit.createdAt,
         dossierFilename: audit.dossierFilename,
+        status: audit.status,
+        statusMessage: audit.statusMessage,
         overallResult: audit.overallResult,
         engine: audit.engine,
         submittedBy: audit.submittedBy,
@@ -152,7 +198,10 @@ auditsRouter.get("/audits", async (_req, res, next) => {
 /** GET /api/audits/summary — dashboard aggregates. */
 auditsRouter.get("/audits/summary", async (_req, res, next) => {
   try {
+    // Only finished audits carry a result; running or failed ones are excluded
+    // from the aggregates so the pass rate is not diluted.
     const audits = await prisma.audit.findMany({
+      where: { status: "COMPLETED" },
       orderBy: { createdAt: "desc" },
       include: {
         deviceType: { select: { name: true, riskClass: true } },
@@ -212,6 +261,8 @@ auditsRouter.get("/audits/:id", async (req, res, next) => {
       createdAt: audit.createdAt,
       dossierFilename: audit.dossierFilename,
       status: audit.status,
+      statusMessage: audit.statusMessage,
+      completedAt: audit.completedAt,
       overallResult: audit.overallResult,
       engine: audit.engine,
       retrievalMode: audit.retrievalMode,
@@ -311,6 +362,9 @@ auditsRouter.get("/audits/:id/export", async (req, res, next) => {
   try {
     const audit = await loadAudit(req.params.id);
     if (!audit) return res.status(404).json({ error: "Audit not found." });
+    if (audit.status !== "COMPLETED") {
+      return res.status(409).json({ error: `Audit is ${audit.status.toLowerCase()}; a report can be exported once screening has completed.` });
+    }
 
     const safeName = `MedDevAudit-IN_${audit.deviceType.name.replace(/[^a-z0-9]+/gi, "-")}_${audit.id.slice(-6)}.pdf`;
     res.setHeader("Content-Type", "application/pdf");

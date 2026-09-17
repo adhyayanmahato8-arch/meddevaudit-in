@@ -167,6 +167,12 @@ app.use((error: unknown, _req: Request, res: Response, _next: NextFunction) => {
 });
 
 const server = app.listen(env.port, () => {
+  // Behind a hosting proxy (Render, ALB, nginx) the app's keep-alive must
+  // outlive the proxy's idle timeout, or the proxy reuses a socket the app has
+  // just closed and the client sees a reset. 65 s clears the common 60 s
+  // proxy defaults; headersTimeout must exceed keepAliveTimeout.
+  server.keepAliveTimeout = 65_000;
+  server.headersTimeout = 66_000;
   console.log(`[api] listening on http://localhost:${env.port}`);
   console.log(
     hasLlm

@@ -25,11 +25,33 @@ export default function AuditReport() {
   const [error, setError] = useState("");
   const [filter, setFilter] = useState<"ALL" | Verdict>("ALL");
 
+  // Screening runs in the background on the server; poll until it settles.
+  // A single failed poll (a dropped keep-alive socket, a flaky connection) is
+  // retried rather than shown as an error; only repeated failures surface.
   useEffect(() => {
-    api
-      .audit(id)
-      .then(setAudit)
-      .catch((e) => setError(e.message));
+    let cancelled = false;
+    let timer: number | undefined;
+    let failures = 0;
+    const load = () =>
+      api
+        .audit(id)
+        .then((next) => {
+          if (cancelled) return;
+          failures = 0;
+          setAudit(next);
+          if (next.status === "RUNNING") timer = window.setTimeout(load, 2000);
+        })
+        .catch((e) => {
+          if (cancelled) return;
+          failures += 1;
+          if (failures >= 4 || /not found/i.test(e.message)) setError(e.message);
+          else timer = window.setTimeout(load, 2500);
+        });
+    load();
+    return () => {
+      cancelled = true;
+      if (timer) window.clearTimeout(timer);
+    };
   }, [id]);
 
   const grouped = useMemo(() => {
@@ -46,6 +68,52 @@ export default function AuditReport() {
 
   if (error) return <ErrorNote message={error} />;
   if (!audit) return <Spinner label="Loading audit report…" />;
+
+  if (audit.status !== "COMPLETED") {
+    const failed = audit.status === "FAILED";
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center gap-2 text-sm">
+          <Link to="/history" className="text-ink-500 hover:text-ink-900 hover:underline">
+            Audit history
+          </Link>
+          <span className="text-ink-300">/</span>
+          <span className="font-medium">Report</span>
+        </div>
+        <section className={`card p-6 ${failed ? "border-rose-200" : ""}`}>
+          <div className="flex items-start gap-4">
+            {failed ? (
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-rose-100 text-sm font-bold text-rose-700">!</span>
+            ) : (
+              <span className="mt-1 h-5 w-5 shrink-0 animate-spin rounded-full border-2 border-ink-300 border-t-ink-900" />
+            )}
+            <div className="min-w-0">
+              <h1 className="text-lg font-bold leading-tight">{audit.dossierFilename}</h1>
+              <div className="mt-1 text-xs text-ink-500">
+                {audit.deviceType.name} · Class {audit.deviceType.riskClass} · {formatDate(audit.createdAt)}
+              </div>
+              <div className={`mt-4 text-sm font-semibold ${failed ? "text-rose-700" : ""}`}>
+                {failed ? "Screening failed" : "Screening in progress"}
+              </div>
+              <p className="mt-1 text-sm text-ink-600">{audit.statusMessage ?? (failed ? "No details recorded." : "Queued…")}</p>
+              {!failed && (
+                <p className="mt-3 text-xs leading-relaxed text-ink-500">
+                  Every passage of the dossier is being embedded and matched against each clause. Short dossiers take
+                  seconds; a 30-page manual can take a few minutes on the free hosting tier. This page refreshes
+                  automatically.
+                </p>
+              )}
+              {failed && (
+                <Link to="/new" className="btn-primary mt-4">
+                  Try another dossier
+                </Link>
+              )}
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   function applyOverride(findingId: string, patch: { reviewerVerdict?: Verdict | null; reviewerComment?: string }) {
     return api.overrideFinding(id, findingId, patch).then((response) => {

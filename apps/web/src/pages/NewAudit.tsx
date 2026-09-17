@@ -201,11 +201,10 @@ export default function NewAudit() {
         <div className="card flex items-center gap-4 p-6">
           <span className="h-5 w-5 animate-spin rounded-full border-2 border-ink-300 border-t-ink-900" />
           <div>
-            <div className="text-sm font-semibold">
-              Screening {selected?.totalClauseCount ?? ""} clauses against the dossier…
-            </div>
+            <div className="text-sm font-semibold">Uploading and extracting text…</div>
             <div className="mt-0.5 text-xs text-ink-500">
-              Extracting text, matching each statement to its clause, then verifying compliance. {elapsed}s elapsed.
+              Screening runs in the background; you will be taken to the report, which updates as clauses complete.{" "}
+              {elapsed}s elapsed.
             </div>
           </div>
         </div>

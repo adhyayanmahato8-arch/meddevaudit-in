@@ -27,7 +27,7 @@ export default function AuditHistory() {
       audits.filter(
         (audit) =>
           (deviceFilter === "ALL" || audit.deviceType.id === deviceFilter) &&
-          (resultFilter === "ALL" || audit.overallResult === resultFilter),
+          (resultFilter === "ALL" || (audit.status === "COMPLETED" && audit.overallResult === resultFilter)),
       ),
     [audits, deviceFilter, resultFilter],
   );
@@ -138,7 +138,16 @@ export default function AuditHistory() {
                       </div>
                     </td>
                     <td className="px-5 py-3">
-                      <VerdictBadge verdict={audit.overallResult} />
+                      {audit.status === "COMPLETED" ? (
+                        <VerdictBadge verdict={audit.overallResult} />
+                      ) : audit.status === "RUNNING" ? (
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-2.5 py-0.5 text-xs font-semibold text-sky-700">
+                          <span className="h-2.5 w-2.5 animate-spin rounded-full border border-sky-300 border-t-sky-700" />
+                          Screening…
+                        </span>
+                      ) : (
+                        <span className="rounded-full border border-rose-200 bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700">Failed</span>
+                      )}
                     </td>
                   </tr>
                 ))}

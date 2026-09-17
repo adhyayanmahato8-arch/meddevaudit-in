@@ -74,7 +74,11 @@ model Audit {
   dossierFilename  String
   dossierText      String
   submittedBy      String     @default("Local Reviewer")
-  status           String     @default("COMPLETED") // RUNNING | COMPLETED | FAILED
+  status           String     @default("RUNNING") // RUNNING | COMPLETED | FAILED
+  /// Progress ("14/17 clauses screened"), engine notes on completion, or the
+  /// error message on failure.
+  statusMessage    String?
+  completedAt      DateTime?
   overallResult    String     @default("PASS") // PASS | MINOR_IMPROVEMENT | REJECT
   engine           String     @default("fallback") // "llm" | "fallback" | "mixed"
   retrievalMode    String     @default("lexical") // "hybrid" (BM25 + embeddings) | "lexical" (BM25 only)

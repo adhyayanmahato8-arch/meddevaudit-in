@@ -61,13 +61,7 @@ export const api = {
       form.append("text", input.text);
       form.append("filename", "Pasted dossier text");
     }
-    return request<{
-      id: string;
-      overallResult: Verdict;
-      engine: string;
-      clausesScreened: number;
-      notes: string[];
-    }>("/api/audits", { method: "POST", body: form });
+    return request<{ id: string; status: "RUNNING" }>("/api/audits", { method: "POST", body: form });
   },
 
   overrideFinding: (
