@@ -9,6 +9,7 @@
 import os from "node:os";
 import { prisma } from "@meddevaudit/db";
 import { screenAudit } from "../services/screening";
+import { embeddingStatus } from "../services/embeddings";
 
 const auditId = process.argv[2];
 if (!auditId) {
@@ -24,8 +25,19 @@ try {
   /* not permitted on this platform — proceed at normal priority */
 }
 
+let peakRss = 0;
+const rssSampler = setInterval(() => {
+  peakRss = Math.max(peakRss, process.memoryUsage().rss);
+}, 100);
+
 screenAudit(auditId)
-  .then(() => process.exit(0))
+  .then(() => {
+    clearInterval(rssSampler);
+    const s = embeddingStatus();
+    if (s.state !== "ready") console.error(`[screen-audit] embedding model ${s.state}${s.error ? `: ${s.error}` : ""} (cache ${s.cacheDir})`);
+    console.error(`[screen-audit] peak worker RSS ${(peakRss / 1048576).toFixed(0)} MB`);
+    process.exit(0);
+  })
   .catch((error) => {
     console.error(`[screen-audit] ${auditId}:`, error instanceof Error ? error.message : error);
     process.exit(1);

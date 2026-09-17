@@ -63,8 +63,12 @@ function runOne(auditId: string): Promise<void> {
 
     let stderr = "";
     child.stderr?.on("data", (chunk) => {
-      stderr += String(chunk);
+      const text = String(chunk);
+      stderr += text;
       if (stderr.length > 4000) stderr = stderr.slice(-4000);
+      // Forward so operator-relevant warnings (model load, degraded retrieval)
+      // reach the service log even when the job succeeds.
+      process.stderr.write(text.replace(/^/gm, `[worker ${auditId.slice(-6)}] `));
     });
 
     const timer = setTimeout(() => {

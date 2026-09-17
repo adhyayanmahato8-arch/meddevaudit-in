@@ -58,7 +58,10 @@ export class HybridIndex {
     if (model && passages.length > 0) {
       try {
         vectors = await model.embed(passages);
-      } catch {
+      } catch (error) {
+        // Degrade to lexical retrieval, but say why: silent degradation hides
+        // real problems (memory guard, corrupt model cache) from the operator.
+        console.error(`[retrieval] embedding failed, using BM25 only: ${error instanceof Error ? error.message : String(error)}`);
         vectors = null;
       }
     }

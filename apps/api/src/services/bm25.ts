@@ -30,22 +30,22 @@ export function tokenize(text: string): string[] {
 }
 
 /**
- * Upper bound on passages per dossier. Documents beyond it (long manuals) have
- * adjacent passages merged until they fit, which coarsens retrieval slightly
- * but bounds screening time and memory on small hosts. Typical submissions
- * (a few dozen passages) and every evaluation fixture (17) are unaffected, so
- * calibrated thresholds still apply to them unchanged.
+ * Safety ceiling on passages per dossier, far above any real submission
+ * (a 32-page manual yields ~220). Beyond it, neighbours are merged in small
+ * groups. Deliberately NOT a tight cap: merging lengthens passages, and
+ * embedding memory grows with the square of sequence length, so merging a
+ * long document into fewer, longer passages costs far more memory than
+ * embedding many short ones. Length is bounded separately in embeddings.ts.
  */
 const MAX_PASSAGES = (() => {
   const v = Number.parseInt(process.env.MAX_PASSAGES ?? "", 10);
-  return Number.isFinite(v) && v > 0 ? v : 120;
+  return Number.isFinite(v) && v > 0 ? v : 600;
 })();
 
 /** Splits a dossier into retrievable passages, dropping structural markers. */
 export function splitPassages(dossier: string): string[] {
   const passages = splitRaw(dossier);
   if (passages.length <= MAX_PASSAGES) return passages;
-  // Merge neighbours in fixed groups so each merged passage stays local.
   const per = Math.ceil(passages.length / MAX_PASSAGES);
   const merged: string[] = [];
   for (let i = 0; i < passages.length; i += per) merged.push(passages.slice(i, i + per).join(" "));
