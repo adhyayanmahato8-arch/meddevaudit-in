@@ -1,0 +1,136 @@
+DEVICE MASTER FILE — INDEX
+Submitted under Rule 35, Medical Device Rules 2017, Fourth Schedule Part II
+Device: FingerSense FS-200 Fingertip Pulse Oximeter
+Applicant: Meridian Medical GmbH, Germany
+
+Table of Contents
+  Section 1  Executive summary and device description
+  Section 2  Intended use and indications for use
+  Section 3  Manufacturing site and process
+  Section 4  List of applied standards
+  Section 5  Design verification and validation
+  Section 6  Clinical accuracy study report
+  Section 7  Stability and shelf-life data
+  Section 8  Labelling and packaging artwork
+  Section 9  Post-market surveillance plan and vigilance procedure
+
+SECTION 1 — DEVICE DESCRIPTION
+The FingerSense FS-200 is a reusable, battery-powered fingertip pulse oximeter
+that measures functional oxygen saturation (SpO2) and pulse rate by transmission
+pulse oximetry at 660 nm (red) and 905 nm (infrared). Maximum optical output
+power is below 15 mW. The device is intended for spot-check measurement on adult
+and paediatric patients in professional healthcare facilities and in the home
+healthcare environment.
+
+SECTION 2 — LICENSING
+Import licence: MD-15 licence number IMP/MD/2024/004518, issued by the Central
+Licensing Authority, CDSCO, on 14 March 2024, valid until 13 March 2029.
+Application submitted in Form MD-14 dated 02 January 2024.
+Indian Authorised Agent: Sundaram Healthcare Distributors Pvt Ltd,
+41 Anna Salai, Chennai 600002, Tamil Nadu, India (wholesale licence 20B/21B
+No. TN/CH/2019/3312). A notarised power of attorney dated 18 December 2023
+appoints Sundaram Healthcare Distributors Pvt Ltd as the authorised agent of
+Meridian Medical GmbH for the purposes of Rule 35.
+
+Free Sale Certificate: issued by the Bundesinstitut fuer Arzneimittel und
+Medizinprodukte (BfArM), the national regulatory authority of the country of
+origin (Germany), certificate 2023/FSC/88214 dated 05 November 2023,
+confirming that the FS-200 is freely sold in Germany.
+
+SECTION 3 — QUALITY MANAGEMENT SYSTEM
+ISO 13485:2016 certificate number DE-QMS-2022-77413 issued by TUV SUD Product
+Service GmbH (accredited certification body). Scope of certification: design,
+development and manufacture of non-invasive patient monitoring equipment
+including pulse oximeters. Certified site: Meridian Medical GmbH,
+Industriestrasse 12, 82256 Fuerstenfeldbruck, Germany.
+Date of issue 11 April 2022. Valid until 10 April 2026 (date of expiry).
+
+SECTION 4 — RISK MANAGEMENT
+Risk management has been conducted in accordance with ISO 14971:2019.
+Documents included: risk management plan RMP-FS200-01; hazard identification
+and risk analysis worksheet (design FMEA, 64 identified hazards); risk
+evaluation and risk control measure table with verification of effectiveness;
+residual risk evaluation; and signed risk management report RMR-FS200-03
+concluding that overall residual risk is acceptable in relation to the
+clinical benefit.
+
+SECTION 5 — SAFETY AND EMC TESTING
+IEC 60601-1:2005 + A1:2012 + A2:2020 general safety — test report number
+TR-60601-1-22884 issued by TUV SUD Product Service GmbH, an ILAC-accredited
+test laboratory. Applied part classified as Type BF. Conclusion: PASS.
+
+IEC 60601-1-2:2014 + A1:2020 electromagnetic compatibility — test report
+number TR-EMC-22891. Emission tested to CISPR 11 Group 1 Class B. Immunity
+tested at the higher levels required for the home healthcare environment.
+The EMC declaration tables are reproduced in Section 8 of the Instructions
+for Use. Conclusion: PASS.
+
+IEC 60601-1-8:2006 + A1 + A2 alarm system — test report TR-ALM-22903.
+Alarm conditions: low SpO2 (high priority), low/high pulse rate (medium
+priority), low battery and probe-off (technical, low priority). Audible and
+visual alarm signal characteristics, default alarm limit settings, alarm limit
+adjustment range, the alarm-off and audio-paused indications, and the alarm
+system delay of less than 10 seconds were all verified. Conclusion: PASS.
+
+SECTION 6 — CLINICAL ACCURACY (SpO2)
+A controlled desaturation study was performed in accordance with
+ISO 80601-2-61:2017 clause 201.12.1.101 on 12 healthy adult volunteers,
+yielding 216 paired data points against a CO-oximeter reference over the
+saturation range 70 to 100 percent. The subject cohort included 4 subjects
+with dark skin pigmentation (Fitzpatrick V-VI), 4 with intermediate and 4
+with light pigmentation. Result: SpO2 accuracy root mean square (ARMS) of
+1.9 percent over 70 to 100 percent saturation. Bland-Altman analysis is
+provided in Annex 6A with a mean bias of -0.3 percent and limits of
+agreement of -4.1 to +3.5 percent.
+
+SECTION 7 — SOFTWARE
+The embedded firmware is developed under a software lifecycle process
+conforming to IEC 62304:2006 + A1:2015. Software safety classification:
+Class B, justified on the basis that a software failure could contribute to
+a hazardous situation resulting in non-serious injury through a delayed or
+erroneous saturation reading. Included: software development plan SDP-FS200;
+software requirements specification SRS-FS200 rev 4; software architecture
+document; software verification and validation report SVVR-FS200; anomaly
+list with residual anomaly justification; and the SOUP inventory (FreeRTOS
+10.4.3, CMSIS-DSP 1.9.0) with its associated risk assessment.
+
+SECTION 8 — LABELLING ARTWORK (carton and device)
+  Manufactured by: Meridian Medical GmbH, Industriestrasse 12,
+    82256 Fuerstenfeldbruck, Germany
+  Imported and marketed by: Sundaram Healthcare Distributors Pvt Ltd,
+    41 Anna Salai, Chennai 600002, India
+  Import licence number: IMP/MD/2024/004518
+  Model: FS-200      Catalogue number (REF): FS200-IN
+  Batch/Lot number: LOT ________     Serial number: SN ________
+  Date of manufacture: 2024-__        Use by: not applicable (reusable)
+  Declaration: "For Sale in India" / Hindi (Devanagari) equivalent printed
+    immediately below in bilingual format, together with the bilingual
+    Hindi and English statement of intended use.
+  Symbols used on the artwork conform to ISO 15223-1:2021. Symbol glossary
+    (legend) reproduced in the Instructions for Use section 1:
+      manufacturer, date of manufacture, batch code, serial number,
+      catalogue number, consult instructions for use, Type BF applied part.
+  Declared performance on the label: SpO2 accuracy ARMS 1.9 percent
+    (70-100 percent); pulse rate range 30-250 bpm, pulse rate accuracy
+    plus or minus 2 bpm; wavelengths 660 nm and 905 nm, maximum optical
+    output power below 15 mW.
+  Compatible sensor/probe list: FS-ADT-01 (adult), FS-PED-01 (paediatric).
+    Use of any probe not on this list invalidates the declared accuracy.
+
+SECTION 9 — INSTRUCTIONS FOR USE (supplied in English)
+Contents: intended use and intended user; indications for use; step-by-step
+operating instructions; contraindications; warnings and precautions
+(including the warning that the declared accuracy statistic is not the
+measurement uncertainty of an individual reading, and that nail polish,
+poor perfusion, motion artefact and carboxyhaemoglobin affect readings);
+residual risks communicated to the user; cleaning and maintenance
+instructions; storage and transport conditions (-20 to +60 degrees C,
+10 to 93 percent RH); expected service life of 5 years; and the contact
+details for reporting an adverse event or complaint in India
+(Materiovigilance cell, Sundaram Healthcare Distributors Pvt Ltd,
+vigilance@sundaramhealth.in, +91 44 4000 1200).
+
+SECTION 10 — POST-MARKET SURVEILLANCE
+Post-market surveillance plan PMS-FS200 rev 2, including the periodic safety
+update schedule, complaint handling procedure, and the vigilance reporting
+route to CDSCO under the Materiovigilance Programme of India.

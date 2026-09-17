@@ -1,0 +1,46 @@
+# Render Blueprint — deploys MedDevAudit-IN as ONE web service that hosts both
+# the API and the built React app on a single public URL.
+#
+# Deploy: push this repo to GitHub, then in Render choose "New → Blueprint",
+# select the repo, and accept. Render reads this file and provisions the
+# service. Every later `git push` to the tracked branch redeploys automatically.
+#
+# Build phase runs `npm run setup`, which generates the Prisma client, creates
+# and seeds the SQLite database, and downloads + caches the sentence-embedding
+# model — so the service starts instantly and needs no outbound network at
+# runtime. Files written during build are part of the deployed image.
+#
+# Persistence note: the free plan has an EPHEMERAL disk. The rule library,
+# demo dossiers and embeddings are baked in at build time and always present;
+# audits run by users are kept until the next deploy or restart. To keep audits
+# permanently, attach a persistent disk (paid) or point DATABASE_URL at a
+# hosted Postgres — see README "Deployment".
+
+services:
+  - type: web
+    name: meddevaudit-in
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: npm ci && npm run build && npm run setup
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
+      # Optional: set in the Render dashboard to enable Claude verification.
+      # Leave unset and the hybrid BM25 + embedding matcher runs instead.
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5
+      - key: AI_CONCURRENCY
+        value: "4"
+      - key: HYBRID_ALPHA
+        value: "0.65"
+      - key: AUDIT_RATE_LIMIT
+        value: "20"

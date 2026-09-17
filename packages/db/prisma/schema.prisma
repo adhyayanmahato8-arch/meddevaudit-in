@@ -1,0 +1,108 @@
+// MedDevAudit-IN data model.
+//
+// SQLite is used so the whole project runs with zero external services. The
+// model is deliberately Postgres-compatible: to move to a hosted database,
+// change `provider` to "postgresql", point `url` at env("DATABASE_URL"), and
+// run `prisma migrate dev`. No model changes are required.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+/// One of the five supported imported device categories.
+model DeviceType {
+  id                  String   @id @default(cuid())
+  slug                String   @unique
+  name                String
+  riskClass           String // MDR-2017 Class A / B / C / D
+  particularStandard  String // the device-specific test standard
+  summary             String
+  clauses             Clause[]
+  audits              Audit[]
+  createdAt           DateTime @default(now())
+}
+
+/// A single regulatory requirement the auditor screens for.
+/// deviceTypeId == null  =>  COMMON CORE clause, applies to every device.
+model Clause {
+  id              String      @id @default(cuid())
+  /// Stable short identifier, e.g. "CORE-ISO13485". Used as the filename of
+  /// this clause's evaluation fixtures and as the key of LLM transcripts, so
+  /// it must not change once fixtures reference it.
+  code            String      @unique
+  deviceTypeId    String?
+  deviceType      DeviceType? @relation(fields: [deviceTypeId], references: [id])
+  category        String
+  clauseRef       String // e.g. "MDR-2017 Third Schedule, Part I, cl. 3(a)"
+  title           String
+  requirementText String
+  mandatory       Boolean     @default(true)
+  /// Pipe-separated keyword groups used by the deterministic fallback matcher.
+  /// Within a group, comma-separated terms are synonyms (any one satisfies the
+  /// group). ALL groups must hit for a PASS. Example:
+  ///   "import licence,md-15|licence number,license no"
+  keywords        String
+  /// Controlled vocabulary for this clause: comma-separated aliases covering
+  /// standard designations ("ISO 13485:2016", "EN ISO 13485", "QMS
+  /// certificate"), Indian form names, unit and numeral variants and common
+  /// regulatory phrasings. Expands the BM25 query so a submission that uses an
+  /// alias is still retrieved.
+  synonyms        String      @default("")
+  /// JSON array of floats: the sentence embedding of this clause, computed at
+  /// seed time. Null when the embedding model was unavailable, in which case
+  /// the matcher degrades to BM25 + controlled vocabulary.
+  embedding       String?
+  /// Short reviewer-facing note on what acceptable evidence looks like.
+  guidance        String
+  sortOrder       Int         @default(0)
+  findings        Finding[]
+
+  @@index([deviceTypeId])
+}
+
+/// One compliance review of one dossier against one device type.
+model Audit {
+  id               String     @id @default(cuid())
+  deviceTypeId     String
+  deviceType       DeviceType @relation(fields: [deviceTypeId], references: [id])
+  dossierFilename  String
+  dossierText      String
+  submittedBy      String     @default("Local Reviewer")
+  status           String     @default("COMPLETED") // RUNNING | COMPLETED | FAILED
+  overallResult    String     @default("PASS") // PASS | MINOR_IMPROVEMENT | REJECT
+  engine           String     @default("fallback") // "llm" | "fallback" | "mixed"
+  retrievalMode    String     @default("lexical") // "hybrid" (BM25 + embeddings) | "lexical" (BM25 only)
+  createdAt        DateTime   @default(now())
+  findings         Finding[]
+
+  @@index([deviceTypeId])
+}
+
+/// The verdict for one clause within one audit, plus any reviewer override.
+model Finding {
+  id                String   @id @default(cuid())
+  auditId           String
+  audit             Audit    @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  clauseId          String
+  clause            Clause   @relation(fields: [clauseId], references: [id])
+  aiVerdict         String // PASS | MINOR_IMPROVEMENT | REJECT
+  aiConfidence      Float    @default(0)
+  aiEvidenceSnippet String   @default("")
+  /// "lexical" = text that directly matches the requirement; "semantic" = the
+  /// closest related passage, shown as context only; "none" = nothing found.
+  aiEvidenceKind    String   @default("none")
+  aiFixNote         String   @default("")
+  aiEngine          String   @default("fallback")
+  reviewerVerdict   String? // set when a human overrides the AI
+  reviewerComment   String?
+  reviewedAt        DateTime?
+
+  @@index([auditId])
+  @@index([clauseId])
+}

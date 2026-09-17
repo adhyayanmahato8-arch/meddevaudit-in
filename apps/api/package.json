@@ -1,0 +1,33 @@
+{
+  "name": "@meddevaudit/api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "embed": "tsx src/scripts/embed-clauses.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
+    "@meddevaudit/db": "*",
+    "@xenova/transformers": "^2.17.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mammoth": "^1.8.0",
+    "multer": "^2.0.1",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.15.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^20.17.6",
+    "@types/pdfkit": "^0.13.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

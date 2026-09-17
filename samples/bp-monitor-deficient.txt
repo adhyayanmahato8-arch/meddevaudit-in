@@ -1,0 +1,66 @@
+PRODUCT SUBMISSION DOSSIER
+Device: CardioEase CE-9 Automatic Upper Arm Blood Pressure Monitor
+Manufacturer: Shenzhen Hualing Electronics Co. Ltd, Guangdong, China
+
+1. PRODUCT DESCRIPTION
+The CardioEase CE-9 is a fully automatic upper-arm blood pressure monitor
+using the oscillometric method. It displays systolic pressure, diastolic
+pressure and pulse rate on a backlit LCD, stores 99 readings per user, and is
+powered by 4 x AA alkaline batteries. It is intended for home use by adults.
+
+2. REGULATORY STATUS
+The device is CE marked and is exported to over 30 countries. The company
+declares that the product complies with all applicable international standards
+for non-invasive blood pressure monitors. A Declaration of Conformity signed by
+the Quality Director of Shenzhen Hualing Electronics Co. Ltd is attached at
+Annex 1 confirming that the device is freely sold in China.
+
+3. QUALITY SYSTEM
+The manufacturing facility operates a quality management system. An ISO 13485
+certificate is held by the company. Certificate details are available on
+request.
+
+4. SAFETY TESTING
+A test report to IEC 60601-1 general electrical safety was issued by
+Guangdong Testing Institute, report number GDT-2021-44120. Conclusion: pass.
+
+An electromagnetic compatibility assessment to IEC 60601-1-2 was carried out.
+Emissions were tested to CISPR 11. Immunity was tested at the levels applicable
+to the professional healthcare facility environment. Report GDT-2021-44121.
+
+5. PERFORMANCE
+The pressure transducer was verified against a reference manometer over the
+range 0 to 299 mmHg. Measured cuff pressure accuracy is within plus or minus
+3 mmHg across the range, meeting IEC 80601-2-30. Calibration of the reference
+manometer is traceable to a national standard. Test report GDT-2021-44122.
+
+The device incorporates an automatic deflation function that releases cuff
+pressure at the end of each measurement cycle.
+
+Clinical performance: the oscillometric algorithm is based on a mature
+platform used in the company's earlier CE-5 and CE-7 models, which have been
+sold since 2016 without reported accuracy complaints.
+
+6. ACCESSORIES
+Supplied with a standard adult cuff. A large cuff is available separately.
+
+7. LABEL ARTWORK
+  CardioEase CE-9 Automatic Blood Pressure Monitor
+  Manufactured by: Shenzhen Hualing Electronics Co. Ltd, Guangdong, China
+  Model: CE-9
+  DC 6V, 4 x AA
+  Made in China
+  (symbols printed on carton: CE mark, WEEE bin, Type BF, IP22, an umbrella,
+  a factory outline and a small book icon)
+
+8. USER MANUAL
+A user manual is supplied. It contains the operating instructions, how to fit
+the cuff, how to read the display, the memory function, battery replacement,
+and a troubleshooting table. Storage conditions are stated on the last page.
+
+9. PACKING LIST
+  1 x main unit
+  1 x adult cuff
+  4 x AA batteries
+  1 x user manual
+  1 x warranty card

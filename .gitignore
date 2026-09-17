@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+.env
+.env.local
+*.log
+npm-debug.log*
+
+# Prisma / SQLite
+packages/db/prisma/*.db
+packages/db/prisma/*.db-journal
+packages/db/generated/
+
+# Uploaded dossiers
+apps/api/uploads/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Sentence-embedding model cache (downloaded on first run)
+.model-cache/
+
