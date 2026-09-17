@@ -6,6 +6,7 @@ import multer from "multer";
 import { prisma } from "@meddevaudit/db";
 import { env, hasLlm } from "./env";
 import { embeddingStatus } from "./services/embeddings";
+import { recoverInterruptedAudits, queueDepth } from "./services/screeningQueue";
 import { catalogueRouter } from "./routes/catalogue";
 import { auditsRouter } from "./routes/audits";
 
@@ -83,6 +84,7 @@ app.get("/api/health", async (_req, res) => {
     ok: true,
     engine: hasLlm ? "llm" : "fallback",
     model: hasLlm ? env.anthropicModel : null,
+    screeningQueue: queueDepth(),
     retrieval: {
       mode: embeddedCount > 0 ? "hybrid" : "lexical",
       alpha: env.hybridAlpha,
@@ -177,8 +179,9 @@ const server = app.listen(env.port, () => {
   console.log(
     hasLlm
       ? `[api] clause verification: Claude (${env.anthropicModel}), concurrency ${env.aiConcurrency}`
-      : "[api] clause verification: deterministic matcher (set ANTHROPIC_API_KEY in .env to enable the LLM)",
+      : "[api] clause verification: hybrid BM25 + embedding matcher (set ANTHROPIC_API_KEY in .env to enable the LLM)",
   );
+  recoverInterruptedAudits().catch((error) => console.error("[screening] recovery failed", error));
 });
 
 async function shutdown() {
