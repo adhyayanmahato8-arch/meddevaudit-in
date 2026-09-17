@@ -7,6 +7,7 @@
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts",
     "embed": "tsx src/scripts/embed-clauses.ts",
+    "test:llm-contract": "tsx --test src/llm/contract.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

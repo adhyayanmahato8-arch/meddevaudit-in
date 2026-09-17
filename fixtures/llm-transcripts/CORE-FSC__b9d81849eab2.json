@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-FSC",
+  "passageHash": "b9d81849eab2",
+  "passageExcerpt": "2.3 Free Sale Certificate. In lieu of a Free Sale Certificate from the country of origin, the manufacturer encloses a De",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "REJECT",
+    "confidence": 0.93,
+    "evidence_snippet": "In lieu of a Free Sale Certificate from the country of origin, the manufacturer encloses a Declaration of Conformity signed by its Quality Director",
+    "fix_note": "A manufacturer's Declaration of Conformity is a self-declaration and does not satisfy Rule 35(2). Obtain and submit a Free Sale Certificate or Certificate to Foreign Government for the FS-200 issued by BfArM (or another national regulatory authority of the country of origin), valid on the date of application."
+  }
+}

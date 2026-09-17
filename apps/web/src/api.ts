@@ -4,6 +4,7 @@ import type {
   Clause,
   DashboardSummary,
   DeviceType,
+  EvaluationSummary,
   Verdict,
 } from "./types";
 
@@ -38,6 +39,8 @@ export const api = {
         modelError: string | null;
       };
     }>("/api/health"),
+
+  evaluation: () => request<{ hybrid: EvaluationSummary | null; llm: EvaluationSummary | null }>("/api/evaluation"),
 
   deviceTypes: () => request<DeviceType[]>("/api/device-types"),
 

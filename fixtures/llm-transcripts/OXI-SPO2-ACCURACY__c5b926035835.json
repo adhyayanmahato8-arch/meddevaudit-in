@@ -1,0 +1,13 @@
+{
+  "clauseCode": "OXI-SPO2-ACCURACY",
+  "passageHash": "c5b926035835",
+  "passageExcerpt": "6.1 Clinical accuracy (SpO2). A controlled desaturation study per ISO 80601-2-61:2017 clause 201.12.1.101 was conducted ",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.97,
+    "evidence_snippet": "A controlled desaturation study per ISO 80601-2-61:2017 clause 201.12.1.101 was conducted at the University of California San Francisco Hypoxia Laboratory in 12 healthy adult volunteers, yielding 216 paired data points against a Radiometer ABL90 CO-oximeter over the saturation range 70 to 100 %. ... Result: SpO2 accuracy root mean square (ARMS) 1.9 % over 70–100 %.",
+    "fix_note": ""
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "clauseCode": "OXI-SPO2-ACCURACY",
+  "passageHash": "cf37165a303f",
+  "passageExcerpt": "6.1 Clinical accuracy (SpO2). SpO2 accuracy was verified in accordance with ISO 80601-2-61:2017 using a Fluke Biomedical",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "REJECT",
+    "confidence": 0.94,
+    "evidence_snippet": "SpO2 accuracy was verified in accordance with ISO 80601-2-61:2017 using a Fluke Biomedical ProSim 8 SpO2 simulator across the saturation range 70 to 100 %",
+    "fix_note": "A bench SpO2 simulator is not the controlled human desaturation study against a CO-oximeter reference that ISO 80601-2-61 clause 201.12.1.101 requires, and the clause states that simulator data alone does not satisfy it. Submit the clinical desaturation study report with ARMS, subject count, data pairs, pigmentation distribution and Bland-Altman analysis."
+  }
+}

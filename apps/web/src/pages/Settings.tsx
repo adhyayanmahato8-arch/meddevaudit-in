@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
-import type { DeviceType } from "../types";
+import type { DeviceType, EvaluationSummary } from "../types";
 import { ErrorNote, Spinner } from "../components/ui";
 
 type Health = Awaited<ReturnType<typeof api.health>>;
+const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 
 export default function Settings() {
   const [health, setHealth] = useState<Health | null>(null);
   const [devices, setDevices] = useState<DeviceType[]>([]);
+  const [evaluation, setEvaluation] = useState<{ hybrid: EvaluationSummary | null; llm: EvaluationSummary | null } | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    Promise.all([api.health(), api.deviceTypes()])
-      .then(([h, d]) => {
+    Promise.all([api.health(), api.deviceTypes(), api.evaluation().catch(() => ({ hybrid: null, llm: null }))])
+      .then(([h, d, e]) => {
         setHealth(h);
         setDevices(d);
+        setEvaluation(e);
       })
       .catch((e) => setError(e.message));
   }, []);
@@ -24,6 +27,8 @@ export default function Settings() {
 
   const llm = health.engine !== "fallback";
   const hybrid = health.retrieval.mode === "hybrid";
+  const active = llm ? evaluation?.llm : evaluation?.hybrid;
+  const hybridEval = evaluation?.hybrid;
 
   return (
     <div className="space-y-6">
@@ -106,6 +111,103 @@ export default function Settings() {
       </section>
 
       <section className="card p-6">
+        <h2 className="text-sm font-semibold">Measured performance of the active matcher</h2>
+        <p className="mt-1 text-xs text-ink-500">
+          Held-out figures from <span className="font-mono">npm run eval</span> (annotated evaluation set, clause-level
+          60/40 split, nothing tuned on held-out). These are the same numbers the README quotes.
+        </p>
+
+        {!active ? (
+          <div className="mt-4 rounded-lg border border-ink-200 bg-ink-50 px-4 py-3 text-xs text-ink-600">
+            No evaluation report found for this matcher. Run <span className="font-mono">npm run eval</span>
+            {llm ? <> <span className="font-mono">-- --matcher=llm --live</span></> : null} and redeploy.
+          </div>
+        ) : (
+          <>
+            {active.coverage && active.coverage.missing > 0 && (
+              <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900">
+                <strong>Pipeline check, not a model evaluation.</strong> Only {active.coverage.answered} of{" "}
+                {active.coverage.total} held-out passages have a recorded transcript
+                {active.matcher === "llm-replay" ? " (hand-written, not produced by a model)" : ""}. The model has not been run
+                on this data. The figures below cover only those {active.coverage.answered} passages.
+              </div>
+            )}
+            {active.floorMet === false && (
+              <div className="mt-4 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-900">
+                <strong>Calibration target not met.</strong> No threshold configuration reached the{" "}
+                {pct(active.precisionFloor ?? 0)} non-compliance precision floor. Thresholds were chosen by the fallback
+                rule ({active.fallbackRule}). Treat offline PASS verdicts as "expected particulars present", not as
+                verified compliance.
+              </div>
+            )}
+            <dl className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <Stat label="Held-out passages" value={String(active.heldOut.n)} />
+              <Stat label="3-class accuracy" value={pct(active.heldOut.accuracy)} />
+              <Stat
+                label="Non-compliance recall"
+                value={pct(active.heldOut.nonCompliance.recall)}
+                hint={`${active.heldOut.nonCompliance.falseNegatives} missed`}
+                tone={active.heldOut.nonCompliance.recall >= 0.8 ? "good" : "bad"}
+              />
+              <Stat
+                label="Non-compliance precision"
+                value={pct(active.heldOut.nonCompliance.precision)}
+                hint={`${active.heldOut.nonCompliance.falsePositives} false alarms`}
+                tone={active.heldOut.nonCompliance.precision >= (active.precisionFloor ?? 0.8) ? "good" : "bad"}
+              />
+            </dl>
+            <div className="mt-4 overflow-hidden rounded-lg border border-ink-200">
+              <table className="w-full text-left text-xs">
+                <thead className="bg-ink-50 uppercase tracking-wide text-ink-500">
+                  <tr>
+                    <th className="px-3 py-2 font-semibold">Passage type</th>
+                    <th className="px-3 py-2 font-semibold">n</th>
+                    <th className="px-3 py-2 font-semibold">Correct</th>
+                    <th className="px-3 py-2 font-semibold">Called PASS</th>
+                    <th className="px-3 py-2 font-semibold">What it means</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-ink-100">
+                  {(
+                    [
+                      ["SATISFIED_LITERAL", "Satisfied, clause's own wording", "Recognises expected vocabulary"],
+                      ["SATISFIED_PARAPHRASE", "Satisfied, different wording", "Recall on paraphrase"],
+                      ["NOT_SATISFIED_DISTRACTOR", "On-topic but not satisfied", "Catches substantive gaps"],
+                    ] as const
+                  ).map(([key, label, meaning]) => {
+                    const row = active.heldOut.byRelationship[key];
+                    if (!row) return null;
+                    return (
+                      <tr key={key}>
+                        <td className="px-3 py-2 font-medium">{label}</td>
+                        <td className="px-3 py-2">{row.n}</td>
+                        <td className={`px-3 py-2 font-semibold ${row.accuracy >= 0.8 ? "text-emerald-700" : row.accuracy >= 0.5 ? "text-amber-700" : "text-rose-700"}`}>
+                          {pct(row.accuracy)}
+                        </td>
+                        <td className="px-3 py-2">
+                          {row.predictedPass}/{row.n}
+                          {key === "NOT_SATISFIED_DISTRACTOR" && row.predictedPass > 0 ? (
+                            <span className="ml-1 text-rose-700">← false passes</span>
+                          ) : null}
+                        </td>
+                        <td className="px-3 py-2 text-ink-500">{meaning}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            {hybridEval?.thresholds && !llm && (
+              <p className="mt-3 font-mono text-[11px] text-ink-500">
+                thresholds: covPass {hybridEval.thresholds.covPass} · tauPass {hybridEval.thresholds.tauPass} · tauSoften{" "}
+                {hybridEval.thresholds.tauSoften} · evaluated {new Date(active.generatedAt).toLocaleDateString("en-IN")}
+              </p>
+            )}
+          </>
+        )}
+      </section>
+
+      <section className="card p-6">
         <h2 className="text-sm font-semibold">Rule library</h2>
         <p className="mt-1 text-xs text-ink-500">
           Device coverage currently loaded in the database. Re-seed with{" "}
@@ -156,6 +258,17 @@ export default function Settings() {
           to be confirmed by a qualified reviewer before any decision is taken.
         </p>
       </section>
+    </div>
+  );
+}
+
+function Stat({ label, value, hint, tone }: { label: string; value: string; hint?: string; tone?: "good" | "bad" }) {
+  const colour = tone === "good" ? "text-emerald-700" : tone === "bad" ? "text-rose-700" : "text-ink-900";
+  return (
+    <div>
+      <dt className="label">{label}</dt>
+      <dd className={`mt-1 text-2xl font-bold ${colour}`}>{value}</dd>
+      {hint && <dd className="text-[11px] text-ink-500">{hint}</dd>}
     </div>
   );
 }

@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-ISO13485",
+  "passageHash": "66c231d915cf",
+  "passageExcerpt": "The quality management certificate issued to the Fürstenfeldbruck plant by the notified body TÜV SÜD under EN ISO 13485 ",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.88,
+    "evidence_snippet": "The quality management certificate issued to the Fürstenfeldbruck plant by the notified body TÜV SÜD under EN ISO 13485 remains in force until 31 March 2028 (registration Q1 20 22 77413 R1). Its scope covers the design and production of non-invasive physiological monitors",
+    "fix_note": ""
+  }
+}

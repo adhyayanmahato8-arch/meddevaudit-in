@@ -1,0 +1,13 @@
+{
+  "clauseCode": "NEB-AEROSOL",
+  "passageHash": "3fafe7754b0e",
+  "passageExcerpt": "6.1 Aerosol performance. The NB-30 compressor nebulizer produces a fine therapeutic mist with particle size in the range",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "MINOR_IMPROVEMENT",
+    "confidence": 0.83,
+    "evidence_snippet": "Particle size was determined by laser diffraction (Malvern Spraytec) at the manufacturer's laboratory; MMAD 3.5 µm. Fill volume and test medication were as per standard practice.",
+    "fix_note": "EN 13544-1 Annex CC specifies cascade impaction, not laser diffraction. Provide the impactor-derived aerosol output, output rate, MMAD, geometric standard deviation and respirable fraction, and state the test medication, fill volume and flow rate used, since the declared performance is valid only for those conditions."
+  }
+}

@@ -1,8 +1,7 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { jsonSchemaOutputFormat } from "@anthropic-ai/sdk/helpers/json-schema";
-import { HybridIndex, type RetrievalMode } from "./retrieval";
+﻿import { HybridIndex, type RetrievalMode } from "./retrieval";
 import { decide, loadThresholds, type ThresholdParams, type Verdict } from "./thresholds";
 import { env, hasLlm } from "../env";
+import { LlmError, type LlmClient } from "../llm/types";
 
 export type { Verdict } from "./thresholds";
 
@@ -219,106 +218,35 @@ export function fallbackMatch(
 
 // ---------------------------------------------------------------------------
 // LLM matcher (grounded, one structured call per clause)
+//
+// The model call itself lives behind the LlmClient interface in ../llm so it
+// can be swapped for a replay or deterministic implementation in tests and
+// evaluation. This function only maps a verdict onto ClauseResult.
 // ---------------------------------------------------------------------------
 
-/**
- * The response contract. `strict` JSON-schema output means the model cannot
- * return a shape we do not expect, so no defensive re-parsing is needed here.
- */
-const VERDICT_SCHEMA = {
-  type: "object",
-  properties: {
-    verdict: {
-      type: "string",
-      enum: ["PASS", "MINOR_IMPROVEMENT", "REJECT"],
-      description:
-        "PASS if fully satisfied, MINOR_IMPROVEMENT if partly satisfied, REJECT if absent or contradicted",
+export async function llmMatch(clause: ClauseForMatching, dossier: string, client: LlmClient): Promise<ClauseResult> {
+  const verdict = await client.verify({
+    clause: {
+      code: clause.code,
+      clauseRef: clause.clauseRef,
+      category: clause.category,
+      title: clause.title,
+      requirementText: clause.requirementText,
+      guidance: clause.guidance,
+      mandatory: clause.mandatory,
     },
-    confidence: {
-      type: "number",
-      description: "Confidence in this verdict, 0.0 to 1.0",
-    },
-    evidence_snippet: {
-      type: "string",
-      description:
-        "A short verbatim quote from the dossier that the verdict rests on. Empty string if nothing relevant exists.",
-    },
-    fix_note: {
-      type: "string",
-      description:
-        "For a non-PASS verdict, the specific action the applicant must take. Empty string for PASS.",
-    },
-  },
-  required: ["verdict", "confidence", "evidence_snippet", "fix_note"],
-  additionalProperties: false,
-} as const;
-
-const SYSTEM_INSTRUCTIONS = `You are a regulatory reviewer at the Central Drugs Standard Control Organisation (CDSCO), screening the import documentation dossier of a medical device against India's Medical Device Rules, 2017 (MDR-2017).
-
-You will be given ONE requirement at a time and the full text of the submitted dossier. Decide whether the dossier satisfies that one requirement, and nothing else.
-
-Verdict definitions — use them exactly:
-- PASS: the required document or field is present in the dossier, and it substantively satisfies every element of the requirement.
-- MINOR_IMPROVEMENT: the dossier addresses the requirement but the evidence is incomplete, out of date, wrongly formatted, ambiguous, or one sub-element of the requirement is unmet. Name precisely which sub-element is unmet.
-- REJECT: the mandatory document or field is missing entirely, or the dossier contradicts a hard requirement, or the applicant has substituted a weaker kind of evidence for the kind the rule demands.
-
-Rules you must follow:
-1. Ground every verdict in the dossier text. Quote the exact words you relied on in evidence_snippet. Never invent, paraphrase, or complete a quotation.
-2. If the dossier says nothing at all about the requirement, that is REJECT with an empty evidence_snippet — do not reason your way to a PASS from the absence of a problem.
-3. A marketing claim is not test evidence. A self-declaration is not a third-party certificate. Bench data is not clinical data. Where the requirement names a specific kind of evidence, only that kind of evidence can produce a PASS.
-4. Judge only the requirement in front of you. Do not penalise the dossier for gaps that belong to other clauses.
-5. fix_note must be specific and actionable for the applicant — name the document, field or test to add. Leave it empty for PASS.
-6. confidence reflects how clear the dossier text is, not how confident you are in your reading of the regulation.`;
-
-let client: Anthropic | null = null;
-function getClient(): Anthropic {
-  if (!client) client = new Anthropic({ apiKey: env.anthropicApiKey });
-  return client;
-}
-
-async function llmMatch(clause: ClauseForMatching, dossier: string): Promise<ClauseResult> {
-  const response = await getClient().messages.parse({
-    model: env.anthropicModel,
-    max_tokens: 2000,
-    system: [
-      { type: "text", text: SYSTEM_INSTRUCTIONS },
-      {
-        type: "text",
-        text: `SUBMITTED DOSSIER (verbatim):\n\n${dossier}`,
-        // The dossier is identical across every clause in an audit, so caching
-        // it here makes clause 2..n cheap and fast.
-        cache_control: { type: "ephemeral" },
-      },
-    ],
-    messages: [
-      {
-        role: "user",
-        content:
-          `Requirement under review\n` +
-          `Clause reference: ${clause.clauseRef}\n` +
-          `Category: ${clause.category}\n` +
-          `Mandatory: ${clause.mandatory ? "yes" : "no"}\n` +
-          `Title: ${clause.title}\n\n` +
-          `Requirement text:\n${clause.requirementText}\n\n` +
-          `Reviewer guidance for this clause:\n${clause.guidance}\n\n` +
-          `Return your verdict on this one requirement.`,
-      },
-    ],
-    output_config: { format: jsonSchemaOutputFormat(VERDICT_SCHEMA) },
+    dossier,
   });
-
-  const parsed = response.parsed_output;
-  if (!parsed) throw new Error("Model returned no parsable verdict");
 
   return {
     clauseId: clause.id,
-    verdict: parsed.verdict as Verdict,
-    confidence: round2(Math.min(1, Math.max(0, parsed.confidence))),
-    evidenceSnippet: parsed.evidence_snippet.slice(0, 600),
-    // The LLM is instructed to quote verbatim from the dossier, so anything it
-    // returns is a direct citation rather than a nearest-neighbour passage.
-    evidenceKind: parsed.evidence_snippet ? "lexical" : "none",
-    fixNote: parsed.fix_note,
+    verdict: verdict.verdict,
+    confidence: verdict.confidence,
+    evidenceSnippet: verdict.evidenceSnippet,
+    // The model is instructed to quote verbatim from the dossier, so anything
+    // it returns is a direct citation rather than a nearest-neighbour passage.
+    evidenceKind: verdict.evidenceSnippet ? "lexical" : "none",
+    fixNote: verdict.fixNote,
     engine: "llm",
   };
 }
@@ -343,6 +271,7 @@ export async function runMatching(
   clauses: ClauseForMatching[],
   dossier: string,
   onProgress?: (done: number, total: number) => void,
+  llmClient?: LlmClient,
 ): Promise<MatchRunResult> {
   const notes: string[] = [];
 
@@ -351,7 +280,11 @@ export async function runMatching(
   const index = await HybridIndex.build(dossier);
   const thresholds = loadThresholds();
 
-  if (!hasLlm) {
+  // The live client is constructed lazily so importing this module never
+  // touches the SDK; tests and the evaluation harness inject their own.
+  const client = llmClient ?? (hasLlm ? await createLiveClient() : undefined);
+
+  if (!client) {
     const results = clauses.map((clause, i) => {
       const result = fallbackMatch(clause, dossier, index, thresholds);
       onProgress?.(i + 1, clauses.length);
@@ -365,6 +298,7 @@ export async function runMatching(
     return { results, engine: "fallback", retrievalMode: index.mode, notes };
   }
 
+  const activeClient: LlmClient = client;
   const results = new Array<ClauseResult>(clauses.length);
   let cursor = 0;
   let done = 0;
@@ -376,7 +310,7 @@ export async function runMatching(
       if (i >= clauses.length) return;
       const clause = clauses[i];
       try {
-        results[i] = await llmMatch(clause, dossier);
+        results[i] = await llmMatch(clause, dossier, activeClient);
       } catch (error) {
         llmFailures += 1;
         if (llmFailures === 1) {
@@ -399,10 +333,17 @@ export async function runMatching(
   return { results, engine, retrievalMode: index.mode, notes };
 }
 
+async function createLiveClient(): Promise<LlmClient> {
+  const { LiveLlmClient } = await import("../llm/live");
+  return new LiveLlmClient();
+}
+
 function describeError(error: unknown): string {
-  if (error instanceof Anthropic.AuthenticationError) return "invalid API key";
-  if (error instanceof Anthropic.RateLimitError) return "rate limited";
-  if (error instanceof Anthropic.APIError) return `API error ${error.status}`;
+  if (error instanceof LlmError) return `${error.code.toLowerCase().replace(/_/g, " ")}: ${error.message}`;
+  const status = (error as { status?: unknown })?.status;
+  if (status === 401) return "invalid API key";
+  if (status === 429) return "rate limited";
+  if (typeof status === "number") return `API error ${status}`;
   if (error instanceof Error) return error.message;
   return "unknown error";
 }

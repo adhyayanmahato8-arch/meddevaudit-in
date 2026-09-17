@@ -1,0 +1,13 @@
+{
+  "clauseCode": "NEB-AEROSOL",
+  "passageHash": "937a363cdf75",
+  "passageExcerpt": "6.1 Aerosol performance. Aerosol characterisation per EN 13544-1:2007+A1 Annex CC (Inhalation Sciences, Stockholm, repor",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.96,
+    "evidence_snippet": "using a Next Generation cascade impactor at 15 L/min: aerosol output 1.18 mL, aerosol output rate 0.26 mL/min, mass median aerodynamic diameter (MMAD) 3.8 µm, geometric standard deviation 2.1, respirable fraction (below 5 µm) 68 %. Test medication 0.9 % sodium chloride with 2.5 mL fill volume",
+    "fix_note": ""
+  }
+}

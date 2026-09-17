@@ -1,0 +1,31 @@
+{
+  "covPass": 0.8,
+  "tauPass": 0,
+  "tauSoften": 0.5,
+  "tauContext": 0.2,
+  "_calibratedAt": "2026-09-17T06:33:21.795Z",
+  "_seed": 42,
+  "_precisionFloor": 0.8,
+  "_floorMet": false,
+  "_calibrationClauses": [
+    "BP-CLINICAL-VALIDATION",
+    "BP-CUFF-SIZE",
+    "CORE-EMC",
+    "CORE-ISO14971",
+    "CORE-LBL-IMPORTER",
+    "CORE-LBL-SYMBOLS",
+    "CORE-MD14-AGENT",
+    "CORE-MD15-LICENCE",
+    "ECG-DEFIB-CF",
+    "ECG-LEADS-BIOCOMPAT",
+    "ECG-SIGNAL",
+    "NEB-AEROSOL",
+    "NEB-COMPRESSOR",
+    "NEB-REPROCESSING",
+    "OXI-LBL-ACCURACY",
+    "OXI-SOFTWARE",
+    "THERM-ACCURACY",
+    "THERM-BATTERY",
+    "THERM-BIOCOMPAT"
+  ]
+}

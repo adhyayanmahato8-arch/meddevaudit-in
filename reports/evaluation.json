@@ -1,0 +1,68 @@
+{
+  "matcher": "hybrid",
+  "generatedAt": "2026-09-17T06:33:21.805Z",
+  "heldOut": {
+    "n": 42,
+    "accuracy": 0.42857142857142855,
+    "macroF1": 0.24320987654320989,
+    "nonCompliance": {
+      "precision": 0.3125,
+      "recall": 0.35714285714285715,
+      "f1": 0.3333333333333333,
+      "support": 14,
+      "truePositives": 5,
+      "falsePositives": 11,
+      "falseNegatives": 9
+    },
+    "perClass": {
+      "PASS": {
+        "precision": 0.6538461538461539,
+        "recall": 0.6071428571428571,
+        "f1": 0.6296296296296297,
+        "support": 28
+      },
+      "MINOR_IMPROVEMENT": {
+        "precision": 0.08333333333333333,
+        "recall": 0.125,
+        "f1": 0.1,
+        "support": 8
+      },
+      "REJECT": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "support": 6
+      }
+    },
+    "byRelationship": {
+      "SATISFIED_LITERAL": {
+        "n": 14,
+        "accuracy": 0.9285714285714286,
+        "predictedPass": 13
+      },
+      "SATISFIED_PARAPHRASE": {
+        "n": 14,
+        "accuracy": 0.2857142857142857,
+        "predictedPass": 4
+      },
+      "NOT_SATISFIED_DISTRACTOR": {
+        "n": 14,
+        "accuracy": 0.07142857142857142,
+        "predictedPass": 9
+      }
+    }
+  },
+  "dossiers": {
+    "judged": 7,
+    "overallCorrect": 3
+  },
+  "floorMet": false,
+  "precisionFloor": 0.8,
+  "thresholds": {
+    "covPass": 0.8,
+    "tauPass": 0,
+    "tauSoften": 0.5,
+    "tauContext": 0.2
+  },
+  "fallbackRule": "max non-compliance F1 subject to literal-PASS recall ≥ 80.0%"
+}

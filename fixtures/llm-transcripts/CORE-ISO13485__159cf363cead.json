@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-ISO13485",
+  "passageHash": "159cf363cead",
+  "passageExcerpt": "3.1 Quality management system. The manufacturing site at Industriestrasse 12, 82256 Fürstenfeldbruck, Germany, holds ISO",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.95,
+    "evidence_snippet": "ISO 13485:2016 certificate number DE-QMS-2022-77413 issued by TÜV SÜD Product Service GmbH. Scope of certification: design, development and manufacture of non-invasive patient monitoring equipment including pulse oximeters. Date of issue 11 April 2022; valid until 10 April 2026.",
+    "fix_note": ""
+  }
+}

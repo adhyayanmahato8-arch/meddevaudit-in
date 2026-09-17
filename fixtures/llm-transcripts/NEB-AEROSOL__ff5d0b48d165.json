@@ -1,0 +1,13 @@
+{
+  "clauseCode": "NEB-AEROSOL",
+  "passageHash": "ff5d0b48d165",
+  "passageExcerpt": "Annex 11 (Inhalation Sciences, AER-NB30-2023-04) characterises the mist the NB-30 produces from a 2.5 mL charge of norma",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.84,
+    "evidence_snippet": "droplet distribution measured by cascade impactor, mass median 3.8 micron with a spread factor of 2.1, 68 % of the delivered mass in droplets small enough to reach the lower airways, 1.18 mL delivered in total at 0.26 mL/min",
+    "fix_note": ""
+  }
+}

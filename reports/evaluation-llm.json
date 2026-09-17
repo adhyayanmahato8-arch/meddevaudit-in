@@ -1,0 +1,65 @@
+{
+  "matcher": "llm-replay",
+  "generatedAt": "2026-09-17T06:28:25.165Z",
+  "heldOut": {
+    "n": 9,
+    "accuracy": 1,
+    "macroF1": 1,
+    "nonCompliance": {
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "support": 3,
+      "truePositives": 3,
+      "falsePositives": 0,
+      "falseNegatives": 0
+    },
+    "perClass": {
+      "PASS": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "support": 6
+      },
+      "MINOR_IMPROVEMENT": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "support": 1
+      },
+      "REJECT": {
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "support": 2
+      }
+    },
+    "byRelationship": {
+      "SATISFIED_LITERAL": {
+        "n": 3,
+        "accuracy": 1,
+        "predictedPass": 3
+      },
+      "SATISFIED_PARAPHRASE": {
+        "n": 3,
+        "accuracy": 1,
+        "predictedPass": 3
+      },
+      "NOT_SATISFIED_DISTRACTOR": {
+        "n": 3,
+        "accuracy": 1,
+        "predictedPass": 0
+      }
+    }
+  },
+  "dossiers": {
+    "judged": 0,
+    "overallCorrect": 0
+  },
+  "coverage": {
+    "answered": 9,
+    "missing": 33,
+    "total": 42
+  },
+  "model": null
+}

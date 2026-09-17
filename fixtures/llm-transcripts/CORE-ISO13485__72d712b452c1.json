@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-ISO13485",
+  "passageHash": "72d712b452c1",
+  "passageExcerpt": "3.1 Quality management system. The manufacturer holds ISO 13485:2016 certificate number DE-QMS-2019-51120 issued by TÜV ",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "MINOR_IMPROVEMENT",
+    "confidence": 0.92,
+    "evidence_snippet": "Date of issue 12 April 2019; valid until 11 April 2022. Recertification audit has been scheduled and the renewed certificate will be forwarded to the licensing authority upon receipt.",
+    "fix_note": "The ISO 13485:2016 certificate DE-QMS-2019-51120 expired on 11 April 2022. Provide the current, unexpired certificate covering the manufacturing site and this device category, or the recertification certificate once issued."
+  }
+}

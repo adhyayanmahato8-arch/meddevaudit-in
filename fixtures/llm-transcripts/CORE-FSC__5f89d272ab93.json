@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-FSC",
+  "passageHash": "5f89d272ab93",
+  "passageExcerpt": "Confirmation that the FS-200 may be lawfully placed on the German market was obtained from BfArM, the federal medicines ",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.85,
+    "evidence_snippet": "Confirmation that the FS-200 may be lawfully placed on the German market was obtained from BfArM, the federal medicines and medical devices regulator, on 05 November 2023 (their reference 2023/FSC/88214).",
+    "fix_note": ""
+  }
+}

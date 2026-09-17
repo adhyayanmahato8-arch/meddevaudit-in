@@ -1,0 +1,13 @@
+{
+  "clauseCode": "OXI-SPO2-ACCURACY",
+  "passageHash": "5b6520b980ba",
+  "passageExcerpt": "Annex 6 reports the human hypoxia trial run at the UCSF laboratory in which twelve healthy adults — four each of dark, m",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.86,
+    "evidence_snippet": "twelve healthy adults — four each of dark, medium and light skin tone — were brought stepwise down to 70 % oxygen saturation while arterial blood samples were analysed on a Radiometer ABL90. Across 216 paired readings the device's root-mean-square error against the blood-gas reference was 1.9 %.",
+    "fix_note": ""
+  }
+}

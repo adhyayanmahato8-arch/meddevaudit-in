@@ -80,6 +80,26 @@ export type AuditDetail = {
   findings: Finding[];
 };
 
+export type EvaluationSummary = {
+  matcher: string;
+  generatedAt: string;
+  heldOut: {
+    n: number;
+    accuracy: number;
+    macroF1: number;
+    nonCompliance: { precision: number; recall: number; f1: number; support: number; truePositives: number; falsePositives: number; falseNegatives: number };
+    perClass: Record<Verdict, { precision: number; recall: number; f1: number; support: number }>;
+    byRelationship: Record<string, { n: number; accuracy: number; predictedPass: number }>;
+  };
+  dossiers: { judged: number; overallCorrect: number };
+  floorMet?: boolean;
+  precisionFloor?: number;
+  thresholds?: { covPass: number; tauPass: number; tauSoften: number; tauContext: number };
+  fallbackRule?: string | null;
+  coverage?: { answered: number; missing: number; total: number };
+  model?: string | null;
+};
+
 export type DashboardSummary = {
   totalAudits: number;
   passRate: number;

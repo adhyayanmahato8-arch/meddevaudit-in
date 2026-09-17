@@ -269,6 +269,15 @@ function FindingCard({
             </div>
           )}
 
+          {finding.aiEngine !== "llm" && finding.aiVerdict === "PASS" && (
+            <p className="mt-2 text-[11px] leading-relaxed text-ink-500">
+              <span className="font-semibold text-ink-600">Offline pass:</span> the expected particulars are present in
+              the dossier. Substantive adequacy — validity dates, the correct entity, the right kind of evidence — is not
+              verified by the offline matcher (measured: it passes 5 of 14 hard distractors). Confirm on review or enable
+              LLM verification.
+            </p>
+          )}
+
           {finding.aiFixNote && (
             <div
               className={`mt-3 rounded-lg px-3 py-2 ${

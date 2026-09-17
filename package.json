@@ -17,6 +17,7 @@
     "build": "npm run build -w @meddevaudit/web",
     "fixtures:build": "npm run build-fixtures -w @meddevaudit/eval",
     "eval": "npm run eval -w @meddevaudit/eval --",
+    "test:llm-contract": "npm run test:llm-contract -w @meddevaudit/api",
     "start": "node scripts/setup.mjs && npm run start -w @meddevaudit/api",
     "typecheck": "npm run typecheck -w @meddevaudit/api && tsc --noEmit -p apps/web"
   },

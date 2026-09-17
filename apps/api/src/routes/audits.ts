@@ -214,6 +214,7 @@ auditsRouter.get("/audits/:id", async (req, res, next) => {
       status: audit.status,
       overallResult: audit.overallResult,
       engine: audit.engine,
+      retrievalMode: audit.retrievalMode,
       submittedBy: audit.submittedBy,
       deviceType: audit.deviceType,
       counts: countByVerdict(audit.findings),

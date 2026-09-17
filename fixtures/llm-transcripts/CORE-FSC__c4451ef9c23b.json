@@ -1,0 +1,13 @@
+{
+  "clauseCode": "CORE-FSC",
+  "passageHash": "c4451ef9c23b",
+  "passageExcerpt": "2.3 Free Sale Certificate. A Free Sale Certificate for the FS-200 Fingertip Pulse Oximeter was issued by the Bundesinsti",
+  "recordedAt": "2026-09-17T00:00:00.000Z",
+  "source": "hand-written",
+  "response": {
+    "verdict": "PASS",
+    "confidence": 0.96,
+    "evidence_snippet": "A Free Sale Certificate for the FS-200 Fingertip Pulse Oximeter was issued by the Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM), the national regulatory authority of Germany, the country of origin, under certificate number 2023/FSC/88214 dated 05 November 2023",
+    "fix_note": ""
+  }
+}

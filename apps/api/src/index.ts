@@ -95,6 +95,25 @@ app.get("/api/health", async (_req, res) => {
   });
 });
 
+/**
+ * Measured evaluation figures, straight from reports/evaluation*.json as
+ * written by `npm run eval`. Served so the Settings page shows the numbers the
+ * README quotes, from the same file. Absent files mean "not yet evaluated".
+ */
+app.get("/api/evaluation", (_req, res) => {
+  const reportsDir = path.resolve(__dirname, "..", "..", "..", "reports");
+  const read = (name: string) => {
+    const file = path.join(reportsDir, name);
+    if (!fs.existsSync(file)) return null;
+    try {
+      return JSON.parse(fs.readFileSync(file, "utf8"));
+    } catch {
+      return null;
+    }
+  };
+  res.json({ hybrid: read("evaluation.json"), llm: read("evaluation-llm.json") });
+});
+
 app.use("/api", catalogueRouter);
 app.use("/api", auditsRouter);
 
