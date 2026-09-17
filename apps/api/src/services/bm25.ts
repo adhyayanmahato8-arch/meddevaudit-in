@@ -29,8 +29,30 @@ export function tokenize(text: string): string[] {
   return matches.filter((token) => token.length > 1 && !STOPWORDS.has(token));
 }
 
+/**
+ * Upper bound on passages per dossier. Documents beyond it (long manuals) have
+ * adjacent passages merged until they fit, which coarsens retrieval slightly
+ * but bounds screening time and memory on small hosts. Typical submissions
+ * (a few dozen passages) and every evaluation fixture (17) are unaffected, so
+ * calibrated thresholds still apply to them unchanged.
+ */
+const MAX_PASSAGES = (() => {
+  const v = Number.parseInt(process.env.MAX_PASSAGES ?? "", 10);
+  return Number.isFinite(v) && v > 0 ? v : 120;
+})();
+
 /** Splits a dossier into retrievable passages, dropping structural markers. */
 export function splitPassages(dossier: string): string[] {
+  const passages = splitRaw(dossier);
+  if (passages.length <= MAX_PASSAGES) return passages;
+  // Merge neighbours in fixed groups so each merged passage stays local.
+  const per = Math.ceil(passages.length / MAX_PASSAGES);
+  const merged: string[] = [];
+  for (let i = 0; i < passages.length; i += per) merged.push(passages.slice(i, i + per).join(" "));
+  return merged;
+}
+
+function splitRaw(dossier: string): string[] {
   const blocks = dossier
     .replace(/^=+ DOCUMENT:.*?=+$/gm, "\n\n")
     .split(/\n\s*\n/)

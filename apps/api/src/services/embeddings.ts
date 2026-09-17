@@ -13,6 +13,17 @@ import path from "node:path";
 export const EMBEDDING_MODEL = "Xenova/all-MiniLM-L6-v2";
 export const EMBEDDING_DIM = 384;
 
+const intEnv = (name: string, fallback: number) => {
+  const v = Number.parseInt(process.env[name] ?? "", 10);
+  return Number.isFinite(v) && v > 0 ? v : fallback;
+};
+/** Passages per inference call. Small keeps memory flat and yields often. */
+const EMBED_BATCH = intEnv("EMBED_BATCH", 8);
+/** Pause between batches so a co-located web process gets CPU time. */
+const EMBED_YIELD_MS = intEnv("EMBED_YIELD_MS", 40);
+/** Worker RSS ceiling; fail the job before the container limit is reached. */
+const MAX_RSS_MB = intEnv("MAX_WORKER_RSS_MB", 380);
+
 export type Embedder = {
   embed(texts: string[]): Promise<number[][]>;
 };
@@ -56,14 +67,25 @@ async function load(): Promise<Embedder | null> {
     const embedder: Embedder = {
       async embed(texts) {
         const vectors: number[][] = [];
-        // Batches keep peak memory bounded on small hosts (Render free tier is 512 MB).
-        for (let i = 0; i < texts.length; i += 16) {
-          const batch = texts.slice(i, i + 16);
+        // Small batches with a yield between them: on a shared-CPU host the
+        // screening worker must leave scheduler time for the web process, and
+        // the RSS guard fails the job cleanly rather than letting the container
+        // hit its memory limit (which restarts the whole instance).
+        for (let i = 0; i < texts.length; i += EMBED_BATCH) {
+          const batch = texts.slice(i, i + EMBED_BATCH);
           const output = await pipe(batch, { pooling: "mean", normalize: true });
           const data = output.data as Float32Array;
           for (let j = 0; j < batch.length; j += 1) {
             vectors.push(Array.from(data.subarray(j * EMBEDDING_DIM, (j + 1) * EMBEDDING_DIM)));
           }
+          const rssMb = process.memoryUsage().rss / 1048576;
+          if (rssMb > MAX_RSS_MB) {
+            throw new Error(
+              `Embedding stopped: worker memory ${rssMb.toFixed(0)} MB exceeded the ${MAX_RSS_MB} MB limit for this host after ${vectors.length}/${texts.length} passages. ` +
+                `Use a shorter document or a larger instance (MAX_WORKER_RSS_MB).`,
+            );
+          }
+          if (i + EMBED_BATCH < texts.length) await new Promise((r) => setTimeout(r, EMBED_YIELD_MS));
         }
         return vectors;
       },

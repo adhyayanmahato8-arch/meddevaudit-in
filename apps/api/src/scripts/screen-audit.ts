@@ -6,6 +6,7 @@
  *
  *   tsx src/scripts/screen-audit.ts <auditId>
  */
+import os from "node:os";
 import { prisma } from "@meddevaudit/db";
 import { screenAudit } from "../services/screening";
 
@@ -13,6 +14,14 @@ const auditId = process.argv[2];
 if (!auditId) {
   console.error("usage: screen-audit <auditId>");
   process.exit(2);
+}
+
+// Lowest scheduling priority: on a shared-CPU host the web process must win
+// every contest for CPU so the site stays responsive while this runs.
+try {
+  os.setPriority(process.pid, 19);
+} catch {
+  /* not permitted on this platform — proceed at normal priority */
 }
 
 screenAudit(auditId)
