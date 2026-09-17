@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "NEB-COMPRESSOR",
+    "passage": "5.7 Compressor safety. The NB-30 piston compressor was assessed under IEC 60601-1 clauses 9 (mechanical hazards) and 15 (construction) and ISO 27427:2013 in report TR-60601-1-60402 (SGS, Annex 7): accessible surface temperature 41 °C maximum after 30 min continuous operation (limit 43 °C); declared duty cycle 30 min on / 30 min off with a thermal cut-out at 85 °C winding temperature; maximum continuous operating time 30 min; all moving parts enclosed with no accessible pinch points; A-weighted sound pressure level 52 dB(A) at 1 m per the particular standard.",
+    "expectedVerdict": "PASS",
+    "rationale": "Surface temperature, duty cycle and maximum operating time, thermal protection, moving-part protection and the declared dB(A) level — all evidenced.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "NEB-COMPRESSOR",
+    "passage": "SGS's report at Annex 7 covers the pump unit: after half an hour running flat out the outer casing reached 41 °C, under the 43 °C ceiling; the motor is rated to run for thirty minutes and then rest for thirty, and a heat switch cuts it if the windings pass 85 °C; the piston and crank are fully enclosed so no finger can reach them; and at one metre the unit measures 52 decibels on the A scale.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same evidence — without \"compressor\", \"duty cycle\", \"continuous operation\", \"operating time\", \"surface temperature\", \"thermal\", \"overheat\", \"noise\", \"sound pressure\" or \"dB(A)\" (uses \"decibels on the A scale\", \"pump unit\", \"heat switch\").",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "NEB-COMPRESSOR",
+    "passage": "5.7 Compressor safety. The NB-30 compressor has been designed for continuous home use and conforms to IEC 60601-1 (report TR-60601-1-60402, SGS, Annex 7). Sound pressure level: 52 dB(A). Moving parts are fully enclosed. The compressor motor is rated for a duty cycle of 30 min on / 30 min off and is protected by a thermal cut-out; the Instructions for Use recommend continuous nebulisation sessions of up to 60 minutes for chronic patients.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The safety evidence is largely present, but the declared 30/30 duty cycle contradicts the 60-minute continuous sessions the IFU recommends — exactly the contradiction the guidance warns about. Present but internally inconsistent — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

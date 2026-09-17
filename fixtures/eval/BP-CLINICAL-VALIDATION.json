@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "BP-CLINICAL-VALIDATION",
+    "passage": "6.2 Clinical validation. The oscillometric algorithm of the CE-9 was clinically validated against auscultatory reference observers per ISO 81060-2:2018+A1 at Peking University First Hospital (report CV-CE9-2023-02, Annex 12). Protocol: same-arm sequential, two trained observers with a mercury reference. Subjects: 85 (44 female), arm circumference 22–42 cm, with the required distribution of systolic and diastolic pressures. Criterion 1: mean difference −1.2 ± 6.4 mmHg systolic, 0.8 ± 5.1 mmHg diastolic (limit ≤5 ± 8). Criterion 2: SD of averaged per-subject differences 4.7 mmHg systolic, 3.9 mmHg diastolic (limits 6.95 and 6.95). Both criteria met.",
+    "expectedVerdict": "PASS",
+    "rationale": "Validation protocol, subject count and cohort distribution, criterion 1 and 2 results for both systolic and diastolic — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "BP-CLINICAL-VALIDATION",
+    "passage": "Annex 12 is the hospital study (Peking University First Hospital, CV-CE9-2023-02) in which the CE-9's readings were compared with two trained listeners using a mercury column on the same arm, one after the other, in 85 adults spanning arm sizes from 22 to 42 cm and the required spread of high and low pressures. Averaged over all readings the device read 1.2 mmHg low for the upper figure (scatter 6.4) and 0.8 mmHg high for the lower figure (scatter 5.1); the per-person scatter was 4.7 and 3.9 mmHg. Both of the protocol's acceptance tests were passed.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same study elements — reference observers, protocol, n, cohort, both criteria for both pressures — without \"ISO 81060-2\", \"clinical validation\", \"criterion 1/2\", \"mean difference\", \"standard deviation\", \"systolic\", \"diastolic\", \"subjects\", \"cohort\" or \"arm circumference\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "BP-CLINICAL-VALIDATION",
+    "passage": "6.2 Clinical validation. The oscillometric algorithm used in the CE-9 is the same mature algorithm platform used in the manufacturer's earlier CE-5 and CE-7 models, which have been sold in more than thirty countries since 2016 with no reported accuracy complaints. Clinical validation of the CE-7 to ISO 81060-2 was performed in 2017 (report CV-CE7-2017-01, held at the manufacturer's site, available on request). Criterion 1 and criterion 2 were met for systolic and diastolic pressure.",
+    "expectedVerdict": "REJECT",
+    "rationale": "Every keyword is present, but the validation cited belongs to a different device (CE-7), is not enclosed, and equivalence of cuff, pneumatics and firmware is merely asserted. Evidence for the wrong entity, not attached — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

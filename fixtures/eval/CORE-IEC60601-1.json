@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-IEC60601-1",
+    "passage": "5.1 Electrical safety. Conformity with IEC 60601-1:2005 + A1:2012 + A2:2020 (general requirements for basic safety and essential performance) is demonstrated by test report number TR-60601-1-22884 issued by TÜV SÜD Product Service GmbH, an ILAC-MRA accredited test laboratory, dated 19 September 2023. The applied part is classified Type BF. The report covers dielectric strength, leakage currents in normal and single-fault condition, mechanical strength and marking, and concludes PASS on all applicable clauses. Full report at Annex 7.",
+    "expectedVerdict": "PASS",
+    "rationale": "Base standard with edition, accredited laboratory, report number, applied-part type and explicit pass conclusion — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-IEC60601-1",
+    "passage": "Annex 7 contains the third-party type-test certificate for the general medical electrical safety standard (third edition with both amendments), reference TR-60601-1-22884, issued 19 September 2023 by TÜV SÜD's laboratory in Munich, which is accredited under the international laboratory accreditation arrangement. The patient-connected part is rated body-floating (BF). All applicable requirements — insulation withstand, earth and patient leakage under normal and fault conditions, mechanical and marking checks — were found to conform.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same content with \"general medical electrical safety standard (third edition…)\" rather than \"IEC 60601-1\", \"type-test certificate\" for \"test report\", \"found to conform\" for \"pass\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-IEC60601-1",
+    "passage": "5.1 Electrical safety. The FS-200 has been designed to comply with the following standards: IEC 60601-1:2005+A1+A2 (general requirements for basic safety and essential performance), IEC 60601-1-2:2014, IEC 60601-1-11:2015 and ISO 80601-2-61:2017. Compliance has been verified by the manufacturer's in-house test department in accordance with its design verification procedure DVP-07, and the applied part is classified Type BF.",
+    "expectedVerdict": "REJECT",
+    "rationale": "IEC 60601-1 is named in a list of applied standards and \"verified in-house\"; there is no test report number, no accredited laboratory and no attached report. Listing a standard is not evidence of conformity to it — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

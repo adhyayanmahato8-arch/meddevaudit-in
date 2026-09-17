@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "THERM-BIOCOMPAT",
+    "passage": "7.1 Biocompatibility. The probe tip (stainless steel 304) and the single-use polyethylene probe cover are surface-contacting devices with limited (≤24 h) contact duration. The biological evaluation plan BEP-DT10-01 and biological evaluation report BER-DT10-02 (Annex 12) are per ISO 10993-1:2018 and include cytotoxicity (ISO 10993-5, MTT, L929: non-cytotoxic), skin irritation (ISO 10993-23, reconstructed human epidermis: non-irritant) and skin sensitisation (ISO 10993-10, GPMT: non-sensitiser), performed by Nelson Labs, report numbers 1240221-1 to -3.",
+    "expectedVerdict": "PASS",
+    "rationale": "Contact classification, plan and report to ISO 10993-1, cytotoxicity, irritation and sensitisation data from a named laboratory — fully met.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "THERM-BIOCOMPAT",
+    "passage": "Annex 12 contains the plan and the report of the biological safety assessment of the parts that touch the patient — the steel probe tip and its disposable polyethylene sheath — classed as intact-skin contact for under a day. Nelson Labs (reports 1240221-1 to -3) found no cell toxicity in the mouse-fibroblast assay, no reaction in the reconstructed-skin model, and no allergic response in the guinea-pig maximisation test.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same evidence — classification, plan/report, the three endpoints with methods and outcomes — without \"ISO 10993\", \"biocompatibility\", \"cytotoxicity\", \"irritation\" or \"sensitisation\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "THERM-BIOCOMPAT",
+    "passage": "7.1 Biocompatibility. The probe tip is manufactured from medical-grade stainless steel 304 and the probe cover from medical-grade polyethylene; both materials are widely used in clinical thermometers and are biocompatible. The materials comply with ISO 10993-1 and are suitable for skin contact. A biological evaluation was therefore not considered necessary. Material certificates from the suppliers are at Annex 12.",
+    "expectedVerdict": "REJECT",
+    "rationale": "\"Medical-grade\" and \"widely used\" are not a biological evaluation and no predicate device or data is cited for an equivalence argument. The clause requires a plan and report with cytotoxicity, irritation and sensitisation data or a justified equivalence — neither is provided — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "OXI-LBL-ACCURACY",
+    "passage": "8.6 Label and IFU — declared performance. The label and IFU section 9 state: SpO2 accuracy ARMS 1.9 % over the saturation range 70–100 %; pulse rate range 30–250 bpm with pulse rate accuracy ±2 bpm; emitter wavelengths 660 nm and 905 nm with maximum optical output power below 15 mW; and the list of compatible sensors validated with this monitor — FS-ADT-01 (adult) and FS-PED-01 (paediatric). The IFU states that the ARMS figure is a statistical measure and is not the measurement uncertainty of an individual reading.",
+    "expectedVerdict": "PASS",
+    "rationale": "Declared ARMS and range, pulse-rate range and accuracy, wavelengths and output power, an explicit compatible-probe list, and the individual-reading caveat — all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "OXI-LBL-ACCURACY",
+    "passage": "Section 9 of the manual and the carton disclose the device's performance figures: a root-mean-square error of 1.9 % for oxygen saturation between 70 and 100 %; heart-rate readings from 30 to 250 per minute within ±2; light sources at 660 and 905 nanometres emitting under 15 milliwatts; and the two finger sensors — FS-ADT-01 for adults, FS-PED-01 for children — that were used in validation and are the only ones approved for use. The manual explains that the 1.9 % figure describes population-level performance, not the error of any single measurement.",
+    "expectedVerdict": "PASS",
+    "rationale": "All disclosures present — without \"ARMS\", \"accuracy\", \"pulse rate\", \"bpm\", \"wavelength\", \"probe\" or \"compatible sensor\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "OXI-LBL-ACCURACY",
+    "passage": "8.6 Label and IFU — declared performance. The label and IFU state: SpO2 accuracy ARMS 1.9 % (70–100 %); pulse rate range 30–250 bpm, accuracy ±2 bpm; wavelengths 660 nm / 905 nm, maximum optical output power below 15 mW. The FS-200 is compatible with standard SpO2 finger sensors with the industry-standard 7-pin connector, including sensors from third-party suppliers. The ARMS figure is not the measurement uncertainty of an individual reading.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "Everything is declared except the specific list of validated probe models — \"standard sensors including third-party\" is the opposite of a validated list, and using an unvalidated probe voids the accuracy claim. Present but with the key list missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

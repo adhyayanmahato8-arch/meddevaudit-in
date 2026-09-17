@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-IFU",
+    "passage": "9. Instructions for Use. The IFU (document IFU-FS200-EN rev 6, Annex 9) is supplied in English with every unit and contains: intended use and intended user; indications for use; step-by-step operating instructions; contraindications; warnings, cautions and precautions; the residual risks communicated to the user; cleaning and maintenance instructions; storage and transport conditions (−20 to +60 °C, 10 to 93 % RH); expected service life of five years; and the contact details for reporting an adverse event or complaint in India (Materiovigilance cell, Sundaram Healthcare Distributors Pvt Ltd, vigilance@sundaramhealth.in, +91 44 4000 1200).",
+    "expectedVerdict": "PASS",
+    "rationale": "Every mandatory content element is enumerated, including the India adverse-event contact.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-IFU",
+    "passage": "An English-language user manual (IFU-FS200-EN rev 6, Annex 9) accompanies each device. It explains what the product is for and who should use it; how to take a reading, step by step; the situations in which it must not be used; the hazards to guard against and the harms that cannot be fully designed out; how to clean and look after it; the temperature and humidity it may be kept and shipped in; how many years it is expected to last; and whom to contact in India — by e-mail or telephone — if something goes wrong or a complaint needs to be made.",
+    "expectedVerdict": "PASS",
+    "rationale": "Every required element is present in plain language: purpose/user, operation, contraindications, warnings, residual risks, cleaning, storage/transport, service life, India complaint route — without \"instructions for use\", \"intended use\", \"contraindication\", \"warning\" or \"storage\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-IFU",
+    "passage": "9. Instructions for Use. The IFU (IFU-FS200-EN rev 5, Annex 9) is supplied in English and contains the intended use and intended user, operating instructions, contraindications, warnings and precautions, residual risks, cleaning and maintenance instructions, storage and transport conditions and the expected service life. Adverse events may be reported to the manufacturer at vigilance@meridian-medical.de or to the competent authority in the user's country.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "Nearly complete, but the adverse-event route given is the German manufacturer and a generic \"competent authority\"; there is no Indian contact for reporting complaints, which the clause requires. Present but one element missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

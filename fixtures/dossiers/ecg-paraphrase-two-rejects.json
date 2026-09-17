@@ -1,0 +1,145 @@
+{
+  "name": "ecg-paraphrase-two-rejects",
+  "deviceSlug": "ecg-machine",
+  "description": "Paraphrased throughout, with two REJECT-grade distractors buried in it (self-declared Free Sale Certificate; Type BF applied part on a diagnostic ECG). Tests that paraphrase recall does not come at the cost of missing real rejects.",
+  "expectedOverall": "REJECT",
+  "composition": [
+    {
+      "clauseCode": "CORE-MD15-LICENCE",
+      "clauseRef": "MDR-2017 Rule 36 r/w Form MD-15",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "The import permission, its reference, issuing body, date and validity are all present, and the reference is cross-tied to the label and customs entry. Phrased without \"MD-15\", \"import licence\" or \"licence number\"."
+    },
+    {
+      "clauseCode": "CORE-MD14-AGENT",
+      "clauseRef": "MDR-2017 Rule 35 r/w Form MD-14",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "An appointed Indian representative with address and licence, the notarised appointment instrument, and the application form are all present — the same three elements, without \"MD-14\", \"authorised agent\" or \"power of attorney\"."
+    },
+    {
+      "clauseCode": "CORE-FSC",
+      "clauseRef": "MDR-2017 Rule 35(2) r/w Fourth Schedule, Part II",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "A self-declaration by the manufacturer has been substituted for a certificate issued by the national regulatory authority. The clause is explicit that a self-declaration does not satisfy it — REJECT, even though every keyword is present."
+    },
+    {
+      "clauseCode": "CORE-ISO13485",
+      "clauseRef": "MDR-2017 Fifth Schedule r/w ISO 13485:2016",
+      "category": "Quality Management",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same substance — body, registration reference, scope covering the device, site, in-force date — with \"remains in force until\" and \"registration\" instead of \"valid until\" and \"certificate number\"."
+    },
+    {
+      "clauseCode": "CORE-ISO14971",
+      "clauseRef": "MDR-2017 First Schedule, Part I r/w ISO 14971:2019",
+      "category": "Risk Management",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Plan, hazard identification, controls with verification, residual-risk evaluation and signed acceptability conclusion are all described — without \"ISO 14971\", \"risk management\", \"FMEA\" or \"residual risk\"."
+    },
+    {
+      "clauseCode": "CORE-IEC60601-1",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1:2005+A1+A2",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same content with \"general medical electrical safety standard (third edition…)\" rather than \"IEC 60601-1\", \"type-test certificate\" for \"test report\", \"found to conform\" for \"pass\"."
+    },
+    {
+      "clauseCode": "CORE-EMC",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1-2:2014+A1",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Covers emissions, immunity levels, the home-healthcare environment and the IFU tables without \"IEC 60601-1-2\", \"EMC\", \"emission\", \"immunity\" or \"test report\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-MFR",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 1",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Producer identity and full plant location on unit and box, tied to the certified site — without \"manufactured by\", \"manufacturer\", \"address\" or \"label\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-IMPORTER",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 2 r/w Rule 44",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Importer identity, Indian address and licence reference on the box, reconciled to the grant — without \"imported by\", \"importer\", \"import licence number\" or \"label\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-BILINGUAL",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 3",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Bilingual Indian-market declaration and bilingual particulars on a consumer product, described without \"For Sale in India\", \"Hindi\" or \"bilingual\" in the English text."
+    },
+    {
+      "clauseCode": "CORE-LBL-SYMBOLS",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 5 r/w ISO 15223-1:2021",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Harmonised-symbol conformity, an explanatory key in the manual, and the specific symbols — described without \"ISO 15223\", \"symbol\", \"batch\", \"serial number\" or \"date of manufacture\"."
+    },
+    {
+      "clauseCode": "CORE-IFU",
+      "clauseRef": "MDR-2017 Third Schedule, Part II",
+      "category": "Instructions for Use",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Every required element is present in plain language: purpose/user, operation, contraindications, warnings, residual risks, cleaning, storage/transport, service life, India complaint route — without \"instructions for use\", \"intended use\", \"contraindication\", \"warning\" or \"storage\"."
+    },
+    {
+      "clauseCode": "CORE-DMF",
+      "clauseRef": "MDR-2017 Fourth Schedule, Part II r/w Rule 35",
+      "category": "Device Master File",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Prescribed format, a contents list, every required section, and all referenced annexes enclosed — without \"Device Master File\", \"index\", \"table of contents\", \"post-market surveillance\" or \"vigilance\"."
+    },
+    {
+      "clauseCode": "ECG-SIGNAL",
+      "clauseRef": "IEC 60601-2-25:2011 cl. 201.12.4",
+      "category": "Performance Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "All tests described with values — without \"IEC 60601-2-25\", \"frequency response\", \"input impedance\", \"common mode rejection\", \"CMRR\", \"noise\", \"baseline\", \"drift\" or \"test report\"."
+    },
+    {
+      "clauseCode": "ECG-DEFIB-CF",
+      "clauseRef": "IEC 60601-1:2005 cl. 8.5.5.1 r/w IEC 60601-2-25 cl. 201.8.5.5.1",
+      "category": "Safety Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "Defibrillation protection is evidenced, but the applied part is Type BF, not Type CF — and the measured currents (45/480 µA) are five to ten times the CF limits. For a diagnostic ECG this is a substantive non-conformity, not a paperwork gap — REJECT."
+    },
+    {
+      "clauseCode": "ECG-ALGORITHM",
+      "clauseRef": "IEC 62304:2006+A1:2015 r/w IEC 60601-2-25 cl. 201.12.1.101",
+      "category": "Software Lifecycle",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same elements — expert database, sensitivity/specificity as plain counts, measurement bias, lifecycle file with classification, overread statement — without \"IEC 62304\", \"interpretive\", \"algorithm validation\", \"sensitivity\", \"specificity\", \"CSE\", \"overread\" or \"advisory\"."
+    },
+    {
+      "clauseCode": "ECG-LEADS-BIOCOMPAT",
+      "clauseRef": "ISO 10993-1:2018 r/w IEC 60601-2-25 cl. 201.7.2.101",
+      "category": "Biocompatibility",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Biological testing, three endpoints, single scheme applied to cable/device/IFU, mains-protected plugs — without \"ISO 10993\", \"biocompatibility\", \"biological evaluation\", \"lead wire\", \"electrode\", \"patient cable\", \"colour code\" or \"IEC convention\"."
+    }
+  ],
+  "text": "SUBMISSION DOSSIER — ECG Machine (resting, non-invasive)\nFixture: ecg-paraphrase-two-rejects (synthetic evaluation dossier, assembled from annotated passages)\n\nRegulatory permission to bring the product into India was granted by the national licensing body on 14 March 2024 under reference IMP/MD/2024/004518 and remains in force for five years from that date. The same reference appears on the outer carton artwork and on the customs entry, and the signed grant letter is included as Annex 2.\n\nThe submission to CDSCO was lodged by the manufacturer's appointed representative in India, Sundaram Healthcare Distributors Pvt Ltd of 41 Anna Salai, Chennai 600002, which holds a current wholesale drugs licence (TN/CH/2019/3312). The instrument appointing that firm to act for Meridian Medical GmbH before the Indian regulator was executed before a notary in Munich on 18 December 2023 and is reproduced at Annex 3, together with the completed application form itself.\n\n2.3 Free Sale Certificate. In lieu of a Free Sale Certificate from the country of origin, the manufacturer encloses a Declaration of Conformity signed by its Quality Director, together with the EC Certificate of its ISO 13485 quality system, and confirms that the FS-200 is freely sold in Germany and in over thirty other countries. The manufacturer is willing to procure a Free Sale Certificate should the licensing authority insist.\n\nThe quality management certificate issued to the Fürstenfeldbruck plant by the notified body TÜV SÜD under EN ISO 13485 remains in force until 31 March 2028 (registration Q1 20 22 77413 R1). Its scope covers the design and production of non-invasive physiological monitors, which encompasses the FS-200. The current registration document and the report of the last surveillance visit are reproduced at Annex 5.\n\nAnnex 6 sets out how foreseeable harms from the FS-200 were identified, weighed and reduced. Sixty-four hazardous situations were catalogued from a design failure-mode study; for each, the mitigating design feature is named and the test that proves it works is cross-referenced. The remaining, unmitigated exposure was assessed against the clinical benefit and judged tolerable in a report signed by the Head of Regulatory Affairs on 3 February 2024. The governing procedure, its scope and the acceptance criteria are laid down in a plan approved before the analysis began.\n\nAnnex 7 contains the third-party type-test certificate for the general medical electrical safety standard (third edition with both amendments), reference TR-60601-1-22884, issued 19 September 2023 by TÜV SÜD's laboratory in Munich, which is accredited under the international laboratory accreditation arrangement. The patient-connected part is rated body-floating (BF). All applicable requirements — insulation withstand, earth and patient leakage under normal and fault conditions, mechanical and marking checks — were found to conform.\n\nAnnex 7 also holds the report on electromagnetic disturbance (reference TR-EMC-22891, TÜV SÜD, 22 September 2023). The device's own radio-frequency output was measured against the Group 1 Class B limits, and its resistance to external interference — electrostatic discharge at ±8 kV contact and ±15 kV air, radiated fields at 10 V/m, and the near-field test for handheld transmitters — was verified at the higher levels the collateral standard prescribes for equipment used in the home. The user manual reproduces the manufacturer's guidance tables on the electromagnetic environment in section 8.\n\nThe legal entity responsible for production, Meridian Medical GmbH, and the full postal location of the plant where the FS-200 is assembled — Industriestrasse 12, 82256 Fürstenfeldbruck, Germany — are printed beside the factory pictogram on both the unit marking and the retail box (drawings LBL-FS200-DEV-03 / CTN-03 at Annex 8). The location given is the certified production plant.\n\nBeneath the producer's details, the retail box shows the Indian firm that brings the product into the country and sells it — Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002 — together with the CDSCO permission reference IMP/MD/2024/004518, which is the same reference as on the grant at Annex 2.\n\nBecause the product is sold to consumers, the retail box carries the Indian-market declaration in both scripts — the English wording and its Devanagari equivalent \"भारत में बिक्री के लिए\" set one above the other — and the principal particulars (product name, purpose, producer, importer) are repeated in Devanagari alongside the English text on the same face of the carton (Annex 8, panel C).\n\nWherever a pictogram replaces text on the packaging, the harmonised medical-device graphical symbols standard has been followed, and a key explaining every pictogram — factory, calendar-with-date, LOT, SN, REF, the book-with-\"i\", the body-floating applied-part mark, the thermometer and droplet limits, and the umbrella — is printed as the first section of the user manual. Annex 8 shows where each pictogram sits on the unit and the box.\n\nAn English-language user manual (IFU-FS200-EN rev 6, Annex 9) accompanies each device. It explains what the product is for and who should use it; how to take a reading, step by step; the situations in which it must not be used; the hazards to guard against and the harms that cannot be fully designed out; how to clean and look after it; the temperature and humidity it may be kept and shipped in; how many years it is expected to last; and whom to contact in India — by e-mail or telephone — if something goes wrong or a complaint needs to be made.\n\nThe technical dossier is organised in the sequence prescribed by the Rules, with a numbered list of its contents on the first page: an overview of the product and what it is for; how and where it is made; the standards applied; the bench and clinical evidence that it performs as claimed; how long it keeps; the artwork set and user manual; and how the manufacturer will watch the product after sale and report problems. All twelve annexes cited in the body are enclosed; none is \"available on request\".\n\nAnnex 11 is Nemko's verification (50318, June 2023) of the EC-12R against the particular standard for diagnostic electrocardiographs. Signal size is reproduced within 3 % and timing within 1 %; the pass-band runs from 0.05 to 150 Hz; a step input rings by under 0.1 mV; the front end presents more than 10 megohms to the patient and suppresses signals common to both electrodes by over 100 dB; its own hiss is below 30 microvolts peak-to-peak; a large T-wave does not upset the R-wave detector and pacing spikes are rejected; and the trace stays on the paper without wandering. Every item is marked as conforming.\n\n5.6 Applied part. The patient connection of the EC-12R is a Type BF applied part with defibrillation protection. Test report TR-60601-1-50310 (Nemko, Annex 7) records patient leakage current of 45 µA (normal condition) and 480 µA (single-fault, mains on applied part), and patient auxiliary current of 40 µA, within the Type BF limits. Defibrillation protection: energy reduction and recovery time verified per clause 8.5.5.1. The BF symbol with paddles appears on the label.\n\nBecause the EC-12R prints diagnostic suggestions and interval figures, its analysis engine was benchmarked against the expert-annotated Common Standards for Electrocardiography reference sets (Annex 10B): it caught 91.4 % of the abnormalities the experts flagged and correctly cleared 94.2 % of the normals, and its PR, QRS and QT figures fell within the reference tolerances. Annex 10A contains the engineering lifecycle file under the medical software standard, with the middle safety tier assigned and reasoned. Section 12 of the manual tells the user that the printed suggestions are a starting point and that a doctor must review the trace before any decision.\n\nAnnex 12 reports the biological safety testing of everything that touches the patient — the trunk cable, the ten wires and the reusable limb clamps: no cell toxicity, no skin reaction, no allergic response. The wires are colour-marked in the European scheme — red right arm, yellow left arm, green left leg, black right leg, white chest wires with coloured collars — and exactly the same scheme is printed on the socket panel and in section 4 of the manual. The wire plugs are shrouded so they cannot be pushed into a mains socket.\n"
+}

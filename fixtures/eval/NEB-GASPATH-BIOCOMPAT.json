@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "NEB-GASPATH-BIOCOMPAT",
+    "passage": "7.3 Gas pathway biocompatibility. The breathing gas pathway (compressor outlet filter, tubing, chamber, mouthpiece, mask) was evaluated per the ISO 18562 series (report GP-NB30-2023-02, Annex 12B): particulate matter emission (ISO 18562-2) PM2.5 and PM10 below limits; volatile organic compound emission (ISO 18562-3) total VOC 0.08 µg/min, below the tolerable exposure; leachables in condensate (ISO 18562-4) below analytical thresholds. Mask and mouthpiece materials (silicone, polypropylene) were additionally evaluated for surface contact per ISO 10993-1 (Annex 12A). Every material in the gas pathway is identified in table 7.3.1.",
+    "expectedVerdict": "PASS",
+    "rationale": "All three 18562 endpoints with results, the 10993 surface evaluation, and a materials inventory of the gas pathway — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "NEB-GASPATH-BIOCOMPAT",
+    "passage": "Annex 12B (GP-NB30-2023-02) assesses what the patient could inhale from the air route — from the pump's outlet filter through the hose and cup to the mouth piece and face piece: airborne solids in the fine and coarse fractions were below the limits, organic vapours totalled 0.08 micrograms per minute, well under the tolerable dose, and nothing measurable washed out of the parts into collected moisture. The silicone face piece and polypropylene mouth piece were separately cleared for skin contact (Annex 12A). Table 7.3.1 names every material along the route.",
+    "expectedVerdict": "PASS",
+    "rationale": "Particulates, VOCs, leachables in condensate, surface-contact evaluation and materials inventory — without \"ISO 18562\", \"gas pathway\", \"breathing gas\", \"VOC\", \"particulate matter\", \"leachable\", \"condensate\", \"ISO 10993\", \"biocompatibility\", \"mask\" or \"mouthpiece\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "NEB-GASPATH-BIOCOMPAT",
+    "passage": "7.3 Gas pathway biocompatibility. The mask (silicone) and mouthpiece (polypropylene) have been evaluated for biocompatibility per ISO 10993-1, ISO 10993-5 and ISO 10993-10 (Annex 12A): non-cytotoxic, non-irritant, non-sensitising. The tubing and chamber are made from medical-grade PVC and polypropylene. All materials in contact with the patient are therefore biocompatible and the gas pathway is considered safe.",
+    "expectedVerdict": "REJECT",
+    "rationale": "Surface-contact 10993 data are present and genuine, but the ISO 18562 evaluation of what the gas pathway emits — particulates, VOCs, leachables — is absent, and the passage reasons that 10993 covers it. The guidance is explicit that it does not. The required evaluation is missing — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

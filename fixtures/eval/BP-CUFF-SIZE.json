@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "BP-CUFF-SIZE",
+    "passage": "8.7 Label and IFU — cuff and population. The CE-9 is supplied with a standard adult cuff validated for arm circumference 22–32 cm and, optionally, a large adult cuff for 32–42 cm; each cuff is printed with its range and a range index marker. The intended patient population is adults; the IFU states that the device is not validated for paediatric or neonatal use, in pregnancy or pre-eclampsia, or in patients with arrhythmia (including atrial fibrillation), and that readings in those groups may be unreliable.",
+    "expectedVerdict": "PASS",
+    "rationale": "Numeric circumference range per cuff, index marker, adult population declared, and the explicit list of non-validated populations — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "BP-CUFF-SIZE",
+    "passage": "Two cuffs are available: the one in the box fits upper arms measuring 22 to 32 cm around, and an optional larger one fits 32 to 42 cm; each has its fitting band printed on it with a mark showing whether it is on correctly. The monitor is meant for grown-ups only; the manual says plainly that it has not been proven on children or newborns, on expectant mothers or those with pregnancy-related high blood pressure, or on people whose heartbeat is irregular, and that results in those groups cannot be relied on.",
+    "expectedVerdict": "PASS",
+    "rationale": "Ranges, index mark, adult-only population and the specific exclusions — without \"cuff size\", \"arm circumference\", \"adult\", \"paediatric\", \"neonatal\", \"not validated\", \"arrhythmia\" or \"pregnancy\" (the paraphrase uses \"grown-ups\", \"children\", \"newborns\", \"irregular heartbeat\", \"expectant mothers\").",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "BP-CUFF-SIZE",
+    "passage": "8.7 Label and IFU — cuff and population. The CE-9 is supplied with a standard adult cuff. A large cuff is available separately. The device is intended for adult patients for home monitoring of blood pressure. Users with medical conditions should consult a physician before relying on home readings.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "No arm-circumference range for either cuff, no range index marker, and the non-validated populations are replaced by a generic \"consult a physician\". The intended population is declared, so the clause is addressed — but the numeric ranges and the explicit limitations are missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

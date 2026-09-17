@@ -1,0 +1,145 @@
+{
+  "name": "bp-monitor-sparse",
+  "deviceSlug": "bp-monitor",
+  "description": "Only six clauses have any passage at all; the other eleven are simply absent. Tests the plain 'missing document' case, which must be REJECT and must not be softened by topical similarity to the passages that are present.",
+  "expectedOverall": "REJECT",
+  "composition": [
+    {
+      "clauseCode": "CORE-MD15-LICENCE",
+      "clauseRef": "MDR-2017 Rule 36 r/w Form MD-15",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "MD-15 licence number, issuing authority, issue date and validity are all stated, and the number is tied to the label and customs paperwork — every element of the clause is met."
+    },
+    {
+      "clauseCode": "CORE-MD14-AGENT",
+      "clauseRef": "MDR-2017 Rule 35 r/w Form MD-14",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-FSC",
+      "clauseRef": "MDR-2017 Rule 35(2) r/w Fourth Schedule, Part II",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-ISO13485",
+      "clauseRef": "MDR-2017 Fifth Schedule r/w ISO 13485:2016",
+      "category": "Quality Management",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Standard and year, certification body, certificate number, scope covering the device, site address and expiry date are all stated and the certificate is current."
+    },
+    {
+      "clauseCode": "CORE-ISO14971",
+      "clauseRef": "MDR-2017 First Schedule, Part I r/w ISO 14971:2019",
+      "category": "Risk Management",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-IEC60601-1",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1:2005+A1+A2",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Base standard with edition, accredited laboratory, report number, applied-part type and explicit pass conclusion — complete."
+    },
+    {
+      "clauseCode": "CORE-EMC",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1-2:2014+A1",
+      "category": "Safety Testing",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-LBL-MFR",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 1",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Manufacturer name and the complete manufacturing site address appear on the device label and the carton, and the address is the certified site."
+    },
+    {
+      "clauseCode": "CORE-LBL-IMPORTER",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 2 r/w Rule 44",
+      "category": "Labelling",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-LBL-BILINGUAL",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 3",
+      "category": "Labelling",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-LBL-SYMBOLS",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 5 r/w ISO 15223-1:2021",
+      "category": "Labelling",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "CORE-IFU",
+      "clauseRef": "MDR-2017 Third Schedule, Part II",
+      "category": "Instructions for Use",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Every mandatory content element is enumerated, including the India adverse-event contact."
+    },
+    {
+      "clauseCode": "CORE-DMF",
+      "clauseRef": "MDR-2017 Fourth Schedule, Part II r/w Rule 35",
+      "category": "Device Master File",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "BP-CUFF-PRESSURE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.12.1.101",
+      "category": "Performance Testing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Report number and accredited laboratory, the ±3 mmHg / ±2 % criterion, the full pressure range, environmental and conditioning tests, reference traceability, pass conclusion — complete."
+    },
+    {
+      "clauseCode": "BP-CLINICAL-VALIDATION",
+      "clauseRef": "ISO 81060-2:2018+A1 r/w IEC 80601-2-30 cl. 201.12.1.102",
+      "category": "Performance Testing",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "BP-CUFF-SIZE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.7.9.2.101 r/w MDR-2017 Third Schedule",
+      "category": "Labelling",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    },
+    {
+      "clauseCode": "BP-OVERPRESSURE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.12.4.103 & 201.101",
+      "category": "Safety Testing",
+      "wordingRelationship": "ABSENT",
+      "expectedVerdict": "REJECT",
+      "rationale": "No passage addresses this clause anywhere in the dossier; the mandatory document is missing."
+    }
+  ],
+  "text": "SUBMISSION DOSSIER — Digital Blood Pressure Monitor (NIBP)\nFixture: bp-monitor-sparse (synthetic evaluation dossier, assembled from annotated passages)\n\n2.1 Import licence. The device is imported under import licence Form MD-15 number IMP/MD/2024/004518, granted by the Central Licensing Authority, CDSCO, on 14 March 2024 and valid until 13 March 2029. A copy of the licence is placed at Annex 2. The licence number is reproduced verbatim on the carton label (Annex 8) and on the Bill of Entry used for customs clearance, so that the three documents can be reconciled at the port.\n\n3.1 Quality management system. The manufacturing site at Industriestrasse 12, 82256 Fürstenfeldbruck, Germany, holds ISO 13485:2016 certificate number DE-QMS-2022-77413 issued by TÜV SÜD Product Service GmbH. Scope of certification: design, development and manufacture of non-invasive patient monitoring equipment including pulse oximeters. Date of issue 11 April 2022; valid until 10 April 2026. The certificate and the most recent surveillance audit report (October 2024) are at Annex 5.\n\n5.1 Electrical safety. Conformity with IEC 60601-1:2005 + A1:2012 + A2:2020 (general requirements for basic safety and essential performance) is demonstrated by test report number TR-60601-1-22884 issued by TÜV SÜD Product Service GmbH, an ILAC-MRA accredited test laboratory, dated 19 September 2023. The applied part is classified Type BF. The report covers dielectric strength, leakage currents in normal and single-fault condition, mechanical strength and marking, and concludes PASS on all applicable clauses. Full report at Annex 7.\n\n8.1 Label — manufacturer. The device label and the outer carton artwork (Annex 8, drawings LBL-FS200-DEV-03 and LBL-FS200-CTN-03) carry the manufacturer symbol followed by: \"Manufactured by: Meridian Medical GmbH, Industriestrasse 12, 82256 Fürstenfeldbruck, Germany\". This is the address of the manufacturing site named on the ISO 13485 certificate, not a sales office.\n\n9. Instructions for Use. The IFU (document IFU-FS200-EN rev 6, Annex 9) is supplied in English with every unit and contains: intended use and intended user; indications for use; step-by-step operating instructions; contraindications; warnings, cautions and precautions; the residual risks communicated to the user; cleaning and maintenance instructions; storage and transport conditions (−20 to +60 °C, 10 to 93 % RH); expected service life of five years; and the contact details for reporting an adverse event or complaint in India (Materiovigilance cell, Sundaram Healthcare Distributors Pvt Ltd, vigilance@sundaramhealth.in, +91 44 4000 1200).\n\n6.1 Cuff pressure accuracy. Test report TR-80601-2-30-40211 (Intertek Testing Services, Shanghai, ILAC-accredited, 3 March 2024) to IEC 80601-2-30:2018 demonstrates cuff pressure indication accuracy within ±3 mmHg (or ±2 % of reading, whichever is greater) across the full indicated pressure range 0 to 299 mmHg, at 10 °C, 23 °C and 40 °C and after 48 h conditioning at 85 % RH. Reference manometer: Fluke DPM4, traceable to NIM China. Conclusion: PASS. Report at Annex 11.\n"
+}

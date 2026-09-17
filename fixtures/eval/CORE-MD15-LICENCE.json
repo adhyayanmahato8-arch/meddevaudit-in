@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-MD15-LICENCE",
+    "passage": "2.1 Import licence. The device is imported under import licence Form MD-15 number IMP/MD/2024/004518, granted by the Central Licensing Authority, CDSCO, on 14 March 2024 and valid until 13 March 2029. A copy of the licence is placed at Annex 2. The licence number is reproduced verbatim on the carton label (Annex 8) and on the Bill of Entry used for customs clearance, so that the three documents can be reconciled at the port.",
+    "expectedVerdict": "PASS",
+    "rationale": "MD-15 licence number, issuing authority, issue date and validity are all stated, and the number is tied to the label and customs paperwork — every element of the clause is met.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-MD15-LICENCE",
+    "passage": "Regulatory permission to bring the product into India was granted by the national licensing body on 14 March 2024 under reference IMP/MD/2024/004518 and remains in force for five years from that date. The same reference appears on the outer carton artwork and on the customs entry, and the signed grant letter is included as Annex 2.",
+    "expectedVerdict": "PASS",
+    "rationale": "The import permission, its reference, issuing body, date and validity are all present, and the reference is cross-tied to the label and customs entry. Phrased without \"MD-15\", \"import licence\" or \"licence number\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-MD15-LICENCE",
+    "passage": "2.1 Import licence. An application for an import licence in Form MD-15 has been submitted to the Central Licensing Authority through the authorised agent and is pending grant. The applicant undertakes to furnish the MD-15 licence number on the label and on customs documentation once the licence is issued. Import will not commence until the licence is received.",
+    "expectedVerdict": "REJECT",
+    "rationale": "The licence has been applied for, not granted. No licence number exists, so the mandatory element is missing entirely — REJECT, despite the passage using the exact vocabulary of the clause.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-ISO13485",
+    "passage": "3.1 Quality management system. The manufacturing site at Industriestrasse 12, 82256 Fürstenfeldbruck, Germany, holds ISO 13485:2016 certificate number DE-QMS-2022-77413 issued by TÜV SÜD Product Service GmbH. Scope of certification: design, development and manufacture of non-invasive patient monitoring equipment including pulse oximeters. Date of issue 11 April 2022; valid until 10 April 2026. The certificate and the most recent surveillance audit report (October 2024) are at Annex 5.",
+    "expectedVerdict": "PASS",
+    "rationale": "Standard and year, certification body, certificate number, scope covering the device, site address and expiry date are all stated and the certificate is current.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-ISO13485",
+    "passage": "The quality management certificate issued to the Fürstenfeldbruck plant by the notified body TÜV SÜD under EN ISO 13485 remains in force until 31 March 2028 (registration Q1 20 22 77413 R1). Its scope covers the design and production of non-invasive physiological monitors, which encompasses the FS-200. The current registration document and the report of the last surveillance visit are reproduced at Annex 5.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same substance — body, registration reference, scope covering the device, site, in-force date — with \"remains in force until\" and \"registration\" instead of \"valid until\" and \"certificate number\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-ISO13485",
+    "passage": "3.1 Quality management system. The manufacturer holds ISO 13485:2016 certificate number DE-QMS-2019-51120 issued by TÜV SÜD Product Service GmbH for the design and manufacture of non-invasive patient monitoring equipment at Industriestrasse 12, Fürstenfeldbruck. Date of issue 12 April 2019; valid until 11 April 2022. Recertification audit has been scheduled and the renewed certificate will be forwarded to the licensing authority upon receipt.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "Every field is present and the scope is right — but the expiry date has passed. An expired certificate does not satisfy the clause; because the QMS evidently exists and is being renewed, this is MINOR_IMPROVEMENT rather than REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

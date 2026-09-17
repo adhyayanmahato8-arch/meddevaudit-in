@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-MD14-AGENT",
+    "passage": "2.2 Application and authorised agent. The application was made in Form MD-14 dated 02 January 2024 by Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, Tamil Nadu, India, holder of wholesale licence 20B/21B No. TN/CH/2019/3312, acting as the Indian authorised agent of Meridian Medical GmbH. The notarised power of attorney dated 18 December 2023 by which Meridian Medical GmbH appoints Sundaram Healthcare Distributors Pvt Ltd for the purposes of Rule 35 is at Annex 3.",
+    "expectedVerdict": "PASS",
+    "rationale": "Form MD-14, a named agent with a complete Indian address and wholesale licence, and the notarised power of attorney are all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-MD14-AGENT",
+    "passage": "The submission to CDSCO was lodged by the manufacturer's appointed representative in India, Sundaram Healthcare Distributors Pvt Ltd of 41 Anna Salai, Chennai 600002, which holds a current wholesale drugs licence (TN/CH/2019/3312). The instrument appointing that firm to act for Meridian Medical GmbH before the Indian regulator was executed before a notary in Munich on 18 December 2023 and is reproduced at Annex 3, together with the completed application form itself.",
+    "expectedVerdict": "PASS",
+    "rationale": "An appointed Indian representative with address and licence, the notarised appointment instrument, and the application form are all present — the same three elements, without \"MD-14\", \"authorised agent\" or \"power of attorney\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-MD14-AGENT",
+    "passage": "2.2 Application and authorised agent. The application in Form MD-14 was submitted on 02 January 2024. The Indian authorised agent is Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, holder of wholesale licence TN/CH/2019/3312. A power of attorney in favour of the agent is being executed by the manufacturer and will be furnished on request.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The form and a named agent with address are present, but the power of attorney — the instrument that actually makes the agent the agent — has not been provided. The requirement is addressed but one mandatory element is unmet: MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

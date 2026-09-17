@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "ECG-DEFIB-CF",
+    "passage": "5.6 Applied part. The patient connection of the EC-12R is a defibrillation-proof Type CF applied part. Test report TR-60601-1-50310 (Nemko, Annex 7) section 8.5.5.1 records the defibrillation protection test: after a 5000 V / 360 J discharge across each lead pair the energy reaching the patient circuit was below 10 % of the delivered energy, and the trace recovered to within 10 mm of baseline within 5 s. Patient leakage current: 8 µA (normal condition), 42 µA (single-fault, mains on applied part); patient auxiliary current 7 µA. The defibrillation-proof CF symbol appears on the rear panel and on the label (Annex 8).",
+    "expectedVerdict": "PASS",
+    "rationale": "Type CF defib-proof classification, the defibrillation test with energy reduction and recovery time, leakage and auxiliary currents in normal and single-fault condition, and the symbol on label and equipment — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "ECG-DEFIB-CF",
+    "passage": "The electrode inputs are rated for direct cardiac connection and to survive a defibrillator shock. Annex 7 (Nemko report 50310, clause 8.5.5.1) shows that after a 5 kV, 360 J pulse across each lead pair, less than a tenth of the energy reached the patient side and the trace was usable again within five seconds; the current that could flow through a patient measured 8 microamps normally and 42 with mains on the electrodes, with 7 microamps of measuring current. The paddle-in-a-heart pictogram is on the rear panel and the packaging.",
+    "expectedVerdict": "PASS",
+    "rationale": "Cardiac-rated, defib-tested with energy reduction and recovery, leakage/auxiliary currents in both conditions, symbol present — without \"Type CF\", \"CF applied part\", \"defibrillation-proof\", \"leakage current\", \"patient auxiliary current\", \"single fault\", \"recovery time\" or \"5000 V\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "ECG-DEFIB-CF",
+    "passage": "5.6 Applied part. The patient connection of the EC-12R is a Type BF applied part with defibrillation protection. Test report TR-60601-1-50310 (Nemko, Annex 7) records patient leakage current of 45 µA (normal condition) and 480 µA (single-fault, mains on applied part), and patient auxiliary current of 40 µA, within the Type BF limits. Defibrillation protection: energy reduction and recovery time verified per clause 8.5.5.1. The BF symbol with paddles appears on the label.",
+    "expectedVerdict": "REJECT",
+    "rationale": "Defibrillation protection is evidenced, but the applied part is Type BF, not Type CF — and the measured currents (45/480 µA) are five to ten times the CF limits. For a diagnostic ECG this is a substantive non-conformity, not a paperwork gap — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

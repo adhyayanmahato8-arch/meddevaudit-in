@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "OXI-ALARM",
+    "passage": "5.4 Alarm system. The FS-200 provides physiological alarms (low SpO2 — high priority; low and high pulse rate — medium priority) and technical alarms (low battery, probe off — low priority). Conformity with IEC 60601-1-8:2006 + A1:2012 + A2:2020 is demonstrated by test report TR-ALM-22903 (TÜV SÜD, Annex 7C), which verifies alarm condition priorities, audible alarm signal characteristics (bursts, pitch, sound pressure) and visual alarm signal characteristics, alarm limit setting range and default limits, the alarm-off and audio-paused indications, and an alarm system delay below 10 s.",
+    "expectedVerdict": "PASS",
+    "rationale": "Alarm conditions and priorities, the report to IEC 60601-1-8, signal characteristics, limits/defaults, off/paused indications and delay — all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "OXI-ALARM",
+    "passage": "The monitor warns the user when saturation falls too low (top urgency), when the heart rate leaves the set band (intermediate urgency), and when the battery is low or the finger clip has come off (lowest urgency). Annex 7C is the independent laboratory's verification (TÜV SÜD, reference TR-ALM-22903) against the collateral standard for medical warning systems: the tone patterns and loudness, the lamp colours and flash rates, the range and factory settings of the adjustable limits, the indicators shown when warnings are switched off or muted, and the lag between the event and the warning (under ten seconds) were all confirmed.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same evidence in plain words — without \"IEC 60601-1-8\", \"alarm system\", \"alarm limit\", \"alarm priority\", \"high/medium priority\", \"audible\", \"visual\" or \"alarm signal\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "OXI-ALARM",
+    "passage": "5.4 Alarm system. The FS-200 provides audible and visual alarms for low SpO2, high and low pulse rate, low battery and probe-off conditions, with user-adjustable alarm limits and default limits set at the factory. The alarm system has been designed with reference to IEC 60601-1-8, which is included in the list of applied standards (section 4). Alarm functions were verified during software validation (section 7).",
+    "expectedVerdict": "REJECT",
+    "rationale": "The device clearly has alarms, and the collateral standard is cited — but only in a list of applied standards, with verification folded into generic \"software validation\". There is no alarm-system test report, no priorities, no signal characteristics, no delay figure. A standard in a reference list with no report behind it — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

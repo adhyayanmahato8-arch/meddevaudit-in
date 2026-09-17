@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-EMC",
+    "passage": "5.2 Electromagnetic compatibility. Conformity with IEC 60601-1-2:2014 + A1:2020 is demonstrated by EMC test report number TR-EMC-22891 (TÜV SÜD Product Service GmbH, 22 September 2023). Emissions were tested to CISPR 11 Group 1 Class B. Immunity was tested at the levels specified for the home healthcare environment, including ESD ±8 kV contact / ±15 kV air, radiated RF 10 V/m, and proximity fields from wireless communications equipment. The declared electromagnetic environment is home healthcare. The manufacturer's EMC declaration tables are reproduced in section 8 of the Instructions for Use. Report at Annex 7.",
+    "expectedVerdict": "PASS",
+    "rationale": "Report number, emission and immunity coverage, declared environment and the IFU declaration tables are all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-EMC",
+    "passage": "Annex 7 also holds the report on electromagnetic disturbance (reference TR-EMC-22891, TÜV SÜD, 22 September 2023). The device's own radio-frequency output was measured against the Group 1 Class B limits, and its resistance to external interference — electrostatic discharge at ±8 kV contact and ±15 kV air, radiated fields at 10 V/m, and the near-field test for handheld transmitters — was verified at the higher levels the collateral standard prescribes for equipment used in the home. The user manual reproduces the manufacturer's guidance tables on the electromagnetic environment in section 8.",
+    "expectedVerdict": "PASS",
+    "rationale": "Covers emissions, immunity levels, the home-healthcare environment and the IFU tables without \"IEC 60601-1-2\", \"EMC\", \"emission\", \"immunity\" or \"test report\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-EMC",
+    "passage": "5.2 Electromagnetic compatibility. EMC test report TR-EMC-22891 (TÜV SÜD, 22 September 2023) demonstrates conformity with IEC 60601-1-2:2014. Emissions were tested to CISPR 11 Group 1 Class B and immunity to the levels specified for the professional healthcare facility environment. The FS-200 is intended for use by patients at home as well as in clinics. The EMC declaration tables are reproduced in the Instructions for Use.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "A real report exists, but immunity was tested only at professional-facility levels while the device is intended for home use, which the collateral standard tests at higher levels. Present but inadequate for the declared use — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

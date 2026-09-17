@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "THERM-SITE-MODE",
+    "passage": "8.5 Label and IFU — measurement site. The label and the Instructions for Use (section 3) state that the DT-10 is validated for axillary and oral measurement, operates in adjusted mode, and reports a temperature adjusted to the oral reference body site. The declared site-specific measurement uncertainty is ±0.2 °C (axillary) and ±0.1 °C (oral). Rectal and tympanic use are stated as not validated.",
+    "expectedVerdict": "PASS",
+    "rationale": "Validated sites, mode of operation, the reference site for adjusted mode and the site-specific uncertainty are all declared on label and IFU.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "THERM-SITE-MODE",
+    "passage": "The packaging and section 3 of the user manual make clear where on the body the DT-10 has been proven to work — under the arm and under the tongue — and explain that the displayed figure is not the raw probe reading but has been converted to the value that would be expected in the mouth. The stated tolerance is two-tenths of a degree under the arm and one-tenth in the mouth. Use in the ear or rectum has not been evaluated and is advised against.",
+    "expectedVerdict": "PASS",
+    "rationale": "Sites (axillary/oral), the adjusted-to-oral nature of the reading, site-specific tolerance and non-validated sites are all conveyed — without \"oral\", \"axillary\", \"adjusted mode\", \"mode of operation\", \"IFU\" or \"label\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "THERM-SITE-MODE",
+    "passage": "8.5 Label and IFU — measurement site. The DT-10 is a digital thermometer for measuring body temperature and may be used orally, axillary or rectally, as described in the Instructions for Use. Measurement accuracy is ±0.1 °C. Mode of operation and the reference body site are as per IEC 80601-2-56. The label carries the wording \"Digital clinical thermometer — body temperature\".",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "Sites are listed, but the mode of operation and reference site are deferred to \"as per the standard\" rather than declared, and the clinical validation in Annex 11 covered only the axillary site — rectal use is claimed without validation, and no site-specific uncertainty is given. Addressed but materially incomplete — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

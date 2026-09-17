@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "BP-OVERPRESSURE",
+    "passage": "5.5 Over-pressure protection. The CE-9 incorporates an independent hardware pressure limiter that vents the cuff at 300 mmHg, separate from the microcontroller's software cut-off at 280 mmHg. Under single-fault conditions (pump driver shorted, firmware halted) the maximum attainable cuff pressure measured was 302 mmHg before automatic rapid deflation. A watchdog limits any single inflation to 180 s, after which the cuff is deflated automatically. Tests per IEC 80601-2-30 cl. 201.12.4.103 and 201.101 in report TR-80601-2-30-40211, section 9.",
+    "expectedVerdict": "PASS",
+    "rationale": "Independent limiter, over-pressure cut-off value, single-fault maximum, automatic rapid deflation, and the inflation-time limit — all evidenced by test.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "BP-OVERPRESSURE",
+    "passage": "Section 9 of Intertek's report shows what happens when things go wrong: with the pump driven continuously by a simulated short and the processor frozen, the cuff never exceeded 302 mmHg because a mechanical relief valve, which works without the electronics, opens at 300 and lets the air out fast; and a separate hardware timer releases the cuff if any measurement runs longer than three minutes.",
+    "expectedVerdict": "PASS",
+    "rationale": "Independent (mechanical) limiter, its trip value, the single-fault maximum, fast release, and the three-minute timer — without \"over-pressure\", \"pressure limit\", \"maximum cuff pressure\", \"automatic deflation\", \"single fault\", \"cut-off\" or \"timeout\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "BP-OVERPRESSURE",
+    "passage": "5.5 Over-pressure protection. The CE-9 firmware limits inflation to a maximum cuff pressure of 280 mmHg and incorporates an automatic deflation function that releases cuff pressure at the end of each measurement cycle or if the measurement is aborted. Over-pressure protection was verified during firmware validation. An independent means of limiting cuff pressure is not required because the firmware is validated to IEC 62304.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "A software limit and end-of-cycle deflation are described, but there is no independent (hardware) limiter, no single-fault test, and no inflation-time limit — and the passage argues the independent means away. One of the two required protections is missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

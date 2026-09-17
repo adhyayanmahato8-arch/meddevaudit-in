@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "OXI-SOFTWARE",
+    "passage": "7. Software. The embedded firmware is developed under a lifecycle process conforming to IEC 62304:2006 + A1:2015. Software safety classification: Class B, justified because a software failure could contribute to a hazardous situation (delayed or erroneous saturation reading) leading to non-serious injury. The documentation set (Annex 10) comprises the software development plan SDP-FS200, software requirements specification SRS-FS200 rev 4, software architecture document, unit and integration verification records, the software validation report SVVR-FS200, the known-anomaly list with residual anomaly justification, and the SOUP inventory (FreeRTOS 10.4.3, CMSIS-DSP 1.9.0) with its risk assessment.",
+    "expectedVerdict": "PASS",
+    "rationale": "Classification with justification, and every listed document including anomaly list and SOUP inventory with risk assessment — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "OXI-SOFTWARE",
+    "passage": "Annex 10 documents how the firmware was engineered under the medical device software process standard. Because a fault could delay or distort the displayed saturation and thereby cause minor harm, the firmware is placed in the middle of the three safety tiers, and that placement is argued in writing. The set includes the engineering plan, the numbered list of what the code must do (revision 4), the structural design, the records of testing each module and the assembled whole, the final confirmation report, the register of open defects with an explanation of why each is tolerable, and the inventory of third-party components (FreeRTOS 10.4.3, CMSIS-DSP 1.9.0) with the hazards each might introduce.",
+    "expectedVerdict": "PASS",
+    "rationale": "All elements described — without \"IEC 62304\", \"software safety classification\", \"Class B\", \"verification\", \"validation\", \"SOUP\" or \"anomaly\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "OXI-SOFTWARE",
+    "passage": "7. Software. The embedded firmware was developed under IEC 62304:2006 + A1:2015. Software safety classification: Class A. The documentation set (Annex 10) comprises the software development plan, software requirements specification rev 4, architecture document, verification and validation reports, and the SOUP inventory (FreeRTOS 10.4.3, CMSIS-DSP 1.9.0) with risk assessment. No known anomalies remain open.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The documentation set is nearly complete, but the safety classification is Class A with no justification — for a monitor whose software failure could produce a hazardous under-reading, Class A is implausible and the clause requires the classification to be justified. Present but a required justification is missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

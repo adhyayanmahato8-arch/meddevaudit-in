@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-LBL-BILINGUAL",
+    "passage": "8.3 Label — language. The FS-200 is intended for home use. The carton artwork (Annex 8) carries the statement \"For Sale in India\" in English with the Hindi (Devanagari) rendering \"भारत में बिक्री के लिए\" immediately below it, and the essential particulars — device name, intended use, manufacturer and importer — are presented bilingually in Hindi and English in the same panel.",
+    "expectedVerdict": "PASS",
+    "rationale": "\"For Sale in India\" is present, and the essential particulars are bilingual Hindi/English for a home-use device — fully met.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-LBL-BILINGUAL",
+    "passage": "Because the product is sold to consumers, the retail box carries the Indian-market declaration in both scripts — the English wording and its Devanagari equivalent \"भारत में बिक्री के लिए\" set one above the other — and the principal particulars (product name, purpose, producer, importer) are repeated in Devanagari alongside the English text on the same face of the carton (Annex 8, panel C).",
+    "expectedVerdict": "PASS",
+    "rationale": "Bilingual Indian-market declaration and bilingual particulars on a consumer product, described without \"For Sale in India\", \"Hindi\" or \"bilingual\" in the English text.",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-LBL-BILINGUAL",
+    "passage": "8.3 Label — language. The FS-200 is intended for home use. The carton artwork (Annex 8) carries the statement \"For Sale in India\" in English. All label particulars are in English, which is the language of the Instructions for Use; a Hindi translation of the Instructions for Use is available on the importer's website. Bilingual artwork can be prepared if required by the licensing authority.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The English \"For Sale in India\" statement is present, but the essential particulars are English-only on a home-use device, which the clause requires to be bilingual. An online IFU translation does not satisfy a label requirement — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

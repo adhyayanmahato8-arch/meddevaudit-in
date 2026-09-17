@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "OXI-SPO2-ACCURACY",
+    "passage": "6.1 Clinical accuracy (SpO2). A controlled desaturation study per ISO 80601-2-61:2017 clause 201.12.1.101 was conducted at the University of California San Francisco Hypoxia Laboratory in 12 healthy adult volunteers, yielding 216 paired data points against a Radiometer ABL90 CO-oximeter over the saturation range 70 to 100 %. The cohort comprised 4 subjects with dark (Fitzpatrick V–VI), 4 intermediate and 4 light pigmentation. Result: SpO2 accuracy root mean square (ARMS) 1.9 % over 70–100 %. Bland-Altman analysis (Annex 6A): mean bias −0.3 %, limits of agreement −4.1 to +3.5 %.",
+    "expectedVerdict": "PASS",
+    "rationale": "Desaturation study, CO-oximeter reference, ARMS with numeric value over the declared range, subjects and data pairs, pigmentation distribution and Bland-Altman analysis — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "OXI-SPO2-ACCURACY",
+    "passage": "Annex 6 reports the human hypoxia trial run at the UCSF laboratory in which twelve healthy adults — four each of dark, medium and light skin tone — were brought stepwise down to 70 % oxygen saturation while arterial blood samples were analysed on a Radiometer ABL90. Across 216 paired readings the device's root-mean-square error against the blood-gas reference was 1.9 %. The agreement plot at Annex 6A shows a mean offset of −0.3 % with 95 % limits from −4.1 to +3.5 %.",
+    "expectedVerdict": "PASS",
+    "rationale": "Human hypoxia trial, blood-gas reference, RMS error (= ARMS) with value and range, n and pairs, pigmentation, agreement analysis — without \"ISO 80601-2-61\", \"ARMS\", \"desaturation study\", \"CO-oximeter\" or \"volunteers\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "OXI-SPO2-ACCURACY",
+    "passage": "6.1 Clinical accuracy (SpO2). SpO2 accuracy was verified in accordance with ISO 80601-2-61:2017 using a Fluke Biomedical ProSim 8 SpO2 simulator across the saturation range 70 to 100 % in 2 % steps, with 30 readings per step (480 data points). Accuracy root mean square (ARMS) against the simulator setting: 1.2 %. The manufacturer considers the simulator method to be equivalent to a volunteer desaturation study because the simulator reproduces the optical characteristics of desaturated tissue; Bland-Altman analysis at Annex 6A.",
+    "expectedVerdict": "REJECT",
+    "rationale": "Every keyword is present and the ARMS value looks excellent, but the reference is a bench simulator, which the clause states explicitly does not satisfy the requirement. Weaker evidence substituted for the clinical study — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

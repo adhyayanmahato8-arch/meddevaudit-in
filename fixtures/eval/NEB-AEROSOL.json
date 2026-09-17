@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "NEB-AEROSOL",
+    "passage": "6.1 Aerosol performance. Aerosol characterisation per EN 13544-1:2007+A1 Annex CC (Inhalation Sciences, Stockholm, report AER-NB30-2023-04, Annex 11) using a Next Generation cascade impactor at 15 L/min: aerosol output 1.18 mL, aerosol output rate 0.26 mL/min, mass median aerodynamic diameter (MMAD) 3.8 µm, geometric standard deviation 2.1, respirable fraction (below 5 µm) 68 %. Test medication 0.9 % sodium chloride with 2.5 mL fill volume; results are valid for those conditions only.",
+    "expectedVerdict": "PASS",
+    "rationale": "Impactor method, output and output rate, MMAD, GSD, respirable fraction, and the fill/medication/flow conditions — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "NEB-AEROSOL",
+    "passage": "Annex 11 (Inhalation Sciences, AER-NB30-2023-04) characterises the mist the NB-30 produces from a 2.5 mL charge of normal saline drawn at 15 litres per minute through an NGI: droplet distribution measured by cascade impactor, mass median 3.8 micron with a spread factor of 2.1, 68 % of the delivered mass in droplets small enough to reach the lower airways, 1.18 mL delivered in total at 0.26 mL/min. The figures hold for that charge and that liquid; other medications will differ.",
+    "expectedVerdict": "PASS",
+    "rationale": "Every quantity is present — without \"EN 13544-1\", \"aerosol output\", \"output rate\", \"MMAD\", \"mass median aerodynamic diameter\", \"particle size\", \"µm\" as a unit label, \"respirable fraction\" or \"fill volume\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "NEB-AEROSOL",
+    "passage": "6.1 Aerosol performance. The NB-30 compressor nebulizer produces a fine therapeutic mist with particle size in the range 0.5–5 µm, suitable for delivery to the lower respiratory tract, at an output rate of ≥0.2 mL/min. Performance conforms to EN 13544-1. Particle size was determined by laser diffraction (Malvern Spraytec) at the manufacturer's laboratory; MMAD 3.5 µm. Fill volume and test medication were as per standard practice.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "A particle-size claim with an MMAD figure — but by laser diffraction rather than the cascade impactor the standard's Annex CC specifies, no respirable fraction, no GSD, no aerosol output, and the fill volume and medication are not stated, so the declared performance cannot be tied to conditions. Addressed but materially incomplete — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

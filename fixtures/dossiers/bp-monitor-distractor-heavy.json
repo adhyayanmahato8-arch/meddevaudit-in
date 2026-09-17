@@ -1,0 +1,145 @@
+{
+  "name": "bp-monitor-distractor-heavy",
+  "deviceSlug": "bp-monitor",
+  "description": "Every clause answered with a hard distractor — same topic and vocabulary, requirement not met. The precision test: a matcher that trusts keywords will over-call PASS here.",
+  "expectedOverall": "REJECT",
+  "composition": [
+    {
+      "clauseCode": "CORE-MD15-LICENCE",
+      "clauseRef": "MDR-2017 Rule 36 r/w Form MD-15",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "The licence has been applied for, not granted. No licence number exists, so the mandatory element is missing entirely — REJECT, despite the passage using the exact vocabulary of the clause."
+    },
+    {
+      "clauseCode": "CORE-MD14-AGENT",
+      "clauseRef": "MDR-2017 Rule 35 r/w Form MD-14",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The form and a named agent with address are present, but the power of attorney — the instrument that actually makes the agent the agent — has not been provided. The requirement is addressed but one mandatory element is unmet: MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-FSC",
+      "clauseRef": "MDR-2017 Rule 35(2) r/w Fourth Schedule, Part II",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "A self-declaration by the manufacturer has been substituted for a certificate issued by the national regulatory authority. The clause is explicit that a self-declaration does not satisfy it — REJECT, even though every keyword is present."
+    },
+    {
+      "clauseCode": "CORE-ISO13485",
+      "clauseRef": "MDR-2017 Fifth Schedule r/w ISO 13485:2016",
+      "category": "Quality Management",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "Every field is present and the scope is right — but the expiry date has passed. An expired certificate does not satisfy the clause; because the QMS evidently exists and is being renewed, this is MINOR_IMPROVEMENT rather than REJECT."
+    },
+    {
+      "clauseCode": "CORE-ISO14971",
+      "clauseRef": "MDR-2017 First Schedule, Part I r/w ISO 14971:2019",
+      "category": "Risk Management",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "The passage asserts that risk management was done but supplies no file: no plan, no hazard analysis, no controls, no report. A statement that a file exists elsewhere is not the file. The mandatory document is absent — REJECT."
+    },
+    {
+      "clauseCode": "CORE-IEC60601-1",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1:2005+A1+A2",
+      "category": "Safety Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "IEC 60601-1 is named in a list of applied standards and \"verified in-house\"; there is no test report number, no accredited laboratory and no attached report. Listing a standard is not evidence of conformity to it — REJECT."
+    },
+    {
+      "clauseCode": "CORE-EMC",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1-2:2014+A1",
+      "category": "Safety Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "A real report exists, but immunity was tested only at professional-facility levels while the device is intended for home use, which the collateral standard tests at higher levels. Present but inadequate for the declared use — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-LBL-MFR",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 1",
+      "category": "Labelling",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The only complete address on the label belongs to the Indian distributor; the manufacturer is identified by name and country alone. The clause requires the complete manufacturing site address on the label itself — a country name is explicitly insufficient. Present but wrong — MINOR_IMPROVEMENT (revised artwork)."
+    },
+    {
+      "clauseCode": "CORE-LBL-IMPORTER",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 2 r/w Rule 44",
+      "category": "Labelling",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The importer block is complete, but the import licence number printed on the label (IMP/MD/2021/001192) is not the MD-15 licence quoted for this device (IMP/MD/2024/004518) — it belongs to an earlier licence. The field is present but wrong — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-LBL-BILINGUAL",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 3",
+      "category": "Labelling",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The English \"For Sale in India\" statement is present, but the essential particulars are English-only on a home-use device, which the clause requires to be bilingual. An online IFU translation does not satisfy a label requirement — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-LBL-SYMBOLS",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 5 r/w ISO 15223-1:2021",
+      "category": "Labelling",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The symbols are used but there is no glossary anywhere — the clause requires their meaning to be explained in the IFU. \"Internationally recognised\" is not a legend. Present but incomplete — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-IFU",
+      "clauseRef": "MDR-2017 Third Schedule, Part II",
+      "category": "Instructions for Use",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "Nearly complete, but the adverse-event route given is the German manufacturer and a generic \"competent authority\"; there is no Indian contact for reporting complaints, which the clause requires. Present but one element missing — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "CORE-DMF",
+      "clauseRef": "MDR-2017 Fourth Schedule, Part II r/w Rule 35",
+      "category": "Device Master File",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The index is present and complete, but three of the annexes it references are not in the bundle. The clause states that every document referenced in the index must actually be present. The structure exists, the content is missing — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "BP-CUFF-PRESSURE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.12.1.101",
+      "category": "Performance Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "A report exists and the tolerance is met at room temperature, but the standard's tests at the specified environmental extremes and after temperature/humidity conditioning are absent, and traceability is asserted rather than shown. Present but incomplete — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "BP-CLINICAL-VALIDATION",
+      "clauseRef": "ISO 81060-2:2018+A1 r/w IEC 80601-2-30 cl. 201.12.1.102",
+      "category": "Performance Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "REJECT",
+      "rationale": "Every keyword is present, but the validation cited belongs to a different device (CE-7), is not enclosed, and equivalence of cuff, pneumatics and firmware is merely asserted. Evidence for the wrong entity, not attached — REJECT."
+    },
+    {
+      "clauseCode": "BP-CUFF-SIZE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.7.9.2.101 r/w MDR-2017 Third Schedule",
+      "category": "Labelling",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "No arm-circumference range for either cuff, no range index marker, and the non-validated populations are replaced by a generic \"consult a physician\". The intended population is declared, so the clause is addressed — but the numeric ranges and the explicit limitations are missing — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "BP-OVERPRESSURE",
+      "clauseRef": "IEC 80601-2-30:2018 cl. 201.12.4.103 & 201.101",
+      "category": "Safety Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "A software limit and end-of-cycle deflation are described, but there is no independent (hardware) limiter, no single-fault test, and no inflation-time limit — and the passage argues the independent means away. One of the two required protections is missing — MINOR_IMPROVEMENT."
+    }
+  ],
+  "text": "SUBMISSION DOSSIER — Digital Blood Pressure Monitor (NIBP)\nFixture: bp-monitor-distractor-heavy (synthetic evaluation dossier, assembled from annotated passages)\n\n2.1 Import licence. An application for an import licence in Form MD-15 has been submitted to the Central Licensing Authority through the authorised agent and is pending grant. The applicant undertakes to furnish the MD-15 licence number on the label and on customs documentation once the licence is issued. Import will not commence until the licence is received.\n\n2.2 Application and authorised agent. The application in Form MD-14 was submitted on 02 January 2024. The Indian authorised agent is Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, holder of wholesale licence TN/CH/2019/3312. A power of attorney in favour of the agent is being executed by the manufacturer and will be furnished on request.\n\n2.3 Free Sale Certificate. In lieu of a Free Sale Certificate from the country of origin, the manufacturer encloses a Declaration of Conformity signed by its Quality Director, together with the EC Certificate of its ISO 13485 quality system, and confirms that the FS-200 is freely sold in Germany and in over thirty other countries. The manufacturer is willing to procure a Free Sale Certificate should the licensing authority insist.\n\n3.1 Quality management system. The manufacturer holds ISO 13485:2016 certificate number DE-QMS-2019-51120 issued by TÜV SÜD Product Service GmbH for the design and manufacture of non-invasive patient monitoring equipment at Industriestrasse 12, Fürstenfeldbruck. Date of issue 12 April 2019; valid until 11 April 2022. Recertification audit has been scheduled and the renewed certificate will be forwarded to the licensing authority upon receipt.\n\n4.1 Risk management. The manufacturer confirms that risk management activities were performed for the FS-200 in accordance with ISO 14971:2019 and that a risk management report has been prepared. The FS-200 has been on the market since 2021 with no reported serious incidents, which the manufacturer considers to demonstrate that the residual risk is acceptable. The risk management file is retained at the manufacturing site and is available for inspection.\n\n5.1 Electrical safety. The FS-200 has been designed to comply with the following standards: IEC 60601-1:2005+A1+A2 (general requirements for basic safety and essential performance), IEC 60601-1-2:2014, IEC 60601-1-11:2015 and ISO 80601-2-61:2017. Compliance has been verified by the manufacturer's in-house test department in accordance with its design verification procedure DVP-07, and the applied part is classified Type BF.\n\n5.2 Electromagnetic compatibility. EMC test report TR-EMC-22891 (TÜV SÜD, 22 September 2023) demonstrates conformity with IEC 60601-1-2:2014. Emissions were tested to CISPR 11 Group 1 Class B and immunity to the levels specified for the professional healthcare facility environment. The FS-200 is intended for use by patients at home as well as in clinics. The EMC declaration tables are reproduced in the Instructions for Use.\n\n8.1 Label — manufacturer. The device label and carton artwork (Annex 8) carry the manufacturer symbol followed by \"Manufactured by: Meridian Medical GmbH, Germany\" and, beneath it, \"Distributed in India by Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002\". The full postal address of the manufacturer is stated in the Instructions for Use.\n\n8.2 Label — importer and licence. The carton artwork (Annex 8) carries: \"Imported and marketed by: Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, India\" and \"Import licence number: IMP/MD/2021/001192\". The importer's wholesale licence number TN/CH/2019/3312 also appears on the carton.\n\n8.3 Label — language. The FS-200 is intended for home use. The carton artwork (Annex 8) carries the statement \"For Sale in India\" in English. All label particulars are in English, which is the language of the Instructions for Use; a Hindi translation of the Instructions for Use is available on the importer's website. Bilingual artwork can be prepared if required by the licensing authority.\n\n8.4 Label — symbols. The device label and carton use the standard symbols for manufacturer, date of manufacture, batch code, serial number, catalogue number and \"consult instructions for use\" as shown on the artwork at Annex 8. These symbols are internationally recognised and are in use on the manufacturer's products in the EU and the USA, so no explanatory legend has been included in the Instructions for Use.\n\n9. Instructions for Use. The IFU (IFU-FS200-EN rev 5, Annex 9) is supplied in English and contains the intended use and intended user, operating instructions, contraindications, warnings and precautions, residual risks, cleaning and maintenance instructions, storage and transport conditions and the expected service life. Adverse events may be reported to the manufacturer at vigilance@meridian-medical.de or to the competent authority in the user's country.\n\n1. Device Master File — index. This Device Master File is submitted in the format of the Fourth Schedule. Table of contents: 1 executive summary; 2 device description and intended use; 3 manufacturing process; 4 list of applied standards; 5 design verification and validation data (Annex 5); 6 clinical study report (Annex 6); 7 stability data (Annex 7); 8 labelling set (Annex 8); 9 post-market surveillance plan (Annex 10). Annexes 5, 6 and 7 are held at the manufacturing site and will be made available to the licensing authority on request.\n\n6.1 Cuff pressure accuracy. The pressure transducer of the CE-9 has been verified against a reference manometer over the range 0 to 299 mmHg at 23 °C and found to be within ±3 mmHg, meeting IEC 80601-2-30. Traceability of the reference manometer: calibration certificate available. Test report GDT-2021-44122 (Guangdong Testing Institute) at Annex 11.\n\n6.2 Clinical validation. The oscillometric algorithm used in the CE-9 is the same mature algorithm platform used in the manufacturer's earlier CE-5 and CE-7 models, which have been sold in more than thirty countries since 2016 with no reported accuracy complaints. Clinical validation of the CE-7 to ISO 81060-2 was performed in 2017 (report CV-CE7-2017-01, held at the manufacturer's site, available on request). Criterion 1 and criterion 2 were met for systolic and diastolic pressure.\n\n8.7 Label and IFU — cuff and population. The CE-9 is supplied with a standard adult cuff. A large cuff is available separately. The device is intended for adult patients for home monitoring of blood pressure. Users with medical conditions should consult a physician before relying on home readings.\n\n5.5 Over-pressure protection. The CE-9 firmware limits inflation to a maximum cuff pressure of 280 mmHg and incorporates an automatic deflation function that releases cuff pressure at the end of each measurement cycle or if the measurement is aborted. Over-pressure protection was verified during firmware validation. An independent means of limiting cuff pressure is not required because the firmware is validated to IEC 62304.\n"
+}

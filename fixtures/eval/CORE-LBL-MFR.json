@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-LBL-MFR",
+    "passage": "8.1 Label — manufacturer. The device label and the outer carton artwork (Annex 8, drawings LBL-FS200-DEV-03 and LBL-FS200-CTN-03) carry the manufacturer symbol followed by: \"Manufactured by: Meridian Medical GmbH, Industriestrasse 12, 82256 Fürstenfeldbruck, Germany\". This is the address of the manufacturing site named on the ISO 13485 certificate, not a sales office.",
+    "expectedVerdict": "PASS",
+    "rationale": "Manufacturer name and the complete manufacturing site address appear on the device label and the carton, and the address is the certified site.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-LBL-MFR",
+    "passage": "The legal entity responsible for production, Meridian Medical GmbH, and the full postal location of the plant where the FS-200 is assembled — Industriestrasse 12, 82256 Fürstenfeldbruck, Germany — are printed beside the factory pictogram on both the unit marking and the retail box (drawings LBL-FS200-DEV-03 / CTN-03 at Annex 8). The location given is the certified production plant.",
+    "expectedVerdict": "PASS",
+    "rationale": "Producer identity and full plant location on unit and box, tied to the certified site — without \"manufactured by\", \"manufacturer\", \"address\" or \"label\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-LBL-MFR",
+    "passage": "8.1 Label — manufacturer. The device label and carton artwork (Annex 8) carry the manufacturer symbol followed by \"Manufactured by: Meridian Medical GmbH, Germany\" and, beneath it, \"Distributed in India by Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002\". The full postal address of the manufacturer is stated in the Instructions for Use.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The only complete address on the label belongs to the Indian distributor; the manufacturer is identified by name and country alone. The clause requires the complete manufacturing site address on the label itself — a country name is explicitly insufficient. Present but wrong — MINOR_IMPROVEMENT (revised artwork).",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

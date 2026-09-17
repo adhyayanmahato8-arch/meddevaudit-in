@@ -1,0 +1,145 @@
+{
+  "name": "nebulizer-literal-one-minor",
+  "deviceSlug": "nebulizer",
+  "description": "Literal throughout except a duty-cycle/IFU contradiction on the compressor clause. Expected overall MINOR_IMPROVEMENT.",
+  "expectedOverall": "MINOR_IMPROVEMENT",
+  "composition": [
+    {
+      "clauseCode": "CORE-MD15-LICENCE",
+      "clauseRef": "MDR-2017 Rule 36 r/w Form MD-15",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "MD-15 licence number, issuing authority, issue date and validity are all stated, and the number is tied to the label and customs paperwork — every element of the clause is met."
+    },
+    {
+      "clauseCode": "CORE-MD14-AGENT",
+      "clauseRef": "MDR-2017 Rule 35 r/w Form MD-14",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Form MD-14, a named agent with a complete Indian address and wholesale licence, and the notarised power of attorney are all present."
+    },
+    {
+      "clauseCode": "CORE-FSC",
+      "clauseRef": "MDR-2017 Rule 35(2) r/w Fourth Schedule, Part II",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Certificate issued by the national regulatory authority of the country of origin, names the device, dated, valid, attached — fully compliant."
+    },
+    {
+      "clauseCode": "CORE-ISO13485",
+      "clauseRef": "MDR-2017 Fifth Schedule r/w ISO 13485:2016",
+      "category": "Quality Management",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Standard and year, certification body, certificate number, scope covering the device, site address and expiry date are all stated and the certificate is current."
+    },
+    {
+      "clauseCode": "CORE-ISO14971",
+      "clauseRef": "MDR-2017 First Schedule, Part I r/w ISO 14971:2019",
+      "category": "Risk Management",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "The complete risk management file is enumerated — plan, hazard analysis, controls with verification, residual risk evaluation and a signed report with the acceptability conclusion."
+    },
+    {
+      "clauseCode": "CORE-IEC60601-1",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1:2005+A1+A2",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Base standard with edition, accredited laboratory, report number, applied-part type and explicit pass conclusion — complete."
+    },
+    {
+      "clauseCode": "CORE-EMC",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1-2:2014+A1",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Report number, emission and immunity coverage, declared environment and the IFU declaration tables are all present."
+    },
+    {
+      "clauseCode": "CORE-LBL-MFR",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 1",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Manufacturer name and the complete manufacturing site address appear on the device label and the carton, and the address is the certified site."
+    },
+    {
+      "clauseCode": "CORE-LBL-IMPORTER",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 2 r/w Rule 44",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Importer name and Indian address and the import licence number are on the label, and the number matches the licence in the dossier."
+    },
+    {
+      "clauseCode": "CORE-LBL-BILINGUAL",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 3",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "\"For Sale in India\" is present, and the essential particulars are bilingual Hindi/English for a home-use device — fully met."
+    },
+    {
+      "clauseCode": "CORE-LBL-SYMBOLS",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 5 r/w ISO 15223-1:2021",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "ISO 15223-1 conformity, an explicit glossary in the IFU, and the symbols actually used — all present."
+    },
+    {
+      "clauseCode": "CORE-IFU",
+      "clauseRef": "MDR-2017 Third Schedule, Part II",
+      "category": "Instructions for Use",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Every mandatory content element is enumerated, including the India adverse-event contact."
+    },
+    {
+      "clauseCode": "CORE-DMF",
+      "clauseRef": "MDR-2017 Fourth Schedule, Part II r/w Rule 35",
+      "category": "Device Master File",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Fourth Schedule format, an internal index, every required section listed, and confirmation that each referenced document is actually in the bundle."
+    },
+    {
+      "clauseCode": "NEB-AEROSOL",
+      "clauseRef": "EN 13544-1:2007+A1 Annex CC",
+      "category": "Performance Testing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Impactor method, output and output rate, MMAD, GSD, respirable fraction, and the fill/medication/flow conditions — complete."
+    },
+    {
+      "clauseCode": "NEB-COMPRESSOR",
+      "clauseRef": "ISO 27427:2013 r/w IEC 60601-1 cl. 9 & cl. 15 and EN 13544-1 cl. 7",
+      "category": "Safety Testing",
+      "wordingRelationship": "NOT_SATISFIED_DISTRACTOR",
+      "expectedVerdict": "MINOR_IMPROVEMENT",
+      "rationale": "The safety evidence is largely present, but the declared 30/30 duty cycle contradicts the 60-minute continuous sessions the IFU recommends — exactly the contradiction the guidance warns about. Present but internally inconsistent — MINOR_IMPROVEMENT."
+    },
+    {
+      "clauseCode": "NEB-REPROCESSING",
+      "clauseRef": "ISO 17664-2:2021 r/w MDR-2017 Third Schedule, Part II",
+      "category": "Reprocessing",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "Method, agents and concentrations, validated cycle count, per-accessory service life and discard point, single- versus multi-patient use — complete."
+    },
+    {
+      "clauseCode": "NEB-GASPATH-BIOCOMPAT",
+      "clauseRef": "ISO 18562 series r/w ISO 10993-1:2018",
+      "category": "Biocompatibility",
+      "wordingRelationship": "SATISFIED_LITERAL",
+      "expectedVerdict": "PASS",
+      "rationale": "All three 18562 endpoints with results, the 10993 surface evaluation, and a materials inventory of the gas pathway — complete."
+    }
+  ],
+  "text": "SUBMISSION DOSSIER — Nebulizer\nFixture: nebulizer-literal-one-minor (synthetic evaluation dossier, assembled from annotated passages)\n\n2.1 Import licence. The device is imported under import licence Form MD-15 number IMP/MD/2024/004518, granted by the Central Licensing Authority, CDSCO, on 14 March 2024 and valid until 13 March 2029. A copy of the licence is placed at Annex 2. The licence number is reproduced verbatim on the carton label (Annex 8) and on the Bill of Entry used for customs clearance, so that the three documents can be reconciled at the port.\n\n2.2 Application and authorised agent. The application was made in Form MD-14 dated 02 January 2024 by Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, Tamil Nadu, India, holder of wholesale licence 20B/21B No. TN/CH/2019/3312, acting as the Indian authorised agent of Meridian Medical GmbH. The notarised power of attorney dated 18 December 2023 by which Meridian Medical GmbH appoints Sundaram Healthcare Distributors Pvt Ltd for the purposes of Rule 35 is at Annex 3.\n\n2.3 Free Sale Certificate. A Free Sale Certificate for the FS-200 Fingertip Pulse Oximeter was issued by the Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM), the national regulatory authority of Germany, the country of origin, under certificate number 2023/FSC/88214 dated 05 November 2023, confirming that the device is freely sold in Germany. The certificate is valid for two years and is placed at Annex 4 with an apostille.\n\n3.1 Quality management system. The manufacturing site at Industriestrasse 12, 82256 Fürstenfeldbruck, Germany, holds ISO 13485:2016 certificate number DE-QMS-2022-77413 issued by TÜV SÜD Product Service GmbH. Scope of certification: design, development and manufacture of non-invasive patient monitoring equipment including pulse oximeters. Date of issue 11 April 2022; valid until 10 April 2026. The certificate and the most recent surveillance audit report (October 2024) are at Annex 5.\n\n4.1 Risk management. Risk management has been carried out in accordance with ISO 14971:2019 across the device lifecycle. The risk management file at Annex 6 comprises the risk management plan RMP-FS200-01, the hazard identification and risk analysis worksheet (design FMEA, 64 identified hazards), the risk evaluation and risk control table with verification of effectiveness for each control, the residual risk evaluation, and the signed risk management report RMR-FS200-03, which concludes that the overall residual risk is acceptable in relation to the clinical benefit.\n\n5.1 Electrical safety. Conformity with IEC 60601-1:2005 + A1:2012 + A2:2020 (general requirements for basic safety and essential performance) is demonstrated by test report number TR-60601-1-22884 issued by TÜV SÜD Product Service GmbH, an ILAC-MRA accredited test laboratory, dated 19 September 2023. The applied part is classified Type BF. The report covers dielectric strength, leakage currents in normal and single-fault condition, mechanical strength and marking, and concludes PASS on all applicable clauses. Full report at Annex 7.\n\n5.2 Electromagnetic compatibility. Conformity with IEC 60601-1-2:2014 + A1:2020 is demonstrated by EMC test report number TR-EMC-22891 (TÜV SÜD Product Service GmbH, 22 September 2023). Emissions were tested to CISPR 11 Group 1 Class B. Immunity was tested at the levels specified for the home healthcare environment, including ESD ±8 kV contact / ±15 kV air, radiated RF 10 V/m, and proximity fields from wireless communications equipment. The declared electromagnetic environment is home healthcare. The manufacturer's EMC declaration tables are reproduced in section 8 of the Instructions for Use. Report at Annex 7.\n\n8.1 Label — manufacturer. The device label and the outer carton artwork (Annex 8, drawings LBL-FS200-DEV-03 and LBL-FS200-CTN-03) carry the manufacturer symbol followed by: \"Manufactured by: Meridian Medical GmbH, Industriestrasse 12, 82256 Fürstenfeldbruck, Germany\". This is the address of the manufacturing site named on the ISO 13485 certificate, not a sales office.\n\n8.2 Label — importer and licence. The carton artwork (Annex 8) carries, in addition to the manufacturer block: \"Imported and marketed by: Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, India\" and \"Import licence number: IMP/MD/2024/004518\". The licence number matches the MD-15 licence at Annex 2.\n\n8.3 Label — language. The FS-200 is intended for home use. The carton artwork (Annex 8) carries the statement \"For Sale in India\" in English with the Hindi (Devanagari) rendering \"भारत में बिक्री के लिए\" immediately below it, and the essential particulars — device name, intended use, manufacturer and importer — are presented bilingually in Hindi and English in the same panel.\n\n8.4 Label — symbols. Symbols used on the artwork conform to ISO 15223-1:2021. The symbol glossary reproduced in section 1 of the Instructions for Use lists each symbol with its meaning: manufacturer, date of manufacture, batch code (LOT), serial number (SN), catalogue number (REF), consult instructions for use, Type BF applied part, temperature and humidity limits, and \"keep dry\". Annex 8 marks the position of each symbol on the device label and carton.\n\n9. Instructions for Use. The IFU (document IFU-FS200-EN rev 6, Annex 9) is supplied in English with every unit and contains: intended use and intended user; indications for use; step-by-step operating instructions; contraindications; warnings, cautions and precautions; the residual risks communicated to the user; cleaning and maintenance instructions; storage and transport conditions (−20 to +60 °C, 10 to 93 % RH); expected service life of five years; and the contact details for reporting an adverse event or complaint in India (Materiovigilance cell, Sundaram Healthcare Distributors Pvt Ltd, vigilance@sundaramhealth.in, +91 44 4000 1200).\n\n1. Device Master File — index. This Device Master File is submitted in the format of the Fourth Schedule, Part II. Table of contents: 1 executive summary; 2 device description and intended use; 3 manufacturing process and site details; 4 list of applied standards; 5 design verification and validation data; 6 clinical accuracy study; 7 stability and shelf-life data; 8 labelling and packaging set; 9 Instructions for Use; 10 post-market surveillance plan and vigilance procedure. Each numbered section is present in this bundle and every annex referenced in the sections is attached (Annexes 1–12).\n\n6.1 Aerosol performance. Aerosol characterisation per EN 13544-1:2007+A1 Annex CC (Inhalation Sciences, Stockholm, report AER-NB30-2023-04, Annex 11) using a Next Generation cascade impactor at 15 L/min: aerosol output 1.18 mL, aerosol output rate 0.26 mL/min, mass median aerodynamic diameter (MMAD) 3.8 µm, geometric standard deviation 2.1, respirable fraction (below 5 µm) 68 %. Test medication 0.9 % sodium chloride with 2.5 mL fill volume; results are valid for those conditions only.\n\n5.7 Compressor safety. The NB-30 compressor has been designed for continuous home use and conforms to IEC 60601-1 (report TR-60601-1-60402, SGS, Annex 7). Sound pressure level: 52 dB(A). Moving parts are fully enclosed. The compressor motor is rated for a duty cycle of 30 min on / 30 min off and is protected by a thermal cut-out; the Instructions for Use recommend continuous nebulisation sessions of up to 60 minutes for chronic patients.\n\n9.2 Reprocessing. Validated reprocessing instructions per ISO 17664-2:2021 for the nebulizer chamber, mask, mouthpiece and tubing (validation report RP-NB30-2023-01, Annex 13): cleaning by manual wash in warm water with mild detergent, disinfection by boiling for 10 minutes or immersion in 0.5 % chlorhexidine for 30 minutes; validated for 60 reprocessing cycles for the chamber and mouthpiece and 30 cycles for the mask; service life 6 months for the chamber and mask, 12 months for the tubing, after which the accessory is to be discarded. The chamber and mask are single-patient use; the compressor may be used for multiple patients with a new accessory set per patient.\n\n7.3 Gas pathway biocompatibility. The breathing gas pathway (compressor outlet filter, tubing, chamber, mouthpiece, mask) was evaluated per the ISO 18562 series (report GP-NB30-2023-02, Annex 12B): particulate matter emission (ISO 18562-2) PM2.5 and PM10 below limits; volatile organic compound emission (ISO 18562-3) total VOC 0.08 µg/min, below the tolerable exposure; leachables in condensate (ISO 18562-4) below analytical thresholds. Mask and mouthpiece materials (silicone, polypropylene) were additionally evaluated for surface contact per ISO 10993-1 (Annex 12A). Every material in the gas pathway is identified in table 7.3.1.\n"
+}

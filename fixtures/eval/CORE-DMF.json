@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-DMF",
+    "passage": "1. Device Master File — index. This Device Master File is submitted in the format of the Fourth Schedule, Part II. Table of contents: 1 executive summary; 2 device description and intended use; 3 manufacturing process and site details; 4 list of applied standards; 5 design verification and validation data; 6 clinical accuracy study; 7 stability and shelf-life data; 8 labelling and packaging set; 9 Instructions for Use; 10 post-market surveillance plan and vigilance procedure. Each numbered section is present in this bundle and every annex referenced in the sections is attached (Annexes 1–12).",
+    "expectedVerdict": "PASS",
+    "rationale": "Fourth Schedule format, an internal index, every required section listed, and confirmation that each referenced document is actually in the bundle.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-DMF",
+    "passage": "The technical dossier is organised in the sequence prescribed by the Rules, with a numbered list of its contents on the first page: an overview of the product and what it is for; how and where it is made; the standards applied; the bench and clinical evidence that it performs as claimed; how long it keeps; the artwork set and user manual; and how the manufacturer will watch the product after sale and report problems. All twelve annexes cited in the body are enclosed; none is \"available on request\".",
+    "expectedVerdict": "PASS",
+    "rationale": "Prescribed format, a contents list, every required section, and all referenced annexes enclosed — without \"Device Master File\", \"index\", \"table of contents\", \"post-market surveillance\" or \"vigilance\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-DMF",
+    "passage": "1. Device Master File — index. This Device Master File is submitted in the format of the Fourth Schedule. Table of contents: 1 executive summary; 2 device description and intended use; 3 manufacturing process; 4 list of applied standards; 5 design verification and validation data (Annex 5); 6 clinical study report (Annex 6); 7 stability data (Annex 7); 8 labelling set (Annex 8); 9 post-market surveillance plan (Annex 10). Annexes 5, 6 and 7 are held at the manufacturing site and will be made available to the licensing authority on request.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The index is present and complete, but three of the annexes it references are not in the bundle. The clause states that every document referenced in the index must actually be present. The structure exists, the content is missing — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

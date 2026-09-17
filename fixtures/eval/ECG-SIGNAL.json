@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "ECG-SIGNAL",
+    "passage": "6.1 Signal performance. Test report TR-60601-2-25-50318 (Nemko, Oslo, ILAC-accredited, 27 June 2023) to IEC 60601-2-25:2011 covers the EC-12R diagnostic electrocardiograph: amplitude accuracy ±3 %, time-base accuracy ±1 %, frequency response 0.05–150 Hz (−3 dB), impulse response overshoot <0.1 mV, input impedance >10 MΩ at 10 Hz, common-mode rejection >100 dB, system noise referred to input <30 µV p-p, tall-T-wave rejection and pacemaker-pulse rejection per clause 201.12.4.107, baseline wander and drift within limits. Each test is reported with a PASS conclusion. Report at Annex 11.",
+    "expectedVerdict": "PASS",
+    "rationale": "Report number, accredited laboratory, every listed signal-chain test with result, and per-test pass conclusions — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "ECG-SIGNAL",
+    "passage": "Annex 11 is Nemko's verification (50318, June 2023) of the EC-12R against the particular standard for diagnostic electrocardiographs. Signal size is reproduced within 3 % and timing within 1 %; the pass-band runs from 0.05 to 150 Hz; a step input rings by under 0.1 mV; the front end presents more than 10 megohms to the patient and suppresses signals common to both electrodes by over 100 dB; its own hiss is below 30 microvolts peak-to-peak; a large T-wave does not upset the R-wave detector and pacing spikes are rejected; and the trace stays on the paper without wandering. Every item is marked as conforming.",
+    "expectedVerdict": "PASS",
+    "rationale": "All tests described with values — without \"IEC 60601-2-25\", \"frequency response\", \"input impedance\", \"common mode rejection\", \"CMRR\", \"noise\", \"baseline\", \"drift\" or \"test report\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "ECG-SIGNAL",
+    "passage": "6.1 Signal performance. The EC-12R ECG signal chain has been tested to IEC 60601-2-27:2011 (ECG monitoring equipment): frequency response 0.67–40 Hz, input impedance >5 MΩ, common mode rejection >90 dB, noise <50 µV p-p, baseline drift within limits. Test report TR-60601-2-27-50319 (Nemko, Annex 11), all tests PASS. The EC-12R is marketed as a 12-lead resting electrocardiograph for diagnostic use.",
+    "expectedVerdict": "REJECT",
+    "rationale": "A genuine report — to the wrong standard. IEC 60601-2-27 (monitoring ECG, 40 Hz bandwidth) is not a substitute for 60601-2-25 (diagnostic ECG, 150 Hz). For a device sold for diagnostic use this is evidence for the wrong requirement — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

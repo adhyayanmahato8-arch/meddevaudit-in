@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-LBL-SYMBOLS",
+    "passage": "8.4 Label — symbols. Symbols used on the artwork conform to ISO 15223-1:2021. The symbol glossary reproduced in section 1 of the Instructions for Use lists each symbol with its meaning: manufacturer, date of manufacture, batch code (LOT), serial number (SN), catalogue number (REF), consult instructions for use, Type BF applied part, temperature and humidity limits, and \"keep dry\". Annex 8 marks the position of each symbol on the device label and carton.",
+    "expectedVerdict": "PASS",
+    "rationale": "ISO 15223-1 conformity, an explicit glossary in the IFU, and the symbols actually used — all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-LBL-SYMBOLS",
+    "passage": "Wherever a pictogram replaces text on the packaging, the harmonised medical-device graphical symbols standard has been followed, and a key explaining every pictogram — factory, calendar-with-date, LOT, SN, REF, the book-with-\"i\", the body-floating applied-part mark, the thermometer and droplet limits, and the umbrella — is printed as the first section of the user manual. Annex 8 shows where each pictogram sits on the unit and the box.",
+    "expectedVerdict": "PASS",
+    "rationale": "Harmonised-symbol conformity, an explanatory key in the manual, and the specific symbols — described without \"ISO 15223\", \"symbol\", \"batch\", \"serial number\" or \"date of manufacture\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-LBL-SYMBOLS",
+    "passage": "8.4 Label — symbols. The device label and carton use the standard symbols for manufacturer, date of manufacture, batch code, serial number, catalogue number and \"consult instructions for use\" as shown on the artwork at Annex 8. These symbols are internationally recognised and are in use on the manufacturer's products in the EU and the USA, so no explanatory legend has been included in the Instructions for Use.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The symbols are used but there is no glossary anywhere — the clause requires their meaning to be explained in the IFU. \"Internationally recognised\" is not a legend. Present but incomplete — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

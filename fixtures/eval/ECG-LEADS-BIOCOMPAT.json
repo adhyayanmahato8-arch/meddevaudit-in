@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "ECG-LEADS-BIOCOMPAT",
+    "passage": "7.2 Patient cable and electrodes. The 10-lead patient cable, lead wires and reusable limb-clamp electrodes are surface-contacting parts evaluated per ISO 10993-1:2018 (biological evaluation report BER-EC12R-01, Annex 12): cytotoxicity (ISO 10993-5) non-cytotoxic; irritation (ISO 10993-23) non-irritant; sensitisation (ISO 10993-10) non-sensitiser. Lead identification follows the IEC colour code (R red, L yellow, F green, N black, C1–C6 white with coloured rings) consistently on the cable connectors, the device rear panel and IFU section 4. Lead connectors are 4 mm shrouded and protected against inadvertent connection to mains.",
+    "expectedVerdict": "PASS",
+    "rationale": "Biological evaluation with all three endpoints, a single colour convention applied consistently across cable, device and IFU, and protected connectors — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "ECG-LEADS-BIOCOMPAT",
+    "passage": "Annex 12 reports the biological safety testing of everything that touches the patient — the trunk cable, the ten wires and the reusable limb clamps: no cell toxicity, no skin reaction, no allergic response. The wires are colour-marked in the European scheme — red right arm, yellow left arm, green left leg, black right leg, white chest wires with coloured collars — and exactly the same scheme is printed on the socket panel and in section 4 of the manual. The wire plugs are shrouded so they cannot be pushed into a mains socket.",
+    "expectedVerdict": "PASS",
+    "rationale": "Biological testing, three endpoints, single scheme applied to cable/device/IFU, mains-protected plugs — without \"ISO 10993\", \"biocompatibility\", \"biological evaluation\", \"lead wire\", \"electrode\", \"patient cable\", \"colour code\" or \"IEC convention\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "ECG-LEADS-BIOCOMPAT",
+    "passage": "7.2 Patient cable and electrodes. The patient cable, lead wires and electrodes are evaluated per ISO 10993-1 (BER-EC12R-01, Annex 12: cytotoxicity, irritation and sensitisation all acceptable). Lead identification: the patient cable supplied uses the AHA colour code (RA white, LA black, LL red, RL green, V1–V6 brown), while the device rear panel and IFU section 4 show the IEC colour code (R red, L yellow, F green, N black). Lead connectors are 4 mm shrouded.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "Biocompatibility is fine, but the cable is coded AHA while the device and IFU are coded IEC — the clause requires one convention applied consistently. Present but inconsistent, a real clinical-use hazard — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

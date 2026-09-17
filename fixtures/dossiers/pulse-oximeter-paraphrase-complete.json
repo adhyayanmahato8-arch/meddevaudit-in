@@ -1,0 +1,145 @@
+{
+  "name": "pulse-oximeter-paraphrase-complete",
+  "deviceSlug": "pulse-oximeter",
+  "description": "Every clause genuinely satisfied, but in deliberately disjoint wording. The recall test for paraphrase: a purely lexical matcher will under-call this dossier.",
+  "expectedOverall": "PASS",
+  "composition": [
+    {
+      "clauseCode": "CORE-MD15-LICENCE",
+      "clauseRef": "MDR-2017 Rule 36 r/w Form MD-15",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "The import permission, its reference, issuing body, date and validity are all present, and the reference is cross-tied to the label and customs entry. Phrased without \"MD-15\", \"import licence\" or \"licence number\"."
+    },
+    {
+      "clauseCode": "CORE-MD14-AGENT",
+      "clauseRef": "MDR-2017 Rule 35 r/w Form MD-14",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "An appointed Indian representative with address and licence, the notarised appointment instrument, and the application form are all present — the same three elements, without \"MD-14\", \"authorised agent\" or \"power of attorney\"."
+    },
+    {
+      "clauseCode": "CORE-FSC",
+      "clauseRef": "MDR-2017 Rule 35(2) r/w Fourth Schedule, Part II",
+      "category": "Licensing & Registration",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "A regulator-issued confirmation of lawful marketing in the country of origin, naming the device, dated and current — the substance of a Free Sale Certificate without the phrase \"Free Sale Certificate\" or \"country of origin\"."
+    },
+    {
+      "clauseCode": "CORE-ISO13485",
+      "clauseRef": "MDR-2017 Fifth Schedule r/w ISO 13485:2016",
+      "category": "Quality Management",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same substance — body, registration reference, scope covering the device, site, in-force date — with \"remains in force until\" and \"registration\" instead of \"valid until\" and \"certificate number\"."
+    },
+    {
+      "clauseCode": "CORE-ISO14971",
+      "clauseRef": "MDR-2017 First Schedule, Part I r/w ISO 14971:2019",
+      "category": "Risk Management",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Plan, hazard identification, controls with verification, residual-risk evaluation and signed acceptability conclusion are all described — without \"ISO 14971\", \"risk management\", \"FMEA\" or \"residual risk\"."
+    },
+    {
+      "clauseCode": "CORE-IEC60601-1",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1:2005+A1+A2",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same content with \"general medical electrical safety standard (third edition…)\" rather than \"IEC 60601-1\", \"type-test certificate\" for \"test report\", \"found to conform\" for \"pass\"."
+    },
+    {
+      "clauseCode": "CORE-EMC",
+      "clauseRef": "MDR-2017 First Schedule, Part II r/w IEC 60601-1-2:2014+A1",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Covers emissions, immunity levels, the home-healthcare environment and the IFU tables without \"IEC 60601-1-2\", \"EMC\", \"emission\", \"immunity\" or \"test report\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-MFR",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 1",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Producer identity and full plant location on unit and box, tied to the certified site — without \"manufactured by\", \"manufacturer\", \"address\" or \"label\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-IMPORTER",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 2 r/w Rule 44",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Importer identity, Indian address and licence reference on the box, reconciled to the grant — without \"imported by\", \"importer\", \"import licence number\" or \"label\"."
+    },
+    {
+      "clauseCode": "CORE-LBL-BILINGUAL",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 3",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Bilingual Indian-market declaration and bilingual particulars on a consumer product, described without \"For Sale in India\", \"Hindi\" or \"bilingual\" in the English text."
+    },
+    {
+      "clauseCode": "CORE-LBL-SYMBOLS",
+      "clauseRef": "MDR-2017 Third Schedule, Part I, cl. 5 r/w ISO 15223-1:2021",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Harmonised-symbol conformity, an explanatory key in the manual, and the specific symbols — described without \"ISO 15223\", \"symbol\", \"batch\", \"serial number\" or \"date of manufacture\"."
+    },
+    {
+      "clauseCode": "CORE-IFU",
+      "clauseRef": "MDR-2017 Third Schedule, Part II",
+      "category": "Instructions for Use",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Every required element is present in plain language: purpose/user, operation, contraindications, warnings, residual risks, cleaning, storage/transport, service life, India complaint route — without \"instructions for use\", \"intended use\", \"contraindication\", \"warning\" or \"storage\"."
+    },
+    {
+      "clauseCode": "CORE-DMF",
+      "clauseRef": "MDR-2017 Fourth Schedule, Part II r/w Rule 35",
+      "category": "Device Master File",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Prescribed format, a contents list, every required section, and all referenced annexes enclosed — without \"Device Master File\", \"index\", \"table of contents\", \"post-market surveillance\" or \"vigilance\"."
+    },
+    {
+      "clauseCode": "OXI-SPO2-ACCURACY",
+      "clauseRef": "ISO 80601-2-61:2017 cl. 201.12.1.101",
+      "category": "Performance Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Human hypoxia trial, blood-gas reference, RMS error (= ARMS) with value and range, n and pairs, pigmentation, agreement analysis — without \"ISO 80601-2-61\", \"ARMS\", \"desaturation study\", \"CO-oximeter\" or \"volunteers\"."
+    },
+    {
+      "clauseCode": "OXI-LBL-ACCURACY",
+      "clauseRef": "ISO 80601-2-61:2017 cl. 201.12.1.102 r/w cl. 201.7.4.101",
+      "category": "Labelling",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "All disclosures present — without \"ARMS\", \"accuracy\", \"pulse rate\", \"bpm\", \"wavelength\", \"probe\" or \"compatible sensor\"."
+    },
+    {
+      "clauseCode": "OXI-ALARM",
+      "clauseRef": "IEC 60601-1-8:2006+A1+A2 r/w ISO 80601-2-61 cl. 201.12.3",
+      "category": "Safety Testing",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "Same evidence in plain words — without \"IEC 60601-1-8\", \"alarm system\", \"alarm limit\", \"alarm priority\", \"high/medium priority\", \"audible\", \"visual\" or \"alarm signal\"."
+    },
+    {
+      "clauseCode": "OXI-SOFTWARE",
+      "clauseRef": "IEC 62304:2006+A1:2015 r/w MDR-2017 First Schedule, Part I cl. 17",
+      "category": "Software Lifecycle",
+      "wordingRelationship": "SATISFIED_PARAPHRASE",
+      "expectedVerdict": "PASS",
+      "rationale": "All elements described — without \"IEC 62304\", \"software safety classification\", \"Class B\", \"verification\", \"validation\", \"SOUP\" or \"anomaly\"."
+    }
+  ],
+  "text": "SUBMISSION DOSSIER — Pulse Oximeter\nFixture: pulse-oximeter-paraphrase-complete (synthetic evaluation dossier, assembled from annotated passages)\n\nRegulatory permission to bring the product into India was granted by the national licensing body on 14 March 2024 under reference IMP/MD/2024/004518 and remains in force for five years from that date. The same reference appears on the outer carton artwork and on the customs entry, and the signed grant letter is included as Annex 2.\n\nThe submission to CDSCO was lodged by the manufacturer's appointed representative in India, Sundaram Healthcare Distributors Pvt Ltd of 41 Anna Salai, Chennai 600002, which holds a current wholesale drugs licence (TN/CH/2019/3312). The instrument appointing that firm to act for Meridian Medical GmbH before the Indian regulator was executed before a notary in Munich on 18 December 2023 and is reproduced at Annex 3, together with the completed application form itself.\n\nConfirmation that the FS-200 may be lawfully placed on the German market was obtained from BfArM, the federal medicines and medical devices regulator, on 05 November 2023 (their reference 2023/FSC/88214). The apostilled original of this regulator-issued confirmation is at Annex 4; it remains current until November 2025.\n\nThe quality management certificate issued to the Fürstenfeldbruck plant by the notified body TÜV SÜD under EN ISO 13485 remains in force until 31 March 2028 (registration Q1 20 22 77413 R1). Its scope covers the design and production of non-invasive physiological monitors, which encompasses the FS-200. The current registration document and the report of the last surveillance visit are reproduced at Annex 5.\n\nAnnex 6 sets out how foreseeable harms from the FS-200 were identified, weighed and reduced. Sixty-four hazardous situations were catalogued from a design failure-mode study; for each, the mitigating design feature is named and the test that proves it works is cross-referenced. The remaining, unmitigated exposure was assessed against the clinical benefit and judged tolerable in a report signed by the Head of Regulatory Affairs on 3 February 2024. The governing procedure, its scope and the acceptance criteria are laid down in a plan approved before the analysis began.\n\nAnnex 7 contains the third-party type-test certificate for the general medical electrical safety standard (third edition with both amendments), reference TR-60601-1-22884, issued 19 September 2023 by TÜV SÜD's laboratory in Munich, which is accredited under the international laboratory accreditation arrangement. The patient-connected part is rated body-floating (BF). All applicable requirements — insulation withstand, earth and patient leakage under normal and fault conditions, mechanical and marking checks — were found to conform.\n\nAnnex 7 also holds the report on electromagnetic disturbance (reference TR-EMC-22891, TÜV SÜD, 22 September 2023). The device's own radio-frequency output was measured against the Group 1 Class B limits, and its resistance to external interference — electrostatic discharge at ±8 kV contact and ±15 kV air, radiated fields at 10 V/m, and the near-field test for handheld transmitters — was verified at the higher levels the collateral standard prescribes for equipment used in the home. The user manual reproduces the manufacturer's guidance tables on the electromagnetic environment in section 8.\n\nThe legal entity responsible for production, Meridian Medical GmbH, and the full postal location of the plant where the FS-200 is assembled — Industriestrasse 12, 82256 Fürstenfeldbruck, Germany — are printed beside the factory pictogram on both the unit marking and the retail box (drawings LBL-FS200-DEV-03 / CTN-03 at Annex 8). The location given is the certified production plant.\n\nBeneath the producer's details, the retail box shows the Indian firm that brings the product into the country and sells it — Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002 — together with the CDSCO permission reference IMP/MD/2024/004518, which is the same reference as on the grant at Annex 2.\n\nBecause the product is sold to consumers, the retail box carries the Indian-market declaration in both scripts — the English wording and its Devanagari equivalent \"भारत में बिक्री के लिए\" set one above the other — and the principal particulars (product name, purpose, producer, importer) are repeated in Devanagari alongside the English text on the same face of the carton (Annex 8, panel C).\n\nWherever a pictogram replaces text on the packaging, the harmonised medical-device graphical symbols standard has been followed, and a key explaining every pictogram — factory, calendar-with-date, LOT, SN, REF, the book-with-\"i\", the body-floating applied-part mark, the thermometer and droplet limits, and the umbrella — is printed as the first section of the user manual. Annex 8 shows where each pictogram sits on the unit and the box.\n\nAn English-language user manual (IFU-FS200-EN rev 6, Annex 9) accompanies each device. It explains what the product is for and who should use it; how to take a reading, step by step; the situations in which it must not be used; the hazards to guard against and the harms that cannot be fully designed out; how to clean and look after it; the temperature and humidity it may be kept and shipped in; how many years it is expected to last; and whom to contact in India — by e-mail or telephone — if something goes wrong or a complaint needs to be made.\n\nThe technical dossier is organised in the sequence prescribed by the Rules, with a numbered list of its contents on the first page: an overview of the product and what it is for; how and where it is made; the standards applied; the bench and clinical evidence that it performs as claimed; how long it keeps; the artwork set and user manual; and how the manufacturer will watch the product after sale and report problems. All twelve annexes cited in the body are enclosed; none is \"available on request\".\n\nAnnex 6 reports the human hypoxia trial run at the UCSF laboratory in which twelve healthy adults — four each of dark, medium and light skin tone — were brought stepwise down to 70 % oxygen saturation while arterial blood samples were analysed on a Radiometer ABL90. Across 216 paired readings the device's root-mean-square error against the blood-gas reference was 1.9 %. The agreement plot at Annex 6A shows a mean offset of −0.3 % with 95 % limits from −4.1 to +3.5 %.\n\nSection 9 of the manual and the carton disclose the device's performance figures: a root-mean-square error of 1.9 % for oxygen saturation between 70 and 100 %; heart-rate readings from 30 to 250 per minute within ±2; light sources at 660 and 905 nanometres emitting under 15 milliwatts; and the two finger sensors — FS-ADT-01 for adults, FS-PED-01 for children — that were used in validation and are the only ones approved for use. The manual explains that the 1.9 % figure describes population-level performance, not the error of any single measurement.\n\nThe monitor warns the user when saturation falls too low (top urgency), when the heart rate leaves the set band (intermediate urgency), and when the battery is low or the finger clip has come off (lowest urgency). Annex 7C is the independent laboratory's verification (TÜV SÜD, reference TR-ALM-22903) against the collateral standard for medical warning systems: the tone patterns and loudness, the lamp colours and flash rates, the range and factory settings of the adjustable limits, the indicators shown when warnings are switched off or muted, and the lag between the event and the warning (under ten seconds) were all confirmed.\n\nAnnex 10 documents how the firmware was engineered under the medical device software process standard. Because a fault could delay or distort the displayed saturation and thereby cause minor harm, the firmware is placed in the middle of the three safety tiers, and that placement is argued in writing. The set includes the engineering plan, the numbered list of what the code must do (revision 4), the structural design, the records of testing each module and the assembled whole, the final confirmation report, the register of open defects with an explanation of why each is tolerable, and the inventory of third-party components (FreeRTOS 10.4.3, CMSIS-DSP 1.9.0) with the hazards each might introduce.\n"
+}

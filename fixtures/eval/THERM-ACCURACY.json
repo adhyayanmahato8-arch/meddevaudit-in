@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "THERM-ACCURACY",
+    "passage": "6.1 Performance. Test report TR-80601-2-56-31177 (SGS Fimko, Helsinki, ILAC-accredited, 8 May 2023) to IEC 80601-2-56:2017+A1 covers the DT-10 clinical thermometer. Laboratory accuracy in a stirred water bath was ±0.1 °C across the measurement range 35.0 to 42.0 °C and ±0.2 °C from 32.0 to 34.9 °C and 42.1 to 43.0 °C. Response time to within 0.1 °C of final reading: 8 s (predictive mode). Clinical accuracy study (n = 112, axillary site, reference: calibrated mercury-in-glass): clinical bias −0.04 °C, limits of agreement −0.28 to +0.20 °C, clinical repeatability 0.09 °C. Report at Annex 11.",
+    "expectedVerdict": "PASS",
+    "rationale": "Report number and accredited laboratory, laboratory accuracy over the declared range, the range itself, response time, and clinical bias and limits of agreement from a human study — every element is present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "THERM-ACCURACY",
+    "passage": "Annex 11 holds the independent laboratory's verification of the DT-10 against the particular standard for clinical electrical thermometers (SGS Fimko, reference 31177, May 2023). In a stirred bath the instrument read within one-tenth of a degree of the reference across the fever band (35.0–42.0 °C) and within two-tenths at the extremes down to 32.0 and up to 43.0 °C; a stable predictive reading was reached in eight seconds. In 112 patients measured under the arm against a calibrated glass reference, the mean offset was −0.04 °C with 95 % of paired differences lying between −0.28 and +0.20 °C.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same evidence — accredited report, lab accuracy and range, response time, clinical bias and limits of agreement — without \"IEC 80601-2-56\", \"accuracy\", \"±0.1\", \"test report\" or \"clinical accuracy\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "THERM-ACCURACY",
+    "passage": "6.1 Performance. The DT-10 has been tested to IEC 80601-2-56:2017 for clinical thermometer accuracy. Laboratory accuracy: ±0.1 °C over the measurement range 35.0 to 42.0 °C, ±0.2 °C outside that range; response time 8 s. Test report TR-80601-2-56-31177 at Annex 11. Clinical accuracy has been established by the manufacturer's use of a temperature-simulating calibration block (Fluke 9142) across the range, which reproduces patient conditions.",
+    "expectedVerdict": "REJECT",
+    "rationale": "The laboratory accuracy is real, but the clinical bias and limits of agreement that the standard requires from human subjects have been replaced by a calibration-block bench test. Bench data substituted for the clinical evidence the clause demands — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

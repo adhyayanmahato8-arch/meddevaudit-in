@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "THERM-BATTERY",
+    "passage": "5.3 Internal power source. The DT-10 is internally powered by one LR41 alkaline button cell, 1.5 V, 32 mAh. The cell manufacturer's IEC 62133-2:2017 certificate (Energizer, certificate CB-DK-15221, Annex 7B) is enclosed. Section 15.4.3 of the IEC 60601-1 report (TR-60601-1-31160) assesses the internal electrical power source, including protection against excessive temperature and electrolyte leakage. Because the cell is a button cell and the device may be used on children, the IFU carries the button-cell ingestion warning in section 2.",
+    "expectedVerdict": "PASS",
+    "rationale": "Battery type and rating, the cell's IEC 62133-2 certificate, the 60601-1 assessment of the power source, and the ingestion warning are all present.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "THERM-BATTERY",
+    "passage": "Power comes from a single 1.5 V LR41 alkaline button-type cell. The cell supplier's third-party conformity certificate for the portable sealed cell safety standard (Energizer, CB-DK-15221, Annex 7B) is enclosed, and the medical electrical safety report at Annex 7 (section 15.4.3) evaluates the on-board supply for over-temperature and leakage. Since a small child could swallow the cell, the user manual's second section warns about that hazard and what to do if it happens.",
+    "expectedVerdict": "PASS",
+    "rationale": "Cell type, its supplier certificate to the cell safety standard, the 60601-1 evaluation and the swallowing warning — without \"IEC 62133\", \"battery safety\", \"battery\" or \"test report\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "THERM-BATTERY",
+    "passage": "5.3 Internal power source. The DT-10 is internally powered by one LR41 1.5 V alkaline button cell supplied by a reputable manufacturer. The cell is CE marked and RoHS compliant. Battery safety is assured by the cell's compliance with IEC 62133, as stated in the supplier's product datasheet (Annex 7B). The cell is not user-accessible without a tool, so no ingestion warning is required.",
+    "expectedVerdict": "REJECT",
+    "rationale": "A datasheet asserting compliance is not a certificate; the IEC 60601-1 power-source assessment is absent; and the ingestion-warning exemption is asserted without evidence that the compartment is tool-secured. The required certificate and assessment are missing — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "BP-CUFF-PRESSURE",
+    "passage": "6.1 Cuff pressure accuracy. Test report TR-80601-2-30-40211 (Intertek Testing Services, Shanghai, ILAC-accredited, 3 March 2024) to IEC 80601-2-30:2018 demonstrates cuff pressure indication accuracy within ±3 mmHg (or ±2 % of reading, whichever is greater) across the full indicated pressure range 0 to 299 mmHg, at 10 °C, 23 °C and 40 °C and after 48 h conditioning at 85 % RH. Reference manometer: Fluke DPM4, traceable to NIM China. Conclusion: PASS. Report at Annex 11.",
+    "expectedVerdict": "PASS",
+    "rationale": "Report number and accredited laboratory, the ±3 mmHg / ±2 % criterion, the full pressure range, environmental and conditioning tests, reference traceability, pass conclusion — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "BP-CUFF-PRESSURE",
+    "passage": "Intertek's Shanghai laboratory verified the CE-9's static pressure reading against a Fluke DPM4 reference gauge (calibration traceable to the national metrology institute) at every 20 mmHg step from zero to the 299 mmHg ceiling, at cold, room and warm ambient and again after two days in humid conditioning. All readings fell within three millimetres of mercury or two per cent, whichever was the larger allowance. The signed report (40211, March 2024) is at Annex 11.",
+    "expectedVerdict": "PASS",
+    "rationale": "Same content — accredited lab, reference traceability, full range, environmental conditioning, the tolerance, pass — without \"IEC 80601-2-30\", \"±3 mmHg\", \"accuracy\", \"cuff pressure\", \"test report\" or \"calibration\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "BP-CUFF-PRESSURE",
+    "passage": "6.1 Cuff pressure accuracy. The pressure transducer of the CE-9 has been verified against a reference manometer over the range 0 to 299 mmHg at 23 °C and found to be within ±3 mmHg, meeting IEC 80601-2-30. Traceability of the reference manometer: calibration certificate available. Test report GDT-2021-44122 (Guangdong Testing Institute) at Annex 11.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "A report exists and the tolerance is met at room temperature, but the standard's tests at the specified environmental extremes and after temperature/humidity conditioning are absent, and traceability is asserted rather than shown. Present but incomplete — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

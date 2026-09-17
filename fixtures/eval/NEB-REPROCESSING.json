@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "NEB-REPROCESSING",
+    "passage": "9.2 Reprocessing. Validated reprocessing instructions per ISO 17664-2:2021 for the nebulizer chamber, mask, mouthpiece and tubing (validation report RP-NB30-2023-01, Annex 13): cleaning by manual wash in warm water with mild detergent, disinfection by boiling for 10 minutes or immersion in 0.5 % chlorhexidine for 30 minutes; validated for 60 reprocessing cycles for the chamber and mouthpiece and 30 cycles for the mask; service life 6 months for the chamber and mask, 12 months for the tubing, after which the accessory is to be discarded. The chamber and mask are single-patient use; the compressor may be used for multiple patients with a new accessory set per patient.",
+    "expectedVerdict": "PASS",
+    "rationale": "Method, agents and concentrations, validated cycle count, per-accessory service life and discard point, single- versus multi-patient use — complete.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "NEB-REPROCESSING",
+    "passage": "Annex 13 (RP-NB30-2023-01) proves out the care instructions for the parts that carry medication or touch the face — the cup, the face piece, the mouth piece and the hose: wash by hand in warm soapy water, then either boil for ten minutes or soak for half an hour in 0.5 % chlorhexidine. The cup and mouth piece were shown to withstand sixty such rounds, the face piece thirty. The cup and face piece are to be thrown away after six months and the hose after twelve. Each patient must have their own set; only the pump may be shared.",
+    "expectedVerdict": "PASS",
+    "rationale": "Method, agents, validated round counts, replacement intervals and single-patient rule — without \"cleaning\", \"disinfection\", \"reprocessing\", \"ISO 17664\", \"validated\", \"cycles\", \"service life\", \"discard\" or \"single patient\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "NEB-REPROCESSING",
+    "passage": "9.2 Reprocessing. The nebulizer chamber, mask, mouthpiece and tubing should be cleaned after each use by rinsing in warm water and allowed to air-dry. Once a week the chamber may be washed with a mild detergent. Accessories should be replaced when they show signs of wear. These instructions are provided in the Instructions for Use section 6. The accessories are made of medical-grade polypropylene and PVC.",
+    "expectedVerdict": "REJECT",
+    "rationale": "Care instructions exist, but there is no disinfection step, no validation, no cycle count and no replacement interval (\"when worn\" is not an interval). For reusable patient-contacting respiratory accessories this is not a partial reprocessing validation — it is the absence of one — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

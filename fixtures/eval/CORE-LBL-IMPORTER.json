@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-LBL-IMPORTER",
+    "passage": "8.2 Label — importer and licence. The carton artwork (Annex 8) carries, in addition to the manufacturer block: \"Imported and marketed by: Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, India\" and \"Import licence number: IMP/MD/2024/004518\". The licence number matches the MD-15 licence at Annex 2.",
+    "expectedVerdict": "PASS",
+    "rationale": "Importer name and Indian address and the import licence number are on the label, and the number matches the licence in the dossier.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-LBL-IMPORTER",
+    "passage": "Beneath the producer's details, the retail box shows the Indian firm that brings the product into the country and sells it — Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002 — together with the CDSCO permission reference IMP/MD/2024/004518, which is the same reference as on the grant at Annex 2.",
+    "expectedVerdict": "PASS",
+    "rationale": "Importer identity, Indian address and licence reference on the box, reconciled to the grant — without \"imported by\", \"importer\", \"import licence number\" or \"label\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-LBL-IMPORTER",
+    "passage": "8.2 Label — importer and licence. The carton artwork (Annex 8) carries: \"Imported and marketed by: Sundaram Healthcare Distributors Pvt Ltd, 41 Anna Salai, Chennai 600002, India\" and \"Import licence number: IMP/MD/2021/001192\". The importer's wholesale licence number TN/CH/2019/3312 also appears on the carton.",
+    "expectedVerdict": "MINOR_IMPROVEMENT",
+    "rationale": "The importer block is complete, but the import licence number printed on the label (IMP/MD/2021/001192) is not the MD-15 licence quoted for this device (IMP/MD/2024/004518) — it belongs to an earlier licence. The field is present but wrong — MINOR_IMPROVEMENT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]

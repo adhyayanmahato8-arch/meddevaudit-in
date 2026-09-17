@@ -1,0 +1,23 @@
+[
+  {
+    "clauseCode": "CORE-ISO14971",
+    "passage": "4.1 Risk management. Risk management has been carried out in accordance with ISO 14971:2019 across the device lifecycle. The risk management file at Annex 6 comprises the risk management plan RMP-FS200-01, the hazard identification and risk analysis worksheet (design FMEA, 64 identified hazards), the risk evaluation and risk control table with verification of effectiveness for each control, the residual risk evaluation, and the signed risk management report RMR-FS200-03, which concludes that the overall residual risk is acceptable in relation to the clinical benefit.",
+    "expectedVerdict": "PASS",
+    "rationale": "The complete risk management file is enumerated — plan, hazard analysis, controls with verification, residual risk evaluation and a signed report with the acceptability conclusion.",
+    "wordingRelationship": "SATISFIED_LITERAL"
+  },
+  {
+    "clauseCode": "CORE-ISO14971",
+    "passage": "Annex 6 sets out how foreseeable harms from the FS-200 were identified, weighed and reduced. Sixty-four hazardous situations were catalogued from a design failure-mode study; for each, the mitigating design feature is named and the test that proves it works is cross-referenced. The remaining, unmitigated exposure was assessed against the clinical benefit and judged tolerable in a report signed by the Head of Regulatory Affairs on 3 February 2024. The governing procedure, its scope and the acceptance criteria are laid down in a plan approved before the analysis began.",
+    "expectedVerdict": "PASS",
+    "rationale": "Plan, hazard identification, controls with verification, residual-risk evaluation and signed acceptability conclusion are all described — without \"ISO 14971\", \"risk management\", \"FMEA\" or \"residual risk\".",
+    "wordingRelationship": "SATISFIED_PARAPHRASE"
+  },
+  {
+    "clauseCode": "CORE-ISO14971",
+    "passage": "4.1 Risk management. The manufacturer confirms that risk management activities were performed for the FS-200 in accordance with ISO 14971:2019 and that a risk management report has been prepared. The FS-200 has been on the market since 2021 with no reported serious incidents, which the manufacturer considers to demonstrate that the residual risk is acceptable. The risk management file is retained at the manufacturing site and is available for inspection.",
+    "expectedVerdict": "REJECT",
+    "rationale": "The passage asserts that risk management was done but supplies no file: no plan, no hazard analysis, no controls, no report. A statement that a file exists elsewhere is not the file. The mandatory document is absent — REJECT.",
+    "wordingRelationship": "NOT_SATISFIED_DISTRACTOR"
+  }
+]
